@@ -9,7 +9,7 @@ import BookmarkPage from "./page/BookmarkPage";
 
 function App() {
   return (
-    <>
+    <div className="font-outfit">
       <Routes>
         <Route path="/" element={<Homepage />} />
         <Route path="/register" element={<RegisterPage />} />
@@ -19,7 +19,7 @@ function App() {
         <Route path="/bookmarks" element={<BookmarkPage />} />
       </Routes>
       <div></div>
-    </>
+    </div>
   );
 }
 
