@@ -8,6 +8,9 @@ export default {
   ],
   theme: {
     extend: {
+      screens:{
+        "desktop": "1440px"
+      },
       colors: {
         "movie-primary": "#FC4747",
         "movie-secondary": "#10141E",                    
@@ -27,8 +30,9 @@ export default {
         'body-s': '13px',  // Body Small (S) - 13px
       },
       fontWeight: {
-        light: 300,  // Light weight for Outfit Light
-        medium: 500, // Medium weight for Outfit Medium
+        light: 300,  // Light weight for Outfit Light          
+        medium: 400,  //  Medium weight for Outfit Medium          
+        heavy: 500, // Heavy weight for Outfit Heavy
       },
     },
   },
