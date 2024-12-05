@@ -1,7 +1,8 @@
 import { useForm } from "react-hook-form";
 import { getUsers } from "../helpers/users/get";
+import { Link } from "react-router";
 
-const Login = () => {
+const RegisterForm = () => {
   const {
     register,
     handleSubmit,
@@ -47,7 +48,7 @@ const Login = () => {
   };
 
   return (
-    <div className="bg-movie-fourth rounded-[20px] p-[1.5rem]">
+    <div className="bg-movie-fourth  rounded-[20px] p-[1.5rem] pb-[2rem] md:p-[2rem] w-[20.4375rem] md:w-[25rem]">
       <h1 className="text-heading-l font-medium text-movie-fifth mb-[2.5rem]">
         Login
       </h1>
@@ -69,7 +70,7 @@ const Login = () => {
                 message: "Wrong email format",
               },
             })}
-            className="text-movie-fifth focus:ring-0 w-full font-medium text-body-m bg-transparent border-none"
+            className="text-movie-fifth focus:ring-0 w-full font-medium text-body-m bg-transparent border-none pb-[1.06rem] pt-0 pl-[1rem]"
             placeholder="Email address"
           />
           {errors.email && (
@@ -89,25 +90,32 @@ const Login = () => {
                 message: "Password must contain special characters",
               },
             })}
-            className="text-movie-fifth focus:ring-0 w-full font-medium text-body-m bg-transparent border-none"
+            className="text-movie-fifth focus:ring-0 w-full font-medium text-body-m bg-transparent border-none pb-[1.06rem] pt-0 pl-[1rem]"
             placeholder="Password"
           />
           {errors.password && (
             <p className="text-movie-primary">{errors.password.message}</p>
           )}
         </div>
+
         <button className="text-movie-fifth text-body-m font-medium mt-[2.5rem] mb-[1.5rem] bg-movie-primary rounded-[6px] h-[3rem]">
           Login to your account
         </button>
+
         <div className="flex justify-center gap-[0.5625rem]">
-          <span className="text-movie-fifth text-body-m">
+          <span className="text-movie-fifth text-body-m font-medium">
             Don&#39;t have an account?
           </span>
-          <button className="text-movie-primary text-body-m">Sign Up</button>
+          <Link
+            to="/register"
+            className="text-movie-primary text-body-m font-medium"
+          >
+            <button>Sign Up</button>
+          </Link>
         </div>
       </form>
     </div>
   );
 };
 
-export default Login;
+export default RegisterForm;
