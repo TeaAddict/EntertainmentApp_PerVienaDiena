@@ -1,5 +1,8 @@
+import Trending from "../components/Trending";
 const Homepage = () => {
-  return <div>Homepage</div>;
+  return (
+    <Trending />
+  );
 };
 
 export default Homepage;
