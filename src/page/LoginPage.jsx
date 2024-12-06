@@ -1,4 +1,4 @@
-import Login from "../components/LoginForm";
+import LoginForm from "../components/LoginForm";
 
 const LoginPage = () => {
   return (
@@ -8,7 +8,7 @@ const LoginPage = () => {
           src="/src/assets/logo.svg"
           className="w-[2rem] h-[1.6rem] mb-[3.65rem] md:mb-[4.52rem] desktop:mb-[5.19rem] justify-self-center"
         />
-        <Login />
+        <LoginForm />
       </div>
     </div>
   );
