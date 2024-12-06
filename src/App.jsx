@@ -12,14 +12,14 @@ function App() {
   return (
     <div className="font-outfit">
       <Header/>
-      {/* <Routes>
+      <Routes>
         <Route path="/" element={<Homepage />} />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/tv-series" element={<TvSeriesPage />} />
         <Route path="/movies" element={<MoviesPage />} />
         <Route path="/bookmarks" element={<BookmarkPage />} />
-      </Routes> */}
+      </Routes>
       <div></div>
     </div>
   );
