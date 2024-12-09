@@ -1,6 +1,30 @@
 {
-  "users": [{ "email": "test@gmail.com", "password": "@DMmasdams232" }],
-
+  "users": [
+    {
+      "email": "test@gmail.com",
+      "password": "@DMmasdams232"
+    },
+    {
+      "id": "a5d9",
+      "email": "zzz@gmail.com",
+      "password": "@DMmasdams232"
+    },
+    {
+      "id": "9b61",
+      "email": "testzzz@gmail.com",
+      "password": "@DMmasdams232"
+    },
+    {
+      "id": "bca8",
+      "email": "teszxct@gmail.com",
+      "password": "@DMmasdams232"
+    },
+    {
+      "id": "a217",
+      "email": "123@gmail.com",
+      "password": "@DMmasdams232"
+    }
+  ],
   "movies": [
     {
       "title": "Beyond Earth",
