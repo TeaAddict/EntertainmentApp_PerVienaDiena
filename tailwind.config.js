@@ -4,7 +4,7 @@ import daisyui from "daisyui";
 
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
-  safelist: ["border-movie-third", "border-movie-primary"],
+  safelist: ["border-movie-third", "border-movie-primary", "bg-movie-fourth"],
   theme: {
     extend: {
       screens: {
