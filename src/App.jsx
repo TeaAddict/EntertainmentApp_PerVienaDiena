@@ -6,6 +6,7 @@ import LoginPage from "./page/LoginPage";
 import TvSeriesPage from "./page/TvSeriesPage";
 import MoviesPage from "./page/MoviesPage";
 import BookmarkPage from "./page/BookmarkPage";
+import ContentCard from "./components/ContentCard";
 
 function App() {
   return (
@@ -18,7 +19,11 @@ function App() {
         <Route path="/movies" element={<MoviesPage />} />
         <Route path="/bookmarks" element={<BookmarkPage />} />
       </Routes>
-      <div></div>
+      <div className="p-5">
+        {/* <ContentCard type="TV Series"></ContentCard> */}
+        <ContentCard type="Movie"></ContentCard>
+        {/* <ContentCard trending={true}></ContentCard> */}
+      </div>
     </div>
   );
 }
