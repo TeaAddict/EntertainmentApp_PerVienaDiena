@@ -1,6 +1,7 @@
 import { useForm } from "react-hook-form";
 import { getUsers } from "../helpers/users/get";
 import { Link, useNavigate } from "react-router";
+import Button from "./Button";
 
 const LoginForm = () => {
   const {
@@ -99,9 +100,7 @@ const LoginForm = () => {
           </div>
         </div>
 
-        <button className="text-movie-fifth hover:text-movie-secondary text-body-m font-medium mt-[2.5rem] mb-[1.5rem] bg-movie-primary hover:bg-movie-fifth rounded-[6px] h-[3rem]">
-          Login to your account
-        </button>
+        <Button>Login to your account</Button>
 
         <div className="flex justify-center gap-[8px]">
           <span className="text-movie-fifth text-body-m font-medium leading-[19px]">

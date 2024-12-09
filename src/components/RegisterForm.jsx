@@ -2,6 +2,7 @@ import { useForm } from "react-hook-form";
 import { getUsers } from "../helpers/users/get";
 import { Link, useNavigate } from "react-router";
 import { postUser } from "../helpers/users/post";
+import Button from "./Button";
 
 const RegisterForm = () => {
   const {
@@ -135,9 +136,7 @@ const RegisterForm = () => {
           </div>
         </div>
 
-        <button className="text-movie-fifth hover:text-movie-secondary text-body-m font-medium mt-[2.5rem] md:mt-[1.5rem] mb-[1.5rem] bg-movie-primary hover:bg-movie-fifth rounded-[6px] h-[3rem]">
-          Create an account
-        </button>
+        <Button>Create an account</Button>
 
         <div className="flex justify-center gap-[8px]">
           <span className="text-movie-fifth text-body-m font-medium leading-[19px]">

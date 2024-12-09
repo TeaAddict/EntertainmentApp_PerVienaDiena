@@ -11,6 +11,8 @@ function App() {
   return (
     <div className="font-outfit">
       <Routes>
+    
+
         <Route path="/" element={<Homepage />} />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} />
