@@ -6,7 +6,7 @@ import LoginPage from "./page/LoginPage";
 import TvSeriesPage from "./page/TvSeriesPage";
 import MoviesPage from "./page/MoviesPage";
 import BookmarkPage from "./page/BookmarkPage";
-
+import RecomendedSection from "./components/RecomendedSection";
 function App() {
   return (
     <div className="font-outfit">
@@ -19,6 +19,7 @@ function App() {
         <Route path="/bookmarks" element={<BookmarkPage />} />
       </Routes>
       <div></div>
+      <RecomendedSection />
     </div>
   );
 }
