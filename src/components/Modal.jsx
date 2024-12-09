@@ -1,5 +1,4 @@
 import { Link } from "react-router";
-import ProfilePictureButton from "./Header/ProfilePictureButton";
 import Button from "./Button";
 
 const Modal = ({ OpenButton }) => {
@@ -9,25 +8,21 @@ const Modal = ({ OpenButton }) => {
         {<OpenButton />}
       </button>
       <dialog id="my_modal_2" className="modal ">
-        <div className="modal-box flex flex-col justify-center items-center bg-movie-third">
+        <div className="modal-box flex flex-col justify-center items-center bg-movie-fourth">
           <p className="py-4 text-movie-fifth">
             Are you sure want to Sing Out?
           </p>
           <section className="flex flex-row gap-5">
             <Link to="/login">
-              <Button
-                onClick={() => document.getElementById("my_modal_2").close()}
+              <Button onClick={() => document.getElementById("my_modal_2").close()}
               >
                 Sing Out
-              </Button>
+              </Button >
             </Link>
-            <Button
-              type="secondary"
-              className=" bg-movie-fourth"
-              onClick={() => document.getElementById("my_modal_2").close()}
+            <Button type="secondary" onClick={() => document.getElementById("my_modal_2").close()}
             >
               Close
-            </Button>
+            </Button >
           </section>
         </div>
         <form method="dialog" className="modal-backdrop">
