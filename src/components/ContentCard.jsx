@@ -71,7 +71,7 @@ export default function ContentCard({ content, index }) {
         src={`src/assets/icon-category-${
           content.category === "Movie" ? "movie" : "tv"
         }.svg`}
-        className="inline-block w-4 h-4"
+        className="inline-block w-[13px] h-[13px]"
       />
     );
   };
@@ -80,7 +80,7 @@ export default function ContentCard({ content, index }) {
     return (
       <div className="group">
         <button
-          className="absolute top-2 right-2 w-8 h-8 bg-movie-secondary bg-opacity-50 rounded-full flex items-center justify-center hover:bg-movie-fifth transition"
+          className="absolute desktop:top-[16px] top-[8px] desktop:right-[24px] right-[8px] w-8 h-8 bg-movie-secondary bg-opacity-50 rounded-full flex items-center justify-center hover:bg-movie-fifth transition"
           onClick={() => handleBookmarkToggle(index, isBookmarked)}
         >
           <svg width="12" height="14" xmlns="http://www.w3.org/2000/svg">
@@ -99,15 +99,17 @@ export default function ContentCard({ content, index }) {
 
   const style = {
     trending: {
-      container: "absolute bottom-0 left-0 p-4 from-black",
-      description: "desktop:text-body-m",
-      title: "desktop:text-heading-s",
+      container:
+        "absolute bottom-0 left-0 p-4 desktop:p-[25px] from-black pb-[16px] desktop:pb-[21px]",
+      description:
+        "text-[12px] leading-[15px] desktop:text-body-m desktop:pb-[2px]",
+      title: "desktop:text-heading-s ",
       imgSize: "w-[240px] h-[140px] desktop:w-[470px] desktop:h-[230px]",
     },
     regular: {
-      container: "w-full pt-3",
-      description: "",
-      title: "desktop:text-heading-xs",
+      container: "w-full pt-3 pt-[6px]",
+      description: "text-[11px] gap-[11px]",
+      title: "desktop:text-[heading-xs] text-[14px]",
       imgSize: "w-[164px] h-[110px] desktop:w-[280px] desktop:h-[174px]",
     },
   };
@@ -152,7 +154,7 @@ export default function ContentCard({ content, index }) {
           `}
         >
           <p
-            className={`text-[12px] font-thin text-white flex items-center space-x-1  ${
+            className={`text-[12px] font-thin text-white flex items-center gap-[8px] ${
               content.isTrending && style.trending.description
             }`}
           >
