@@ -108,19 +108,16 @@ export default function ContentCard({ content, index }) {
       container: "w-full pt-3",
       description: "",
       title: "desktop:text-heading-xs",
-      imgSize: "w-[164px] h-[110px] desktop:w-[228px] desktop:h-[174px]",
+      imgSize: "w-[164px] h-[110px] desktop:w-[280px] desktop:h-[174px]",
     },
   };
 
   return (
-    <div
-      className="items-center w-fit bg-movie-secondary border-none rounded-lg shadow dark:bg-movie-secondary dark:border-movie-secondary"
-      key={content.title}
-    >
+    <div className="items-center w-fit bg-movie-secondary">
       <div className="relative">
         <div>
           <img
-            className={`object-cover rounded hover:bg-movie-second ${
+            className={`object-cover rounded-[9px] hover:bg-movie-second ${
               content.isTrending
                 ? style.trending.imgSize
                 : style.regular.imgSize
@@ -128,7 +125,7 @@ export default function ContentCard({ content, index }) {
             src={updatedSrc(
               content.isTrending
                 ? content.thumbnail.trending.large
-                : content.thumbnail.regular.small
+                : content.thumbnail.regular.large
             )}
             alt=""
           />
@@ -147,14 +144,15 @@ export default function ContentCard({ content, index }) {
 
         {/* DESCRIPTION */}
         <div
-          className={
+          className={`pt-[9px] ${
             content.isTrending
               ? style.trending.container
               : style.regular.container
           }
+          `}
         >
           <p
-            className={`text-body-s font-light text-white flex items-center space-x-1 ${
+            className={`text-[12px] font-thin text-white flex items-center space-x-1  ${
               content.isTrending && style.trending.description
             }`}
           >
