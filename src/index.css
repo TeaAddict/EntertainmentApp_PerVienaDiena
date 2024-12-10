@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root{
+    --main-red: #FC4747;
+    --main-dark-blue: #10141E;
+    --main-greyish-blue: #5A698F;
+    --main-semi-dark-blue: #161D2F;
+    --main-pure-whte: #FFFFFF;
+}
+
+.active-link svg{
+    fill:  var(--main-pure-whte);
+}

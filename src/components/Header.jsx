@@ -1,5 +1,7 @@
-import { Link } from "react-router";
+import { NavLink } from "react-router";
 import avatar from "../assets/image-avatar.png";
+
+const setActive = ({isActive}) => isActive  ? `active-link` : ``;
 
 const Header = () => {
   return (
@@ -19,7 +21,7 @@ const Header = () => {
           </section>
           <section className=" flex justify-center desktop:items-start items-center h-full desktop:pt-[4.69rem] ">
             <section className=" flex justify-between items-center w-[8.346rem] h-[1rem] gap-[1.5rem] md:w-[10.8075rem] md:h-[1.25rem] md:gap-[2rem] desktop:flex desktop:flex-col desktop:w-[1.25rem] desktop:h-[12.5rem]">
-              <Link to="/">
+              <NavLink to="/" className={setActive} >
                 <button>
                   <svg
                     className="fill-[#5A698F] hover:fill-movie-fifth w-[1rem] h-[1rem] md:w-[1.25rem] md:h-[1.25rem] "
@@ -36,8 +38,8 @@ const Header = () => {
                     />
                   </svg>
                 </button>
-              </Link>
-              <Link to="/movies">
+              </NavLink>
+              <NavLink to="/movies" className={setActive} >
                 <button>
                   <svg
                     className="fill-[#5A698F] hover:fill-movie-fifth sm:w-[3rem] w-[1rem] h-[1rem] md:w-[1.25rem] md:h-[1.25rem]"
@@ -54,8 +56,8 @@ const Header = () => {
                     />
                   </svg>
                 </button>
-              </Link>
-              <Link to="/tv-series">
+              </NavLink>
+              <NavLink to="/tv-series" className={setActive} >
                 <button>
                   <svg
                     className="fill-[#5A698F] hover:fill-movie-fifth w-[1rem] h-[1rem] md:w-[1.25rem] md:h-[1.25rem] "
@@ -72,8 +74,8 @@ const Header = () => {
                     />
                   </svg>
                 </button>
-              </Link>
-              <Link to="/bookmarks">
+              </NavLink>
+              <NavLink to="/bookmarks" className={setActive} >
                 <button>
                   <svg
                     className="fill-[#5A698F] hover:fill-movie-fifth w-[0.846rem] h-[1rem] md:w-[1.0575rem] md:h-[1.25rem] "
@@ -86,7 +88,7 @@ const Header = () => {
                     <path d="M12.3093 0C12.4715 0 12.6266 0.031725 12.7746 0.0951751C13.0073 0.186825 13.1923 0.331351 13.3298 0.528751C13.4673 0.726151 13.536 0.944701 13.536 1.1844V14.8156C13.536 15.0553 13.4673 15.2738 13.3298 15.4712C13.1923 15.6686 13.0073 15.8132 12.7746 15.9048C12.6407 15.9612 12.4856 15.9894 12.3093 15.9894C11.9709 15.9894 11.6783 15.8766 11.4316 15.651L6.76801 11.1672L2.10443 15.651C1.85063 15.8837 1.55805 16 1.2267 16C1.06455 16 0.909451 15.9683 0.761401 15.9048C0.528751 15.8132 0.343688 15.6686 0.206213 15.4712C0.0687376 15.2738 0 15.0553 0 14.8156V1.1844C0 0.944701 0.0687376 0.726151 0.206213 0.528751C0.343688 0.331351 0.528751 0.186825 0.761401 0.0951751C0.909451 0.031725 1.06455 0 1.2267 0H12.3093Z" />
                   </svg>
                 </button>
-              </Link>
+              </NavLink>
             </section>
           </section>
           <section className=" flex justify-end  pr-[1rem] py-[1rem] md:pr[1rem] md:pt-[1.31] md:pb-[1.19] desktop:pb-[2rem] desktop:pl-[1.75rem] desktop:pr-[1.75rem] desktop:self-end">
