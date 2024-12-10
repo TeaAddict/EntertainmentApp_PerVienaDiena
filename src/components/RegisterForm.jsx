@@ -78,7 +78,7 @@ const RegisterForm = () => {
                   message: "Wrong email format",
                 },
               })}
-              onFocus={() => clearErrors("email")}
+             
               className="caret-movie-primary text-movie-fifth focus:ring-0 w-full font-medium text-body-m bg-transparent border-none pb-[1.06rem] pt-0 pl-[1rem] leading-[19px]"
               placeholder="Email address"
             />
@@ -102,7 +102,6 @@ const RegisterForm = () => {
                   message: "Password needs special characters",
                 },
               })}
-              onFocus={() => clearErrors("password")}
               type="password"
               className="caret-movie-primary text-movie-fifth focus:ring-0 w-full font-medium text-body-m bg-transparent border-none pb-[1.06rem] pt-0 pl-[1rem] leading-[19px]"
               placeholder="Password"
@@ -126,7 +125,6 @@ const RegisterForm = () => {
               type="password"
               className="text-movie-fifth focus:ring-0 w-full font-medium text-body-m bg-transparent border-none pb-[1.06rem] pt-0 pl-[1rem] leading-[19px]"
               placeholder="Repeat Password"
-              onFocus={() => clearErrors("repeatPass")}
               onBlur={(e) => {
                 if (e.target.value !== currentPass)
                   setError("repeatPass", {

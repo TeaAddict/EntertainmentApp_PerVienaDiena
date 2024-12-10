@@ -20,18 +20,21 @@ const LoginForm = () => {
   const handleFormSubmit = async (data) => {
     try {
       const res = await getUsers();
-      console.log(res);
+
+      setError("email", { type: "custom", message: "Incorrect email" });
+      setError("password", {
+        type: "custom",
+        message: "Incorrect password",
+      });
+
       const isCorrect = res.some((user) => {
         let correct = true;
         if (user.email != data.email) {
-          setError("email", { type: "custom", message: "Incorrect email" });
+          clearErrors("email");
           correct = false;
         }
         if (user.password != data.password) {
-          setError("password", {
-            type: "custom",
-            message: "Incorrect password",
-          });
+          clearErrors("password");
           correct = false;
         }
         return correct;
@@ -42,6 +45,8 @@ const LoginForm = () => {
       console.error(error);
     }
   };
+
+  console.log(errors);
 
   return (
     <div className="bg-movie-fourth  rounded-[20px] p-[1.5rem] pb-[2rem] md:p-[2rem] w-[20.4375rem] md:w-[25rem]">
@@ -67,7 +72,6 @@ const LoginForm = () => {
                   message: "Wrong email format",
                 },
               })}
-              onFocus={() => clearErrors("email")}
               className="text-movie-fifth focus:ring-0 w-full font-medium text-body-m bg-transparent border-none pb-[1.06rem] pt-0 pl-[1rem] leading-[19px]"
               placeholder="Email address"
             />
@@ -85,12 +89,7 @@ const LoginForm = () => {
             <input
               {...register("password", {
                 required: "Can't be empty",
-                pattern: {
-                  value: /^(?=.*[A-Z])(?=.*[\W_]).{8,}$/,
-                  message: "Password needs special characters",
-                },
               })}
-              onFocus={() => clearErrors("password")}
               type="password"
               className="text-movie-fifth focus:ring-0 w-full font-medium text-body-m bg-transparent border-none pb-[1.06rem] pt-0 pl-[1rem] leading-[19px]"
               placeholder="Password"
