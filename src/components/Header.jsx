@@ -1,31 +1,35 @@
-import { Link } from "react-router";
+import { NavLink } from "react-router";
 import HeaderProfilePicture from "./Header/HeaderProfilePicture";
 
+const setActive = ({ isActive }) => (isActive ? `active-link ` : ``);
 const Header = () => {
   return (
     <>
       <header>
-        <nav className="  bg-movie-fourth md:rounded-[0.63rem] grid grid-cols-3 items-center desktop:grid desktop:gridRows-[auto_1fr_auto] desktop:grid-cols-1 md:w-[44.9375rem] md:h-[4.5rem] desktop:w-[6rem] desktop:h-[60rem] desktop:rounded-[1.25rem]">
-          <section className=" pl-[1rem] md:pl-[1.5rem] md:pb-[1.4rem] md:pt-[1.5rem] desktop:pt-[2.21rem] desktop:pl-[1.99rem] desktop:pr-[2.01rem] desktop:pb-0  ">
+        <nav className="  bg-movie-fourth md:rounded-[0.63rem] grid grid-cols-[auto_1fr_auto] items-center desktop:grid desktop:grid-cols-1 desktop:grid-rows-[auto_1fr_auto] desktop:w-[6rem] desktop:h-[60rem] desktop:rounded-[1.25rem]">
+          <section className=" pt-[1.13rem] pb-[1.12rem] pl-[1rem] md:pl-[1.5rem] md:pb-[1.4rem] md:pt-[1.5rem] desktop:pt-[2.21rem] desktop:pl-[1.99rem] desktop:pr-[2.01rem] desktop:pb-0">
             <svg
-              className="w-[25px] h-[20px] md:w-[2rem] md:h-[1.6rem] desktop:w-[2rem] desktop:h-[1.6rem] "
+              className="w-[1.5625rem] h-[1.25rem] md:w-[2rem] md:h-[1.6rem] desktop:w-[2rem] desktop:h-[1.6rem] "
               xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 33 27"
-              fill="#FC4747"
+              width="25"
+              height="20"
+              viewBox="0 0 25 20"
+              fill="none"
             >
-              {" "}
-              <path d="m26.463.408 3.2 6.4h-4.8l-3.2-6.4h-3.2l3.2 6.4h-4.8l-3.2-6.4h-3.2l3.2 6.4h-4.8l-3.2-6.4h-1.6a3.186 3.186 0 0 0-3.184 3.2l-.016 19.2a3.2 3.2 0 0 0 3.2 3.2h25.6a3.2 3.2 0 0 0 3.2-3.2V.408h-6.4Z" />{" "}
+              <path
+                d="M20 0L22.5 5H18.75L16.25 0H13.75L16.25 5H12.5L10 0H7.5L10 5H6.25L3.75 0H2.5C1.11875 0 0.0125 1.11875 0.0125 2.5L0 17.5C0 18.8813 1.11875 20 2.5 20H22.5C23.8813 20 25 18.8813 25 17.5V0H20Z"
+                fill="#FC4747"
+              />
             </svg>
           </section>
-          <section className=" flex justify-center desktop:items-start items-center h-full desktop:pt-[4.69rem] ">
-            <section className=" flex justify-between items-center w-[8.346rem] h-[1rem] gap-[1.5rem] md:w-[10.8075rem] md:h-[1.25rem] md:gap-[2rem] desktop:flex desktop:flex-col desktop:w-[1.25rem] desktop:h-[12.5rem]">
-              <NavLink to="/" className={setActive} >
-                <button>
+          <section className=" flex justify-center desktop:items-start desktop:flex items-center h-full desktop:pt-[4.69rem]">
+            <section className=" flex justify-between items-center w-[8.346rem] h-[1rem] gap-[1.5rem] md:w-[10.8075rem] md:h-[1.25rem] md:gap-[2rem] desktop:flex-col desktop:w-[1.25rem]  desktop:h-[12.5rem] desktop:gap-[2.5rem] ">
+              <NavLink to="/" className={setActive}>
+                <button className=" flex">
                   <svg
                     className="fill-[#5A698F] hover:fill-movie-fifth w-[1rem] h-[1rem] md:w-[1.25rem] md:h-[1.25rem] "
                     xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
+                    
                     viewBox="0 0 16 16"
                     fill="none"
                   >
@@ -37,13 +41,12 @@ const Header = () => {
                   </svg>
                 </button>
               </NavLink>
-              <NavLink to="/movies" className={setActive} >
-                <button>
+              <NavLink to="/movies" className={setActive}>
+                <button className=" flex">
                   <svg
-                    className="fill-[#5A698F] hover:fill-movie-fifth sm:w-[3rem] w-[1rem] h-[1rem] md:w-[1.25rem] md:h-[1.25rem]"
+                    className="fill-[#5A698F] hover:fill-movie-fifth w-[1rem] h-[1rem] md:w-[1.25rem] md:h-[1.25rem]"
                     xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
+                    
                     viewBox="0 0 16 16"
                     fill="none"
                   >
@@ -55,13 +58,12 @@ const Header = () => {
                   </svg>
                 </button>
               </NavLink>
-              <NavLink to="/tv-series" className={setActive} >
-                <button>
+              <NavLink to="/tv-series" className={setActive}>
+                <button className=" flex">
                   <svg
                     className="fill-[#5A698F] hover:fill-movie-fifth w-[1rem] h-[1rem] md:w-[1.25rem] md:h-[1.25rem] "
                     xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
+                    
                     viewBox="0 0 16 16"
                     fill="none"
                   >
@@ -73,13 +75,13 @@ const Header = () => {
                   </svg>
                 </button>
               </NavLink>
-              <NavLink to="/bookmarks" className={setActive} >
-                <button>
+              <NavLink to="/bookmarks" className={setActive}>
+                <button className=" flex">
                   <svg
                     className="fill-[#5A698F] hover:fill-movie-fifth w-[0.846rem] h-[1rem] md:w-[1.0575rem] md:h-[1.25rem] "
                     xmlns="http://www.w3.org/2000/svg"
-                    width="14"
-                    height="16"
+                    // width="14"
+                    // height="16"
                     viewBox="0 0 14 16"
                     fill="none"
                   >
@@ -89,8 +91,8 @@ const Header = () => {
               </NavLink>
             </section>
           </section>
-          <section className=" flex justify-end  pr-[1rem] py-[1rem] md:pr[1rem] md:pt-[1.31] md:pb-[1.19] desktop:pb-[2rem] desktop:pl-[1.75rem] desktop:pr-[1.75rem] desktop:self-end">
-          <HeaderProfilePicture/>
+          <section className=" flex justify-end items-center pr-[1rem] pt-[1rem] pb-[1rem] md:pr[1rem] md:pt-[1.31rem] md:pb-[1.19rem] desktop:pb-[1.7rem] desktop:pl-[1.75rem] desktop:pr-[1.75rem] desktop:self-end">
+            <HeaderProfilePicture />
           </section>
         </nav>
       </header>
