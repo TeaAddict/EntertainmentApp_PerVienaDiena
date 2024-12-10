@@ -9,6 +9,7 @@ const RegisterForm = () => {
     handleSubmit,
     formState: { errors },
     setError,
+    clearErrors,
     watch,
   } = useForm({
     defaultValues: {
@@ -52,6 +53,7 @@ const RegisterForm = () => {
 
   const currentPass = watch("password");
 
+  console.log(errors);
   return (
     <div className="bg-movie-fourth  rounded-[20px] p-[1.5rem] pb-[2rem] md:p-[2rem] w-[20.4375rem] md:w-[25rem]">
       <h1 className="text-heading-l font-medium text-movie-fifth mb-[2.5rem] tracking-[-0.5px] leading-[40px]">
@@ -76,9 +78,11 @@ const RegisterForm = () => {
                   message: "Wrong email format",
                 },
               })}
-              className="text-movie-fifth focus:ring-0 w-full font-medium text-body-m bg-transparent border-none pb-[1.06rem] pt-0 pl-[1rem] leading-[19px]"
+              onFocus={() => clearErrors("email")}
+              className="caret-movie-primary text-movie-fifth focus:ring-0 w-full font-medium text-body-m bg-transparent border-none pb-[1.06rem] pt-0 pl-[1rem] leading-[19px]"
               placeholder="Email address"
             />
+
             {errors.email && (
               <p className="text-movie-primary text-nowrap">
                 {errors.email.message}
@@ -95,10 +99,12 @@ const RegisterForm = () => {
                 required: "Can't be empty",
                 pattern: {
                   value: /^(?=.*[A-Z])(?=.*[\W_]).{8,}$/,
-                  message: "Password must contain special characters",
+                  message: "Password needs special characters",
                 },
               })}
-              className="text-movie-fifth focus:ring-0 w-full font-medium text-body-m bg-transparent border-none pb-[1.06rem] pt-0 pl-[1rem] leading-[19px]"
+              onFocus={() => clearErrors("password")}
+              type="password"
+              className="caret-movie-primary text-movie-fifth focus:ring-0 w-full font-medium text-body-m bg-transparent border-none pb-[1.06rem] pt-0 pl-[1rem] leading-[19px]"
               placeholder="Password"
             />
             {errors.password && (
@@ -117,8 +123,10 @@ const RegisterForm = () => {
               {...register("repeatPass", {
                 required: "Can't be empty",
               })}
+              type="password"
               className="text-movie-fifth focus:ring-0 w-full font-medium text-body-m bg-transparent border-none pb-[1.06rem] pt-0 pl-[1rem] leading-[19px]"
               placeholder="Repeat Password"
+              onFocus={() => clearErrors("repeatPass")}
               onBlur={(e) => {
                 if (e.target.value !== currentPass)
                   setError("repeatPass", {

@@ -8,6 +8,7 @@ const LoginForm = () => {
     handleSubmit,
     formState: { errors },
     setError,
+    clearErrors,
   } = useForm({
     defaultValues: {
       email: "",
@@ -66,6 +67,7 @@ const LoginForm = () => {
                   message: "Wrong email format",
                 },
               })}
+              onFocus={() => clearErrors("email")}
               className="text-movie-fifth focus:ring-0 w-full font-medium text-body-m bg-transparent border-none pb-[1.06rem] pt-0 pl-[1rem] leading-[19px]"
               placeholder="Email address"
             />
@@ -85,9 +87,11 @@ const LoginForm = () => {
                 required: "Can't be empty",
                 pattern: {
                   value: /^(?=.*[A-Z])(?=.*[\W_]).{8,}$/,
-                  message: "Password must contain special characters",
+                  message: "Password needs special characters",
                 },
               })}
+              onFocus={() => clearErrors("password")}
+              type="password"
               className="text-movie-fifth focus:ring-0 w-full font-medium text-body-m bg-transparent border-none pb-[1.06rem] pt-0 pl-[1rem] leading-[19px]"
               placeholder="Password"
             />
