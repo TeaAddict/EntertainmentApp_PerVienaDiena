@@ -27,22 +27,20 @@ const RegisterForm = () => {
       const res = await getUsers();
       console.log(res);
       const isCorrect = res.some((user) => {
-        let correct = true;
         if (user.email == data.email) {
           setError("email", {
             type: "custom",
             message: "Email already exists",
           });
-          correct = false;
+          return false;
         }
-
-        return correct;
+        return true;
       });
 
       if (isCorrect) {
         console.log("Correct credentials!");
-        await postUser({ email: data.email, password: data.password });
-        navigate("/");
+        // await postUser({ email: data.email, password: data.password });
+        // navigate("/");
       } else {
         console.log("Incorrect credentials!");
       }
@@ -77,8 +75,8 @@ const RegisterForm = () => {
                   value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
                   message: "Wrong email format",
                 },
+                onChange: () => clearErrors("email"),
               })}
-             
               className="caret-movie-primary text-movie-fifth focus:ring-0 w-full font-medium text-body-m bg-transparent border-none pb-[1.06rem] pt-0 pl-[1rem] leading-[19px]"
               placeholder="Email address"
             />
@@ -97,10 +95,14 @@ const RegisterForm = () => {
             <input
               {...register("password", {
                 required: "Can't be empty",
-                pattern: {
-                  value: /^(?=.*[A-Z])(?=.*[\W_]).{8,}$/,
-                  message: "Password needs special characters",
+                onBlur: (e) => {
+                  if (!/^(?=.*[A-Z])(?=.*[\W_]).{8,}$/.test(e.target.value))
+                    setError("password", {
+                      type: "custom",
+                      message: "Password needs special characters",
+                    });
                 },
+                onChange: () => clearErrors("password"),
               })}
               type="password"
               className="caret-movie-primary text-movie-fifth focus:ring-0 w-full font-medium text-body-m bg-transparent border-none pb-[1.06rem] pt-0 pl-[1rem] leading-[19px]"
@@ -121,17 +123,18 @@ const RegisterForm = () => {
             <input
               {...register("repeatPass", {
                 required: "Can't be empty",
+                onBlur: (e) => {
+                  if (e.target.value !== currentPass)
+                    setError("repeatPass", {
+                      type: "manual",
+                      message: "Passwords must match",
+                    });
+                },
+                onChange: () => clearErrors("repeatPass"),
               })}
               type="password"
               className="text-movie-fifth focus:ring-0 w-full font-medium text-body-m bg-transparent border-none pb-[1.06rem] pt-0 pl-[1rem] leading-[19px]"
               placeholder="Repeat Password"
-              onBlur={(e) => {
-                if (e.target.value !== currentPass)
-                  setError("repeatPass", {
-                    type: "manual",
-                    message: "Passwords must match",
-                  });
-              }}
             />
             {errors.repeatPass && (
               <p className="text-movie-primary text-nowrap">

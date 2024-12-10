@@ -21,32 +21,28 @@ const LoginForm = () => {
     try {
       const res = await getUsers();
 
-      setError("email", { type: "custom", message: "Incorrect email" });
-      setError("password", {
-        type: "custom",
-        message: "Incorrect password",
-      });
-
       const isCorrect = res.some((user) => {
-        let correct = true;
-        if (user.email != data.email) {
+        if (user.email == data.email) {
           clearErrors("email");
-          correct = false;
+
+          if (user.password == data.password) {
+            clearErrors("password");
+            return true;
+          }
         }
-        if (user.password != data.password) {
-          clearErrors("password");
-          correct = false;
-        }
-        return correct;
+        setError("general", {
+          type: "custom",
+          message: "Incorrect credentials",
+        });
+        return false;
       });
 
       if (isCorrect) navigate("/");
+      else console.log("wrong acc");
     } catch (error) {
       console.error(error);
     }
   };
-
-  console.log(errors);
 
   return (
     <div className="bg-movie-fourth  rounded-[20px] p-[1.5rem] pb-[2rem] md:p-[2rem] w-[20.4375rem] md:w-[25rem]">
@@ -66,11 +62,24 @@ const LoginForm = () => {
           >
             <input
               {...register("email", {
-                required: "Can't be empty",
-                pattern: {
-                  value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
-                  message: "Wrong email format",
+                onBlur: (e) => {
+                  if (!e.target.value) {
+                    setError("email", {
+                      type: "manual",
+                      message: "Can't be empty",
+                    });
+                  } else if (
+                    !/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(
+                      e.target.value
+                    )
+                  )
+                    setError("email", {
+                      type: "manual",
+                      message: "Wrong email format",
+                    });
                 },
+                required: "Can't be empty",
+                onChange: () => clearErrors(["email", "general"]),
               })}
               className="text-movie-fifth focus:ring-0 w-full font-medium text-body-m bg-transparent border-none pb-[1.06rem] pt-0 pl-[1rem] leading-[19px]"
               placeholder="Email address"
@@ -89,6 +98,7 @@ const LoginForm = () => {
             <input
               {...register("password", {
                 required: "Can't be empty",
+                onChange: () => clearErrors(["password", "general"]),
               })}
               type="password"
               className="text-movie-fifth focus:ring-0 w-full font-medium text-body-m bg-transparent border-none pb-[1.06rem] pt-0 pl-[1rem] leading-[19px]"
@@ -101,6 +111,12 @@ const LoginForm = () => {
             )}
           </div>
         </div>
+
+        {errors.general && (
+          <p className="text-movie-primary text-nowrap">
+            {errors.general.message}
+          </p>
+        )}
 
         <button className="text-movie-fifth hover:text-movie-secondary text-body-m font-medium mt-[2.5rem] mb-[1.5rem] bg-movie-primary hover:bg-movie-fifth rounded-[6px] h-[3rem]">
           Login to your account
