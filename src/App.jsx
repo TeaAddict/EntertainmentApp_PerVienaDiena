@@ -11,7 +11,7 @@ function App() {
   return (
     <div className="font-outfit">
       <Routes>
-        <Route path="/" element={<Homepage />} />
+        <Route path="/" element={<RecomendedSection />} />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/tv-series" element={<TvSeriesPage />} />
@@ -19,7 +19,6 @@ function App() {
         <Route path="/bookmarks" element={<BookmarkPage />} />
       </Routes>
       <div></div>
-      <RecomendedSection />
     </div>
   );
 }

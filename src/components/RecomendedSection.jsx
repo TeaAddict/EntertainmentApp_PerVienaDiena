@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { data } from "react-router";
 import ContentCard from "./ContentCard";
 
 export default function RecomendedSection() {
@@ -30,20 +29,23 @@ export default function RecomendedSection() {
   }
 
   return (
-    <div className="bg-movie-secondary px-7 ">
-      <h2 className="text-movie-fifth text-heading-xs font-light px-2 pb-[22px] ">
+    <div className="bg-movie-secondary px-[8px] desktop:px-[80px]">
+      <h2 className="text-movie-fifth text-heading-xs font-light px-[8px] pb-[22px] desktop:px-[20px] desktop:text-heading-l desktop:pb-[23px]">
         Recommended for you
       </h2>
 
       <ul className="grid grid-cols-2 desktop:grid-cols-4">
-        {data.map((content, index) => (
-          <li
-            key={content.title}
-            className="flex justify-center pb-[5px] border"
-          >
-            <ContentCard content={content} index={index} />
-          </li>
-        ))}
+        {data.map(
+          (content, index) =>
+            !content.isTrending && (
+              <li
+                key={content.title}
+                className="flex justify-center pb-[13px] desktop:pb-[30px]"
+              >
+                <ContentCard content={content} index={index} />
+              </li>
+            )
+        )}
       </ul>
     </div>
   );
