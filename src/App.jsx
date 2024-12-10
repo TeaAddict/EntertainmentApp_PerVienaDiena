@@ -13,6 +13,8 @@ function App() {
     <div className="font-outfit">
       <Header/>
       <Routes>
+    
+
         <Route path="/" element={<Homepage />} />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} />
@@ -20,7 +22,6 @@ function App() {
         <Route path="/movies" element={<MoviesPage />} />
         <Route path="/bookmarks" element={<BookmarkPage />} />
       </Routes>
-      <div></div>
     </div>
   );
 }
