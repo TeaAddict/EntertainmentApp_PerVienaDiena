@@ -15,3 +15,14 @@ input:-webkit-autofill:active {
   transition: background-color 5000s ease-in-out 0s;
   -webkit-text-fill-color: white !important;
 }
+:root {
+  --main-red: #fc4747;
+  --main-dark-blue: #10141e;
+  --main-greyish-blue: #5a698f;
+  --main-semi-dark-blue: #161d2f;
+  --main-pure-white: #ffffff;
+}
+
+.active-link svg {
+  fill: var(--main-pure-white);
+}

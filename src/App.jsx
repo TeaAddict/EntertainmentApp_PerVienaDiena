@@ -6,11 +6,15 @@ import LoginPage from "./page/LoginPage";
 import TvSeriesPage from "./page/TvSeriesPage";
 import MoviesPage from "./page/MoviesPage";
 import BookmarkPage from "./page/BookmarkPage";
+import Header from  "./components/Header";
 
 function App() {
   return (
     <div className="font-outfit">
+      <Header/>
       <Routes>
+    
+
         <Route path="/" element={<Homepage />} />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} />

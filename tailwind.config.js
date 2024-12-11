@@ -1,9 +1,10 @@
 import form from "@tailwindcss/forms";
+import daisyui from "daisyui";
 /** @type {import('tailwindcss').Config} */
 
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
-  safelist: ["border-movie-third", "border-movie-primary"],
+  safelist: ["border-movie-third", "border-movie-primary", "bg-movie-fourth"],
   theme: {
     extend: {
       screens: {
@@ -34,5 +35,5 @@ export default {
       },
     },
   },
-  plugins: [form],
+  plugins: [form, daisyui],
 };
