@@ -8,6 +8,7 @@ import BookmarkPage from "./page/BookmarkPage";
 import Homepage from "./page/HomePage";
 import { useEffect, useState } from "react";
 import { getMovies } from "./helpers/movies/get";
+import Main from "./components/Main";
 
 function App() {
   const [data, setData] = useState(null);
@@ -35,14 +36,14 @@ function App() {
     return <p>Error: {error}</p>;
   }
 
-  console.log(data);
-
   return (
     <div className="font-outfit">
       <Routes>
-        <Route path="/" element={<Homepage movies={data} />}>
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/register" element={<RegisterPage />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/register" element={<RegisterPage />} />
+
+        <Route path="/" element={<Main/>}>
+          <Route index element={<Homepage movies={data} />} />
           <Route path="/tv-series" element={<TvSeriesPage />} />
           <Route path="/movies" element={<MoviesPage />} />
           <Route path="/bookmarks" element={<BookmarkPage />} />

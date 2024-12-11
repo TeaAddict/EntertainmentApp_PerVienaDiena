@@ -1,12 +1,12 @@
 import { updateMovie } from "../helpers/movies/put";
 
-export default function ContentCard({ content, index }) {
-  const handleBookmarkToggle = async (index, currentStatus) => {
+export default function ContentCard({ content }) {
+  const handleBookmarkToggle = async (currentStatus) => {
     try {
-      const response = await fetch(`http://localhost:3001/${index}`);
-      const contentData = await response.json();
+      // const response = await fetch(`http://localhost:3001/${index}`);
+      // const contentData = await response.json();
 
-      const updatedData = { ...contentData, isBookmarked: !currentStatus };
+      // const updatedData = { ...contentData, isBookmarked: !currentStatus };
 
       // await fetch(`http://localhost:3001/${index}`, {
       //   method: "PUT",
@@ -15,7 +15,7 @@ export default function ContentCard({ content, index }) {
       //     "Content-Type": "application/json",
       //   },
       // });
-      await updateMovie(content.id, updatedData);
+      await updateMovie(content.id, { isBookmarked: !currentStatus });
     } catch (error) {
       console.error("Error:", error);
     }
@@ -36,12 +36,12 @@ export default function ContentCard({ content, index }) {
     );
   };
 
-  const displayBookmark = (index, isBookmarked) => {
+  const displayBookmark = (isBookmarked) => {
     return (
       <div className="group">
         <button
           className="absolute desktop:top-[16px] top-[8px] desktop:right-[24px] right-[8px] w-8 h-8 bg-movie-secondary bg-opacity-50 rounded-full flex items-center justify-center hover:bg-movie-fifth transition"
-          onClick={() => handleBookmarkToggle(index, isBookmarked)}
+          onClick={() => handleBookmarkToggle(isBookmarked)}
         >
           <svg width="12" height="14" xmlns="http://www.w3.org/2000/svg">
             <path
@@ -101,7 +101,7 @@ export default function ContentCard({ content, index }) {
             </button>
           </div>
         </div>
-        {displayBookmark(index, content.isBookmarked)}
+        {displayBookmark(content.isBookmarked)}
         {/* Description and Title */}
         <div
           className={`pt-[9px] ${

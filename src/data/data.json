@@ -2,13 +2,13 @@
   "users": [
     {
       "email": "test@cc.com",
-      "password": "@Matas123"
+      "password": "@Matas123",
+      "id": "6d7e"
     }
   ],
-
   "movies": [
     {
-      "id": 1,
+      "id": "1",
       "title": "Beyond Earth",
       "thumbnail": {
         "trending": {
@@ -24,11 +24,11 @@
       "year": 2019,
       "category": "Movie",
       "rating": "PG",
-      "isBookmarked": false,
+      "isBookmarked": true,
       "isTrending": true
     },
     {
-      "id": 2,
+      "id": "2",
       "title": "Bottom Gear",
       "thumbnail": {
         "trending": {
@@ -44,11 +44,11 @@
       "year": 2021,
       "category": "Movie",
       "rating": "PG",
-      "isBookmarked": false,
+      "isBookmarked": true,
       "isTrending": true
     },
     {
-      "id": 3,
+      "id": "3",
       "title": "Undiscovered Cities",
       "thumbnail": {
         "trending": {
@@ -68,7 +68,7 @@
       "isTrending": true
     },
     {
-      "id": 4,
+      "id": "4",
       "title": "1998",
       "thumbnail": {
         "trending": {
@@ -88,7 +88,7 @@
       "isTrending": true
     },
     {
-      "id": 5,
+      "id": "5",
       "title": "Dark Side of the Moon",
       "thumbnail": {
         "trending": {
@@ -108,7 +108,7 @@
       "isTrending": true
     },
     {
-      "id": 6,
+      "id": "6",
       "title": "The Great Lands",
       "thumbnail": {
         "regular": {
@@ -124,7 +124,7 @@
       "isTrending": false
     },
     {
-      "id": 7,
+      "id": "7",
       "title": "The Diary",
       "thumbnail": {
         "regular": {
@@ -136,11 +136,11 @@
       "year": 2019,
       "category": "TV Series",
       "rating": "PG",
-      "isBookmarked": false,
+      "isBookmarked": true,
       "isTrending": false
     },
     {
-      "id": 8,
+      "id": "8",
       "title": "Earth’s Untouched",
       "thumbnail": {
         "regular": {
@@ -156,7 +156,7 @@
       "isTrending": false
     },
     {
-      "id": 9,
+      "id": "9",
       "title": "No Land Beyond",
       "thumbnail": {
         "regular": {
@@ -172,7 +172,7 @@
       "isTrending": false
     },
     {
-      "id": 10,
+      "id": "10",
       "title": "During the Hunt",
       "thumbnail": {
         "regular": {
@@ -188,7 +188,7 @@
       "isTrending": false
     },
     {
-      "id": 11,
+      "id": "11",
       "title": "Autosport the Series",
       "thumbnail": {
         "regular": {
@@ -200,11 +200,11 @@
       "year": 2016,
       "category": "TV Series",
       "rating": "18+",
-      "isBookmarked": false,
+      "isBookmarked": true,
       "isTrending": false
     },
     {
-      "id": 12,
+      "id": "12",
       "title": "Same Answer II",
       "thumbnail": {
         "regular": {
@@ -220,7 +220,7 @@
       "isTrending": false
     },
     {
-      "id": 13,
+      "id": "13",
       "title": "Below Echo",
       "thumbnail": {
         "regular": {
@@ -236,7 +236,7 @@
       "isTrending": false
     },
     {
-      "id": 14,
+      "id": "14",
       "title": "The Rockies",
       "thumbnail": {
         "regular": {
@@ -252,7 +252,7 @@
       "isTrending": false
     },
     {
-      "id": 15,
+      "id": "15",
       "title": "Relentless",
       "thumbnail": {
         "regular": {
@@ -268,7 +268,7 @@
       "isTrending": false
     },
     {
-      "id": 16,
+      "id": "16",
       "title": "Community of Ours",
       "thumbnail": {
         "regular": {
@@ -284,7 +284,7 @@
       "isTrending": false
     },
     {
-      "id": 17,
+      "id": "17",
       "title": "Van Life",
       "thumbnail": {
         "regular": {
@@ -300,7 +300,7 @@
       "isTrending": false
     },
     {
-      "id": 18,
+      "id": "18",
       "title": "The Heiress",
       "thumbnail": {
         "regular": {
@@ -316,7 +316,7 @@
       "isTrending": false
     },
     {
-      "id": 19,
+      "id": "19",
       "title": "Off the Track",
       "thumbnail": {
         "regular": {
@@ -332,7 +332,7 @@
       "isTrending": false
     },
     {
-      "id": 20,
+      "id": "20",
       "title": "Whispering Hill",
       "thumbnail": {
         "regular": {
@@ -348,7 +348,7 @@
       "isTrending": false
     },
     {
-      "id": 21,
+      "id": "21",
       "title": "112",
       "thumbnail": {
         "regular": {
@@ -364,7 +364,7 @@
       "isTrending": false
     },
     {
-      "id": 22,
+      "id": "22",
       "title": "Lone Heart",
       "thumbnail": {
         "regular": {
@@ -380,7 +380,7 @@
       "isTrending": false
     },
     {
-      "id": 23,
+      "id": "23",
       "title": "Production Line",
       "thumbnail": {
         "regular": {
@@ -396,7 +396,7 @@
       "isTrending": false
     },
     {
-      "id": 24,
+      "id": "24",
       "title": "Dogs",
       "thumbnail": {
         "regular": {
@@ -412,7 +412,7 @@
       "isTrending": false
     },
     {
-      "id": 25,
+      "id": "25",
       "title": "Asia in 24 Days",
       "thumbnail": {
         "regular": {
@@ -428,7 +428,7 @@
       "isTrending": false
     },
     {
-      "id": 26,
+      "id": "26",
       "title": "The Tasty Tour",
       "thumbnail": {
         "regular": {
@@ -444,7 +444,7 @@
       "isTrending": false
     },
     {
-      "id": 27,
+      "id": "27",
       "title": "Darker",
       "thumbnail": {
         "regular": {
@@ -460,7 +460,7 @@
       "isTrending": false
     },
     {
-      "id": 28,
+      "id": "28",
       "title": "Unresolved Cases",
       "thumbnail": {
         "regular": {
@@ -476,7 +476,23 @@
       "isTrending": false
     },
     {
-      "id": 29,
+      "id": "29",
+      "title": "Mission: Saturn",
+      "thumbnail": {
+        "regular": {
+          "small": "./assets/thumbnails/mission-saturn/regular/small.jpg",
+          "medium": "./assets/thumbnails/mission-saturn/regular/medium.jpg",
+          "large": "./assets/thumbnails/mission-saturn/regular/large.jpg"
+        }
+      },
+      "year": 2017,
+      "category": "Movie",
+      "rating": "PG",
+      "isBookmarked": true,
+      "isTrending": false
+    },
+    {
+      "id": "29",
       "title": "Mission: Saturn",
       "thumbnail": {
         "regular": {
