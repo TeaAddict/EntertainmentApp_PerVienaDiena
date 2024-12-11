@@ -7,12 +7,12 @@ const Homepage = ({ movies }) => {
 
   if (!movies) return <p>Loading data...</p>;
   return (
-    <div className="bg-movie-secondary">
+    <div className="bg-movie-secondary flex flex-col gap-[1.5rem] md:gap-0">
       {/* <div className="mt-[1.5rem] mb-[2.13rem] desktop:mt-[2rem]"> */}
-      <div className="mt-[1.5rem] mb-[2.13rem] ">
-        <SearchBar text="Search for movies or TV series" />
+      <div className="mt-[1.5rem] md:my-[2.06rem]">
+        <SearchBar placeholderText="Search for movies or TV series" />
       </div>
-      <div className="desktop:mb-[]">
+      <div className="md:mb-[2.44rem]">
         <Trending data={trendingMovies} />
       </div>
       <RecomendedSection />

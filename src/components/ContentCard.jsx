@@ -3,18 +3,6 @@ import { updateMovie } from "../helpers/movies/put";
 export default function ContentCard({ content }) {
   const handleBookmarkToggle = async (currentStatus) => {
     try {
-      // const response = await fetch(`http://localhost:3001/${index}`);
-      // const contentData = await response.json();
-
-      // const updatedData = { ...contentData, isBookmarked: !currentStatus };
-
-      // await fetch(`http://localhost:3001/${index}`, {
-      //   method: "PUT",
-      //   body: JSON.stringify(updatedData),
-      //   headers: {
-      //     "Content-Type": "application/json",
-      //   },
-      // });
       await updateMovie(content.id, { isBookmarked: !currentStatus });
     } catch (error) {
       console.error("Error:", error);
