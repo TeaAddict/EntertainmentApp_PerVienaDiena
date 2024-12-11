@@ -6,8 +6,35 @@ import TvSeriesPage from "./page/TvSeriesPage";
 import MoviesPage from "./page/MoviesPage";
 import BookmarkPage from "./page/BookmarkPage";
 import Homepage from "./page/HomePage";
+import { useEffect, useState } from "react";
+import { getMovies } from "./helpers/movies/get";
 
 function App() {
+  const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const data = await getMovies();
+        setData(data);
+        setLoading(false);
+      } catch (error) {
+        setError(error.message);
+        setLoading(false);
+      }
+    };
+    fetchData();
+  }, []);
+
+  if (loading) {
+    return <p>Loading...</p>;
+  }
+  if (error) {
+    return <p>Error: {error}</p>;
+  }
+
   return (
     <div className="font-outfit">
       <Routes>
