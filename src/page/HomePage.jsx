@@ -8,10 +8,13 @@ const Homepage = ({ movies }) => {
   if (!movies) return <p>Loading data...</p>;
   return (
     <div className="bg-movie-secondary">
-      <div className="mt-[1.5rem] mb-[2.13rem] desktop:mt-[2rem]">
+      {/* <div className="mt-[1.5rem] mb-[2.13rem] desktop:mt-[2rem]"> */}
+      <div className="mt-[1.5rem] mb-[2.13rem] ">
         <SearchBar text="Search for movies or TV series" />
       </div>
-      <Trending data={trendingMovies} />
+      <div className="desktop:mb-[]">
+        <Trending data={trendingMovies} />
+      </div>
       <RecomendedSection />
     </div>
   );

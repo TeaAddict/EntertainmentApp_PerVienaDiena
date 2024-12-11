@@ -5,7 +5,7 @@ import ContentCard from "./ContentCard";
 
 const Trending = ({ data }) => {
   return (
-    <section className=" bg-movie-secondary text-white py-11 sm:py-11">
+    <section className=" bg-movie-secondary text-white">
       <h1 className="text-[1.3rem] sm:text-[1.91rem] lg:text-[1.91rem] mb-[1.02rem] sm:mt-[-0.31rem] sm:mb-[1.31rem] ">
         Trending
       </h1>
