@@ -47,15 +47,15 @@ function App() {
         <Route path="/bookmarks" element={<BookmarkPage />} />
       </Routes>
       <div className="justify-self-center">
-        {data.map(
-          (content, index) => (
+        {
+          data.map((content, index) => (
             // !content.isTrending && (
             <div key={content.title}>
               <ContentCard content={content} index={index}></ContentCard>
             </div>
-          )
+          ))
           // )
-        )}
+        }
       </div>
     </div>
   );
