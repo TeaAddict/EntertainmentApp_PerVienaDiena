@@ -1,12 +1,13 @@
 import { NavLink } from "react-router";
-import HeaderProfilePicture from "./Header/HeaderProfilePicture";
+import HeaderProfilePicture from "./HeaderProfilePicture";
+
 
 const setActive = ({ isActive }) => (isActive ? `active-link ` : ``);
 const Header = () => {
   return (
     <>
-      <header>
-        <nav className="  bg-movie-fourth h-[3.5rem] md:h-[4.5rem] md:rounded-[0.63rem] grid grid-cols-[auto_1fr_auto] items-center desktop:grid desktop:grid-cols-1 desktop:grid-rows-[auto_1fr_auto] desktop:w-[6rem] desktop:h-[60rem] desktop:rounded-[1.25rem] md:mt-[1.44rem]">
+      <header className=" sticky top-0 h-full">
+        <nav className=" bg-movie-fourth h-[3.5rem] md:h-[4.5rem] md:rounded-[0.63rem] grid grid-cols-[auto_1fr_auto] items-center justify-center desktop:grid desktop:grid-cols-1 desktop:grid-rows-[auto_1fr_auto] desktop:w-[6rem] desktop:h-[60rem] desktop:rounded-[1.25rem] md:mt-[1.44rem]">
           <section className=" pt-[1.13rem] pb-[1.52rem]  pl-[0.93rem] md:pl-[1.5rem] md:pb-[1.8rem] md:pt-[1.5rem] desktop:pt-[2.21rem] desktop:pl-[1.99rem] desktop:pr-[2.01rem] desktop:pb-0">
             <svg
               className="w-[1.5625rem] h-[1.25rem] md:w-[2rem] md:h-[1.6rem] desktop:w-[2rem] desktop:h-[1.6rem] "
@@ -22,7 +23,7 @@ const Header = () => {
               />
             </svg>
           </section>
-          <section className=" flex justify-center desktop:items-start desktop:flex items-center h-full desktop:pt-[4.69rem] pb-[0.45rem] md:pb-[0.3rem] md:pr-[0.52rem]">
+          <section className=" flex justify-center desktop:items-start desktop:flex items-center h-full desktop:pt-[4.69rem] pb-[0.45rem] md:pb-[0.3rem] md:pr-[0.52rem] desktop:p-0">
             <section className=" flex justify-between items-center w-[8.346rem] h-[1rem] gap-[1.5rem] md:w-[10.8075rem] md:h-[1.25rem] md:gap-[2rem] desktop:flex-col desktop:w-[1.25rem]  desktop:h-[12.5rem] desktop:gap-[2.5rem] ">
               <NavLink to="/" className={setActive}>
                   <svg
@@ -82,7 +83,7 @@ const Header = () => {
             </section>
           </section>
           <section className=" flex justify-end items-center pr-[0.93rem] pt-[1rem] pb-[1rem] md:pr-[1rem] md:pt-[1.31rem] md:pb-[1.19rem] desktop:pb-[1.7rem] desktop:pl-[1.75rem] desktop:pr-[1.75rem] desktop:self-end">
-            <HeaderProfilePicture />
+            <HeaderProfilePicture/>
           </section>
         </nav>
       </header>
