@@ -1,7 +1,9 @@
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 import Button from "./Button";
 
+
 const Modal = ({ OpenButton }) => {
+  const navigate = useNavigate();
   return (
     <div>
       <button onClick={() => document.getElementById("my_modal_2").showModal()}>
@@ -13,12 +15,14 @@ const Modal = ({ OpenButton }) => {
             Are you sure want to Sing Out?
           </p>
           <section className="flex flex-row gap-5">
-            <Link to="/login">
-              <Button onClick={() => document.getElementById("my_modal_2").close()}
+              <Button onClick={() =>{
+                document.getElementById("my_modal_2").close() 
+                navigate("/login")
+              }
+              }
               >
                 Sing Out
               </Button >
-            </Link>
             <Button type="secondary" onClick={() => document.getElementById("my_modal_2").close()}
             >
               Close
