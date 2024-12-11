@@ -11,7 +11,7 @@ const Trending = () => {
       <h1 className="text-[1.3rem] sm:text-[1.91rem] lg:text-[1.91rem] mb-[1.02rem] sm:mt-[-0.31rem] sm:mb-[1.31rem] ">
         Trending
       </h1>
-      <div className="flex gap-4 sm:gap-10 lg:gap-10 overflow-auto ">
+      <div className="flex gap-4 sm:gap-10 lg:gap-10 overflow-auto">
         {trendingItems.map((item) => (
           <div
             key={item.title}
