@@ -40,12 +40,13 @@ function App() {
   return (
     <div className="font-outfit">
       <Routes>
-        <Route path="/" element={<Homepage movies={data} />} />
-        <Route path="/register" element={<RegisterPage />} />
-        <Route path="/login" element={<LoginPage />} />
-        <Route path="/tv-series" element={<TvSeriesPage />} />
-        <Route path="/movies" element={<MoviesPage />} />
-        <Route path="/bookmarks" element={<BookmarkPage />} />
+        <Route path="/" element={<Homepage movies={data} />}>
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/register" element={<RegisterPage />} />
+          <Route path="/tv-series" element={<TvSeriesPage />} />
+          <Route path="/movies" element={<MoviesPage />} />
+          <Route path="/bookmarks" element={<BookmarkPage />} />
+        </Route>
       </Routes>
 
       {/* {data.map((card) => {

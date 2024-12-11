@@ -38,8 +38,10 @@ const LoginForm = () => {
         return false;
       });
 
-      if (isCorrect) navigate("/");
-      else console.log("wrong acc");
+      if (isCorrect) {
+        console.log("correct acc");
+        navigate("/homepage");
+      } else console.log("wrong acc");
     } catch (error) {
       console.error(error);
     }
