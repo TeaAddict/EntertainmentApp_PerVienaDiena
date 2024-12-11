@@ -22,10 +22,8 @@ const RegisterForm = () => {
   const navigate = useNavigate();
 
   const handleFormSubmit = async (data) => {
-    console.log(data);
     try {
       const res = await getUsers();
-      console.log(res);
       const isCorrect = res.some((user) => {
         if (user.email == data.email) {
           setError("email", {
@@ -38,9 +36,8 @@ const RegisterForm = () => {
       });
 
       if (isCorrect) {
-        console.log("Correct credentials!");
-        // await postUser({ email: data.email, password: data.password });
-        // navigate("/");
+        await postUser({ email: data.email, password: data.password });
+        navigate("/");
       } else {
         console.log("Incorrect credentials!");
       }
@@ -51,7 +48,6 @@ const RegisterForm = () => {
 
   const currentPass = watch("password");
 
-  console.log(errors);
   return (
     <div className="bg-movie-fourth  rounded-[20px] p-[1.5rem] pb-[2rem] md:p-[2rem] w-[20.4375rem] md:w-[25rem]">
       <h1 className="text-heading-l font-medium text-movie-fifth mb-[2.5rem] tracking-[-0.5px] leading-[40px]">
@@ -71,9 +67,26 @@ const RegisterForm = () => {
             <input
               {...register("email", {
                 required: "Can't be empty",
-                pattern: {
-                  value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
-                  message: "Wrong email format",
+
+                onBlur: (e) => {
+                  if (
+                    !/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(
+                      e.target.value
+                    )
+                  )
+                    setError("email", {
+                      type: "custom",
+                      message: "Wrong email format",
+                    });
+                },
+                validate: () => {
+                  if (
+                    !/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(
+                      watch("email")
+                    )
+                  ) {
+                    return "Wrong email format";
+                  }
                 },
                 onChange: () => clearErrors("email"),
               })}
@@ -102,6 +115,13 @@ const RegisterForm = () => {
                       message: "Password needs special characters",
                     });
                 },
+                validate: () => {
+                  if (
+                    !/^(?=.*[A-Z])(?=.*[\W_]).{8,}$/.test(watch("password"))
+                  ) {
+                    return "Password needs special characters";
+                  }
+                },
                 onChange: () => clearErrors("password"),
               })}
               type="password"
@@ -129,6 +149,11 @@ const RegisterForm = () => {
                       type: "manual",
                       message: "Passwords must match",
                     });
+                },
+                validate: () => {
+                  if (watch("repeatPass") !== currentPass) {
+                    return "Passwords must match";
+                  }
                 },
                 onChange: () => clearErrors("repeatPass"),
               })}
