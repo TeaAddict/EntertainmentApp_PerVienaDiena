@@ -35,16 +35,22 @@ function App() {
     return <p>Error: {error}</p>;
   }
 
+  console.log(data);
+
   return (
     <div className="font-outfit">
       <Routes>
-        <Route path="/" element={<Homepage />} />
+        <Route path="/" element={<Homepage movies={data} />} />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/tv-series" element={<TvSeriesPage />} />
         <Route path="/movies" element={<MoviesPage />} />
         <Route path="/bookmarks" element={<BookmarkPage />} />
       </Routes>
+
+      {/* {data.map((card) => {
+        console.log(card);
+      })} */}
     </div>
   );
 }

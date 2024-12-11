@@ -1,38 +1,4 @@
-//  Component that calls ContentCard should have something like this
-// import { useEffect, useState } from "react";
-// ...
-// ...
-// const [data, setData] = useState(null);
-// const [loading, setLoading] = useState(true);
-// const [error, setError] = useState(null);
-// useEffect(() => {
-//   const fetchData = async () => {
-//     try {
-//       const response = await fetch("./src/data/data.json");
-//       const jsonData = await response.json();
-//       setData(jsonData);
-//       setLoading(false);
-//     } catch (error) {
-//       setError(error.message);
-//       setLoading(false);
-//     }
-//   };
-//   fetchData();
-// }, []);
-
-// if (loading) {
-//   return <p>Loading...</p>;
-// }
-// if (error) {
-//   return <p>Error: {error}</p>;
-// }
-//
-// return(
-// {data.map((content, index) => (
-//   <div key={content.title}>
-//     <ContentCard content={content} index={index}></ContentCard>
-//   </div>
-// ))})
+import { updateMovie } from "../helpers/movies/put";
 
 export default function ContentCard({ content, index }) {
   const handleBookmarkToggle = async (index, currentStatus) => {
@@ -42,20 +8,14 @@ export default function ContentCard({ content, index }) {
 
       const updatedData = { ...contentData, isBookmarked: !currentStatus };
 
-      await fetch(`http://localhost:3001/${index}`, {
-        method: "PUT",
-        body: JSON.stringify(updatedData),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
-
-      // FIX
-      // setData((prevData) =>
-      //   prevData.map((content, i) =>
-      //     i === index ? { ...content, isBookmarked: !currentStatus } : content
-      //   )
-      // );
+      // await fetch(`http://localhost:3001/${index}`, {
+      //   method: "PUT",
+      //   body: JSON.stringify(updatedData),
+      //   headers: {
+      //     "Content-Type": "application/json",
+      //   },
+      // });
+      await updateMovie(content.id, updatedData);
     } catch (error) {
       console.error("Error:", error);
     }
