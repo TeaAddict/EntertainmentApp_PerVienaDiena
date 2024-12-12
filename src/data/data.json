@@ -120,7 +120,7 @@
       "year": 2019,
       "category": "Movie",
       "rating": "E",
-      "isBookmarked": true,
+      "isBookmarked": false,
       "isTrending": false
     },
     {
@@ -136,7 +136,7 @@
       "year": 2019,
       "category": "TV Series",
       "rating": "PG",
-      "isBookmarked": true,
+      "isBookmarked": false,
       "isTrending": false
     },
     {
@@ -152,7 +152,7 @@
       "year": 2017,
       "category": "Movie",
       "rating": "18+",
-      "isBookmarked": true,
+      "isBookmarked": false,
       "isTrending": false
     },
     {
@@ -184,7 +184,7 @@
       "year": 2016,
       "category": "TV Series",
       "rating": "PG",
-      "isBookmarked": true,
+      "isBookmarked": false,
       "isTrending": false
     },
     {
@@ -200,7 +200,7 @@
       "year": 2016,
       "category": "TV Series",
       "rating": "18+",
-      "isBookmarked": true,
+      "isBookmarked": false,
       "isTrending": false
     },
     {
@@ -493,7 +493,7 @@
     },
     {
       "id": "30",
-      "title": "Mission: Saturn",
+      "title": "Mission: Saturn 2",
       "thumbnail": {
         "regular": {
           "small": "./assets/thumbnails/mission-saturn/regular/small.jpg",

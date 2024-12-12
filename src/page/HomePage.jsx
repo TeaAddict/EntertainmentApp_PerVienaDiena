@@ -8,18 +8,17 @@ const HomePage = ({ movies }) => {
   const [searchText, setSearchText] = useState("");
 
   const trendingMovies = movies.filter((movie) => movie.isTrending);
+  const notTrendingMovies = movies.filter((movie) => movie.isTrending == false);
+
   let filteredMovies = [];
 
-  console.log("Search val: ", searchText);
-
-  if (searchText.length > 4) {
-    filteredMovies = movies.filter((movie) =>
+  if (searchText.length > 2) {
+    filteredMovies = notTrendingMovies.filter((movie) =>
       movie.title.toLowerCase().includes(searchText.toLowerCase())
     );
   }
 
   if (!movies) return <p>Loading data...</p>;
-  if (searchText) return <FoundSection movies={filteredMovies} />;
   return (
     <div className="bg-movie-secondary flex flex-col gap-[1.5rem] md:gap-0">
       <div className="mt-[1.4rem]  md:my-[1.99rem]">
@@ -28,10 +27,16 @@ const HomePage = ({ movies }) => {
           setValue={setSearchText}
         />
       </div>
-      <div className="md:mb-[2.44rem]">
-        <Trending data={trendingMovies} />
-      </div>
-      <ContentSection heading={"Recommended for you"} />
+      {searchText.length > 2 ? (
+        <FoundSection movies={filteredMovies} searchText={searchText} />
+      ) : (
+        <div>
+          <div className="md:mb-[2.44rem]">
+            <Trending data={trendingMovies} />
+          </div>
+          <ContentSection movies={movies} heading={"Recommended for you"} />
+        </div>
+      )}
     </div>
   );
 };
