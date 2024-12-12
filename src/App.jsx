@@ -5,7 +5,7 @@ import LoginPage from "./page/LoginPage";
 import TvSeriesPage from "./page/TvSeriesPage";
 import MoviesPage from "./page/MoviesPage";
 import BookmarkPage from "./page/BookmarkPage";
-import Homepage from "./page/HomePage";
+import HomePage from "./page/HomePage";
 import { useEffect, useState } from "react";
 import { getMovies } from "./helpers/movies/get";
 import Main from "./components/Main";
@@ -42,14 +42,13 @@ function App() {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
 
-        <Route path="/" element={<Main/>}>
-          <Route index element={<Homepage movies={data} />} />
+        <Route path="/" element={<Main />}>
+          <Route index element={<HomePage movies={data} />} />
           <Route path="/tv-series" element={<TvSeriesPage />} />
           <Route path="/movies" element={<MoviesPage />} />
           <Route path="/bookmarks" element={<BookmarkPage />} />
         </Route>
       </Routes>
-
     </div>
   );
 }
