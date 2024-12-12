@@ -4,9 +4,9 @@ import { updateMovie } from "../helpers/movies/put.js";
 export default function TrendingCard({ content }) {
   const [isBookmarked, setIsBookmarked] = useState(content.isBookmarked);
 
-  const handleBookmarkToggle = async (currentStatus) => {
+  const handleBookmarkToggle = async () => {
     try {
-      await updateMovie(content.id, { isBookmarked: !currentStatus });
+      await updateMovie(content.id, { isBookmarked: !isBookmarked });
       setIsBookmarked(!isBookmarked);
     } catch (error) {
       console.error("Error:", error);
