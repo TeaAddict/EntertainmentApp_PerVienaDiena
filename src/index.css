@@ -6,6 +6,7 @@
 
 body {
   @apply font-outfit;
+  box-sizing: border-box;
 }
 
 input:-webkit-autofill,
@@ -25,7 +26,7 @@ input:-webkit-autofill:active {
 
 .active-link svg {
   fill: var(--main-pure-white);
-/* scrollbar */
+  /* scrollbar */
 }
 
 ::-webkit-scrollbar {

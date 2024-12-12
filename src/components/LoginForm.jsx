@@ -40,7 +40,7 @@ const LoginForm = () => {
 
       if (isCorrect) {
         console.log("correct acc");
-        navigate("/homepage");
+        navigate("/");
       } else console.log("wrong acc");
     } catch (error) {
       console.error(error);

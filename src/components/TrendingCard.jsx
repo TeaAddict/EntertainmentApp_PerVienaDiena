@@ -56,7 +56,7 @@ export default function TrendingCard({ content }) {
           alt={content.title}
         />
       </picture>
-      <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent py-[0.9rem] px-4 sm:py-[1.3rem] sm:px-6 lg:py-5 lg:px-[1.5rem] flex flex-col justify-end ">
+      <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent py-[0.99rem] px-4 sm:py-[1.3rem] sm:px-6 lg:py-5 lg:px-[1.5rem] flex flex-col justify-end ">
         <div className="text-xs sm:text-[0.9375rem] opacity-75 flex items-center gap-[0.39rem] sm:gap-[0.4rem] lg:gap-[0.4rem]">
           <span>{content.year}</span>
           <span className="px-[0.1rem] sm:px-[0.04rem]">•</span>
