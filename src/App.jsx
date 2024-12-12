@@ -50,9 +50,6 @@ function App() {
         </Route>
       </Routes>
 
-      {/* {data.map((card) => {
-        console.log(card);
-      })} */}
     </div>
   );
 }

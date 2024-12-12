@@ -2,6 +2,7 @@
 // import tv from "../assets/icon-category-tv.svg";
 // import movie from "../assets/icon-category-movie.svg";
 import ContentCard from "./ContentCard";
+import { v4 as uuidv4 } from 'uuid';
 
 const Trending = ({ data }) => {
   return (
@@ -15,7 +16,7 @@ const Trending = ({ data }) => {
             key={item.title}
             className="relative flex-shrink-0 rounded-lg overflow-hidden h-[8.75rem] sm:h-[14.375rem] lg:h-[14.375rem]"
           >
-            <ContentCard content={item} key={item.id} />
+            <ContentCard content={item} key={uuidv4()} />
           </div>
         ))}
       </div>

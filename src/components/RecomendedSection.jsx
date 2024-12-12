@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import ContentCard from "./ContentCard";
 import { getMovies } from "../helpers/movies/get";
+import { v4 as uuidv4 } from 'uuid';
 
 export default function RecomendedSection({ movies }) {
   const [data, setData] = useState(movies);
@@ -39,8 +40,8 @@ export default function RecomendedSection({ movies }) {
         {data.map(
           (content) =>
             !content.isTrending && (
-              <li key={content.title}>
-                <ContentCard content={content} />
+              <li key={uuidv4()}>
+                <ContentCard content={content}/>
               </li>
             )
         )}
