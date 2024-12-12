@@ -9,6 +9,7 @@ export default {
     extend: {
       screens: {
         desktop: "1440px",
+        desktop2xl: "1450px",
       },
       colors: {
         "movie-primary": "#FC4747",

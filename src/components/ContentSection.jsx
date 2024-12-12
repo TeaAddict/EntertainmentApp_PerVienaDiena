@@ -3,7 +3,7 @@ import ContentCard from "./ContentCard";
 import { getMovies } from "../helpers/movies/get";
 import { v4 as uuidv4 } from "uuid";
 
-export default function ContentSection({ movies }) {
+export default function ContentSection({ movies, heading }) {
   const [data, setData] = useState(movies);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -32,13 +32,13 @@ export default function ContentSection({ movies }) {
 
   return (
     <div className="bg-movie-secondary">
-      <h1 className="text-[1.2rem] mb-[0.7rem] md:text-[1.91rem] desktop:text-[1.91rem] desktop:mb-[28px] desktop:tracking-[0.3px]">
-        Recommended for you
+      <h1 className="text-[1.2rem] mb-[0.7rem] md:text-[1.91rem] desktop:text-[1.91rem] desktop:mb-[28px] desktop:tracking-[0.3px] text-movie-fifth">
+        {heading}
       </h1>
 
       <ul
         className="grid grid-cols-2 md:grid-cols-3 desktop:grid-cols-4 gap-x-[0.938rem] gap-y-[1rem] md:gap-x-[1.813rem] md:gap-y-[1.5rem] 
-      desktop:gap-x-[2.5rem] desktop:gap-y-[2rem]"
+      desktop:gap-x-[2.5rem] desktop:vt5fwbgy6nh7cuvmj8ig9k-y-[2rem]"
       >
         {data.map(
           (content) =>
