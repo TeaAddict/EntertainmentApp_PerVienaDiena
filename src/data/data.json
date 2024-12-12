@@ -4,6 +4,21 @@
       "email": "test@cc.com",
       "password": "@Matas123",
       "id": "6d7e"
+    },
+    {
+      "id": "d1f2",
+      "email": "jonas@gmail.com",
+      "password": "@Jonas1234"
+    },
+    {
+      "id": "f310",
+      "email": "jonas@gmail.com",
+      "password": "@Jonas123"
+    },
+    {
+      "id": "8a81",
+      "email": "jonas1@gmail.com",
+      "password": "@Jonas1234"
     }
   ],
   "movies": [
