@@ -37,16 +37,16 @@ function App() {
   }
 
   return (
-    <div className="font-outfit">
+    <div className="font-outfit min-h-[100vh] bg-movie-secondary">
       <Routes>
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
 
         <Route path="/" element={<Main />}>
           <Route index element={<HomePage movies={data} />} />
-          <Route path="/tv-series" element={<TvSeriesPage />} />
-          <Route path="/movies" element={<MoviesPage />} />
-          <Route path="/bookmarks" element={<BookmarkPage />} />
+          <Route path="/tv-series" element={<TvSeriesPage movies={data} />} />
+          <Route path="/movies" element={<MoviesPage movies={data} />} />
+          <Route path="/bookmarks" element={<BookmarkPage movies={data} />} />
         </Route>
       </Routes>
     </div>

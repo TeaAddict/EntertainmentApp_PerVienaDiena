@@ -1,42 +1,20 @@
-// import { useEffect, useState } from "react";
 import ContentCard from "./ContentCard";
-// import { getMovies } from "../helpers/movies/get";
+import { v4 as uuidv4 } from "uuid";
 
-export default function FoundSection({ movies }) {
-  //   const [data, setData] = useState(movies);
-  //   const [loading, setLoading] = useState(true);
-  //   const [error, setError] = useState(null);
-
-  //   const fetchData = async () => {
-  //     try {
-  //       const newMovies = await getMovies();
-  //       setData(newMovies);
-  //       setLoading(false);
-  //     } catch (error) {
-  //       setError(error.message);
-  //       setLoading(false);
-  //     }
-  //   };
-
-  //   useEffect(() => {
-  //     fetchData();
-  //   }, []);
-
-  if (!movies) {
-    return <p>Loading...</p>;
-  }
+export default function FoundSection({ movies, searchText }) {
+  const resultLength = movies.length != 0 ? movies.length : 0;
 
   return (
     <div className="bg-movie-secondary">
-      <h2 className="text-movie-fifth text-heading-xs font-light pb-[22px] desktop:text-heading-l desktop:pb-[23px]">
-        Recommended for you
+      <h2 className="text-[1.2rem] mb-[1.3rem] md:text-[1.91rem] md:mb-[1.2rem] desktop:mb-[1.8rem] text-movie-fifth">
+        {`Found ${resultLength} results for ‘${searchText}’`}
       </h2>
 
-      <ul className="grid grid-cols-2 desktop:grid-cols-4 desktop:gap-x-[2.5rem] desktop:gap-y-[2rem]">
+      <ul className="grid grid-cols-2 md:grid-cols-3 desktop:grid-cols-4 gap-x-[0.938rem] gap-y-[1rem] md:gap-x-[1.813rem] md:gap-y-[1.5rem] desktop:gap-x-[2.5rem] desktop:gap-y-[2rem]">
         {movies.map(
           (content) =>
             !content.isTrending && (
-              <li key={content.title}>
+              <li key={uuidv4()}>
                 <ContentCard content={content} />
               </li>
             )

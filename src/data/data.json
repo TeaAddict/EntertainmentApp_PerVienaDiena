@@ -19,6 +19,11 @@
       "id": "8a81",
       "email": "jonas1@gmail.com",
       "password": "@Jonas1234"
+    },
+    {
+      "id": "5944",
+      "email": "petras@petas.com",
+      "password": "@Matas123"
     }
   ],
   "movies": [
@@ -39,7 +44,7 @@
       "year": 2019,
       "category": "Movie",
       "rating": "PG",
-      "isBookmarked": false,
+      "isBookmarked": true,
       "isTrending": true
     },
     {
@@ -135,7 +140,7 @@
       "year": 2019,
       "category": "Movie",
       "rating": "E",
-      "isBookmarked": true,
+      "isBookmarked": false,
       "isTrending": false
     },
     {
@@ -167,7 +172,7 @@
       "year": 2017,
       "category": "Movie",
       "rating": "18+",
-      "isBookmarked": true,
+      "isBookmarked": false,
       "isTrending": false
     },
     {
@@ -199,7 +204,7 @@
       "year": 2016,
       "category": "TV Series",
       "rating": "PG",
-      "isBookmarked": true,
+      "isBookmarked": false,
       "isTrending": false
     },
     {
@@ -215,7 +220,7 @@
       "year": 2016,
       "category": "TV Series",
       "rating": "18+",
-      "isBookmarked": true,
+      "isBookmarked": false,
       "isTrending": false
     },
     {
@@ -231,7 +236,7 @@
       "year": 2017,
       "category": "Movie",
       "rating": "E",
-      "isBookmarked": false,
+      "isBookmarked": true,
       "isTrending": false
     },
     {
@@ -508,7 +513,7 @@
     },
     {
       "id": "30",
-      "title": "Mission: Saturn",
+      "title": "Mission: Saturn 2",
       "thumbnail": {
         "regular": {
           "small": "./assets/thumbnails/mission-saturn/regular/small.jpg",
