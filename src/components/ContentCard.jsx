@@ -17,34 +17,13 @@ export default function ContentCard({ content }) {
     return `src/${imgString.substring(1)}`;
   };
 
-  const style = {
-    trending: {
-      container:
-        "absolute bottom-0 left-0 p-4 md:p-[25px] from-black pb-[16px] md:pb-[21px]",
-      description:
-        "text-[12px] leading-[15px] md:text-body-m md:pb-[2px] md:gap-[5px]",
-      title: "md:text-heading-s ",
-      imgSize: "w-[240px] h-[140px]  md:w-[470px] md:h-[230px]",
-    },
-    regular: {
-      container: "w-full pt-3 pt-[6px] ",
-      description: "text-[11px] gap-[9px]",
-      title: "text-[14px]  md:text-[heading-xs] md:pt-[1px] md:pl-[2px]",
-      imgSize:
-        "min-w-[10.25rem] min-h-[6.875rem] md:min-w-[13.75rem] md:min-h-[8.75rem] desktop:min-w-[280px] desktop:min-h-[174px]",
-    },
-  };
   return (
     <div className="items-center bg-movie-secondary">
       <div className="relative">
         {/* Image */}
         <div className="group relative">
           <img
-            className={`object-cover rounded-[9px] hover:bg-movie-second ${
-              content.isTrending
-                ? style.trending.imgSize
-                : style.regular.imgSize
-            }`}
+            className="object-cover rounded-[9px] hover:bg-movie-second min-w-[10.25rem] min-h-[6.875rem] md:min-w-[13.75rem] md:min-h-[8.75rem] desktop:min-w-[280px] desktop:min-h-[174px]"
             src={updatedSrc(
               content.isTrending
                 ? content.thumbnail.trending.large
@@ -78,37 +57,22 @@ export default function ContentCard({ content }) {
           </button>
         </div>
         {/* Description and Title */}
-        <div
-          className={`pt-[9px] ${
-            content.isTrending
-              ? style.trending.container
-              : style.regular.container
-          }`}
-        >
-          <p
-            className={`text-[12px] font-thin text-white flex items-center ${
-              content.isTrending
-                ? style.trending.description
-                : style.regular.description
-            }`}
-          >
-            <span>{content.year}</span>
-            <span>•</span>
+        <div className="w-full pt-[7px] ">
+          <p className="font-thin text-white flex items-center text-[11px] desktop:text-body-s ">
+            <span className="pr-[8px]">{content.year}</span>
+            <span className="pr-[8px]">•</span>
             <img
               src={`src/assets/icon-category-${
                 content.category === "Movie" ? "movie" : "tv"
               }.svg`}
-              className="inline-block w-[13px] h-[13px]"
+              className="inline-block w-[13px] h-[13px] mr-[5px]"
             />
-            <span>{content.category}</span>
-            <span>•</span>
+            <span className="pr-[8px]">{content.category}</span>
+            <span className="pr-[8px]">•</span>
             <span>{content.rating}</span>
           </p>
-          <h5
-            className={`text-body-m text-white font-heavy ${
-              content.isTrending ? style.trending.title : style.regular.title
-            }`}
-          >
+
+          <h5 className="text-body-m text-white desktop:text-heading-xs">
             {content.title}
           </h5>
         </div>

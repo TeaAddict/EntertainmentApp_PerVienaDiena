@@ -22,26 +22,53 @@ const RegisterForm = () => {
 
   const navigate = useNavigate();
 
+  // const handleFormSubmit = async (data) => {
+  //   try {
+  //     const res = await getUsers();
+  //     const isCorrect = res.some((user) => {
+  //       if (user.email == data.email) {
+  //         setError("email", {
+  //           type: "custom",
+  //           message: "Email already exists",
+  //         });
+  //         return false;
+  //       }
+  //       return true;
+  //     });
+
+  //     if (isCorrect) {
+  //       await postUser({ email: data.email, password: data.password });
+  //       navigate("/");
+  //     } else {
+  //       console.log("Incorrect credentials!");
+  //     }
+  //   } catch (error) {
+  //     console.error(error);
+  //   }
+  // };
   const handleFormSubmit = async (data) => {
     try {
       const res = await getUsers();
-      const isCorrect = res.some((user) => {
-        if (user.email == data.email) {
-          setError("email", {
-            type: "custom",
-            message: "Email already exists",
-          });
-          return false;
-        }
-        return true;
-      });
-
-      if (isCorrect) {
-        await postUser({ email: data.email, password: data.password });
-        navigate("/");
-      } else {
-        console.log("Incorrect credentials!");
+      const isCorrectEmail = res.some((user) => user.email === data.email);
+      if (isCorrectEmail) {
+        setError("email", {
+          type: "custom",
+          message: "Email already exists",
+        });
+        return;
       }
+
+      const isCorrectPassword = res.some((user) => user.password === data.password);
+      if (isCorrectPassword) {
+        setError("password", {
+          type: "custom",
+          message: "password already exists",
+        });
+        return;
+      }
+
+      await postUser({ email: data.email, password: data.password });
+      navigate("/");
     } catch (error) {
       console.error(error);
     }
