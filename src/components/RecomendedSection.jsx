@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import ContentCard from "./ContentCard";
 import { getMovies } from "../helpers/movies/get";
-import { v4 as uuidv4 } from 'uuid';
+import { v4 as uuidv4 } from "uuid";
 
 export default function RecomendedSection({ movies }) {
   const [data, setData] = useState(movies);
@@ -36,12 +36,12 @@ export default function RecomendedSection({ movies }) {
         Recommended for you
       </h2>
 
-      <ul className="grid grid-cols-2 desktop:grid-cols-4 desktop:gap-x-[2.5rem] desktop:gap-y-[2rem]">
+      <ul className="grid grid-cols-2 md:grid-cols-3 desktop:grid-cols-4 gap-x-[0.938rem] gap-y-[1rem] md:gap-x-[1.813rem] md:gap-y-[1.5rem] desktop:gap-x-[2.5rem] desktop:gap-y-[2rem]">
         {data.map(
           (content) =>
             !content.isTrending && (
               <li key={uuidv4()}>
-                <ContentCard content={content}/>
+                <ContentCard content={content} />
               </li>
             )
         )}

@@ -20,22 +20,22 @@ export default function ContentCard({ content }) {
   const style = {
     trending: {
       container:
-        "absolute bottom-0 left-0 p-4 desktop:p-[25px] from-black pb-[16px] desktop:pb-[21px]",
+        "absolute bottom-0 left-0 p-4 md:p-[25px] from-black pb-[16px] md:pb-[21px]",
       description:
-        "text-[12px] leading-[15px] desktop:text-body-m desktop:pb-[2px] desktop:gap-[5px]",
-      title: "desktop:text-heading-s ",
-      imgSize: "w-[240px] h-[140px] desktop:w-[470px] desktop:h-[230px]",
+        "text-[12px] leading-[15px] md:text-body-m md:pb-[2px] md:gap-[5px]",
+      title: "md:text-heading-s ",
+      imgSize: "w-[240px] h-[140px]  md:w-[470px] md:h-[230px]",
     },
     regular: {
       container: "w-full pt-3 pt-[6px] ",
       description: "text-[11px] gap-[9px]",
-      title:
-        "desktop:text-[heading-xs] text-[14px] desktop:pt-[1px] desktop:pl-[2px]",
-      imgSize: "w-[164px] h-[110px] desktop:w-[280px] desktop:h-[174px]",
+      title: "text-[14px]  md:text-[heading-xs] md:pt-[1px] md:pl-[2px]",
+      imgSize:
+        "min-w-[10.25rem] min-h-[6.875rem] md:min-w-[13.75rem] md:min-h-[8.75rem] desktop:min-w-[280px] desktop:min-h-[174px]",
     },
   };
   return (
-    <div className="items-center w-fit bg-movie-secondary">
+    <div className="items-center bg-movie-secondary">
       <div className="relative">
         {/* Image */}
         <div className="group relative">
@@ -60,9 +60,10 @@ export default function ContentCard({ content }) {
             </button>
           </div>
         </div>
+        {/* bookmark */}
         <div className="group">
           <button
-            className="absolute desktop:top-[16px] top-[8px] desktop:right-[24px] right-[8px] w-8 h-8 bg-movie-secondary bg-opacity-50 rounded-full flex items-center justify-center hover:bg-movie-fifth transition"
+            className="absolute top-[8px] right-[8px] md:top-[16px] md:right-[16px] w-8 h-8 bg-movie-secondary bg-opacity-50 rounded-full flex items-center justify-center hover:bg-movie-fifth transition"
             onClick={handleBookmarkToggle}
           >
             <svg width="12" height="14" xmlns="http://www.w3.org/2000/svg">
