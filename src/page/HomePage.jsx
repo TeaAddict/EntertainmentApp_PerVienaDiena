@@ -13,7 +13,7 @@ const HomePage = ({ movies }) => {
   console.log("Search val: ", searchText);
   return (
     <div className="bg-movie-secondary flex flex-col gap-[1.5rem] md:gap-0">
-      <div className="mt-[1.5rem] md:my-[2.06rem]">
+      <div className="mt-[1.4rem]  md:my-[1.99rem]">
         <SearchBar
           placeholderText="Search for movies or TV series"
           setValue={setSearchText}

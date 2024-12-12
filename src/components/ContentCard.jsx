@@ -1,9 +1,13 @@
 import { updateMovie } from "../helpers/movies/put";
+import { useState } from "react";
 
 export default function ContentCard({ content }) {
-  const handleBookmarkToggle = async (currentStatus) => {
+  const [isBookmarked, setIsBookmarked] = useState(content.isBookmarked);
+
+  const handleBookmarkToggle = async () => {
     try {
-      await updateMovie(content.id, { isBookmarked: !currentStatus });
+      await updateMovie(content.id, { isBookmarked: !isBookmarked });
+      setIsBookmarked(!isBookmarked);
     } catch (error) {
       console.error("Error:", error);
     }
@@ -11,38 +15,6 @@ export default function ContentCard({ content }) {
 
   const updatedSrc = (imgString) => {
     return `src/${imgString.substring(1)}`;
-  };
-
-  const displayIcon = () => {
-    return (
-      <img
-        src={`src/assets/icon-category-${
-          content.category === "Movie" ? "movie" : "tv"
-        }.svg`}
-        className="inline-block w-[13px] h-[13px]"
-      />
-    );
-  };
-
-  const displayBookmark = (isBookmarked) => {
-    return (
-      <div className="group">
-        <button
-          className="absolute desktop:top-[16px] top-[8px] desktop:right-[24px] right-[8px] w-8 h-8 bg-movie-secondary bg-opacity-50 rounded-full flex items-center justify-center hover:bg-movie-fifth transition"
-          onClick={() => handleBookmarkToggle(isBookmarked)}
-        >
-          <svg width="12" height="14" xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="m10.518.75.399 12.214-5.084-4.24-4.535 4.426L.75 1.036l9.768-.285Z"
-              stroke="#FFF"
-              strokeWidth="1.5"
-              fill={isBookmarked ? "#FFF" : "none"}
-              className="group-hover:stroke-movie-secondary"
-            />
-          </svg>
-        </button>
-      </div>
-    );
   };
 
   const style = {
@@ -62,7 +34,6 @@ export default function ContentCard({ content }) {
       imgSize: "w-[164px] h-[110px] desktop:w-[280px] desktop:h-[174px]",
     },
   };
-
   return (
     <div className="items-center w-fit bg-movie-secondary">
       <div className="relative">
@@ -89,7 +60,22 @@ export default function ContentCard({ content }) {
             </button>
           </div>
         </div>
-        {displayBookmark(content.isBookmarked)}
+        <div className="group">
+          <button
+            className="absolute desktop:top-[16px] top-[8px] desktop:right-[24px] right-[8px] w-8 h-8 bg-movie-secondary bg-opacity-50 rounded-full flex items-center justify-center hover:bg-movie-fifth transition"
+            onClick={handleBookmarkToggle}
+          >
+            <svg width="12" height="14" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="m10.518.75.399 12.214-5.084-4.24-4.535 4.426L.75 1.036l9.768-.285Z"
+                stroke="#FFF"
+                strokeWidth="1.5"
+                fill={isBookmarked ? "#FFF" : "none"}
+                className="group-hover:stroke-movie-secondary"
+              />
+            </svg>
+          </button>
+        </div>
         {/* Description and Title */}
         <div
           className={`pt-[9px] ${
@@ -107,7 +93,12 @@ export default function ContentCard({ content }) {
           >
             <span>{content.year}</span>
             <span>•</span>
-            {displayIcon()}
+            <img
+              src={`src/assets/icon-category-${
+                content.category === "Movie" ? "movie" : "tv"
+              }.svg`}
+              className="inline-block w-[13px] h-[13px]"
+            />
             <span>{content.category}</span>
             <span>•</span>
             <span>{content.rating}</span>
