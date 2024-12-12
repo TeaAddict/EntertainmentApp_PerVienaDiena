@@ -1,7 +1,7 @@
 import { useState } from "react";
-import RecomendedSection from "../components/RecomendedSection";
 import SearchBar from "../components/SearchBar";
 import Trending from "../components/Trending";
+import ContentSection from "../components/ContentSection";
 
 const HomePage = ({ movies }) => {
   const [searchText, setSearchText] = useState("");
@@ -22,7 +22,7 @@ const HomePage = ({ movies }) => {
       <div className="md:mb-[2.44rem]">
         <Trending data={trendingMovies} />
       </div>
-      <RecomendedSection />
+      <ContentSection heading={"Recommended for you"} />
     </div>
   );
 };
