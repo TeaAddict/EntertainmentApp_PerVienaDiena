@@ -1,6 +1,5 @@
 import { updateMovie } from "../helpers/movies/put";
 import { useState } from "react";
-
 export default function ContentCard({ content }) {
   const [isBookmarked, setIsBookmarked] = useState(content.isBookmarked);
 
@@ -21,16 +20,19 @@ export default function ContentCard({ content }) {
     <div className="items-center bg-movie-secondary">
       <div className="relative">
         {/* Image */}
-        <div className="group relative">
-          <img
-            className="object-cover rounded-[9px] hover:bg-movie-second min-w-[10.25rem] min-h-[6.875rem] md:min-w-[13.75rem] md:min-h-[8.75rem] desktop:min-w-[280px] desktop:min-h-[174px]"
-            src={updatedSrc(
-              content.isTrending
-                ? content.thumbnail.trending.large
-                : content.thumbnail.regular.large
-            )}
-            alt=""
-          />
+        <div className="group relative ">
+          <div className="flex">
+            <div
+              className="min-w-[10.25rem] min-h-[6.875rem] md:min-w-[13.75rem] md:min-h-[8.75rem] 
+              desktop:min-w-[280px] desktop:min-h-[174px] img-background "
+            >
+              <img
+                className="block object-contain rounded-[9px] hover:bg-movie-second w-[100%]"
+                src={updatedSrc(content.thumbnail.regular.large)}
+                alt=""
+              />
+            </div>
+          </div>
           {/* Play Button */}
           <div className="absolute inset-0 hidden group-hover:flex items-center justify-center opacity-0 hover:opacity-100 bg-opacity-50 bg-black transition">
             <button className="bg-white bg-opacity-25 text-white rounded-full p-2 flex items-center space-x-2">
@@ -57,8 +59,8 @@ export default function ContentCard({ content }) {
           </button>
         </div>
         {/* Description and Title */}
-        <div className="w-full pt-[7px] ">
-          <p className="font-thin text-white flex items-center text-[11px] desktop:text-body-s ">
+        <div className="w-full pt-[5px] ">
+          <p className="font-thin text-white flex items-center text-[11px] desktop:text-body-s pb-[1px]">
             <span className="pr-[8px]">{content.year}</span>
             <span className="pr-[8px]">•</span>
             <img

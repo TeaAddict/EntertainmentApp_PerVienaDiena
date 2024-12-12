@@ -39,3 +39,9 @@ input:-webkit-autofill:active {
   -ms-overflow-style: none;
   /* For IE/Edge */
 }
+
+/* .img-background {
+  background-image: url("./assets/thumbnails/112/regular/large.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+} */
