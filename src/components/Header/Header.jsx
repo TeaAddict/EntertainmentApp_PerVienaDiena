@@ -5,7 +5,7 @@ const setActive = ({ isActive }) => (isActive ? `active-link ` : ``);
 const Header = () => {
   return (
     <header className="sticky top-0 desktop:top-[2rem] h-full z-10">
-      <nav className="  bg-movie-fourth h-[3.5rem] md:h-[4.5rem] md:rounded-[0.63rem] grid grid-cols-[auto_1fr_auto] items-center desktop:grid desktop:grid-cols-1 desktop:grid-rows-[auto_1fr_auto] desktop:w-[6rem] desktop:h-[calc(100vh-4rem)] desktop:rounded-[1.25rem]">
+      <nav className="  bg-movie-fourth h-[3.5rem] md:h-[4.5rem] md:rounded-[0.63rem] grid grid-cols-[auto_1fr_auto] items-center desktop:grid desktop:grid-cols-1 desktop:grid-rows-[auto_1fr_auto] desktop:w-[6rem] desktop:h-[60rem] desktop:rounded-[1.25rem]">
         <section className=" pt-[1.13rem] pb-[1.52rem]  pl-[0.93rem] md:pl-[1.5rem] md:pb-[1.8rem] md:pt-[1.5rem] desktop:pt-[2.21rem] desktop:pl-[1.99rem] desktop:pr-[2.01rem] desktop:pb-0">
           <svg
             className="w-[1.5625rem] h-[1.25rem] md:w-[2rem] md:h-[1.6rem] desktop:w-[2rem] desktop:h-[1.6rem] "
