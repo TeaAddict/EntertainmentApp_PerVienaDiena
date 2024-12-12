@@ -1,35 +1,16 @@
+import { useState } from "react";
 import { updateMovie } from "../helpers/movies/put.js";
 
 export default function TrendingCard({ content }) {
-  console.log("contentasd", content);
+  const [isBookmarked, setIsBookmarked] = useState(content.isBookmarked);
 
   const handleBookmarkToggle = async (currentStatus) => {
     try {
       await updateMovie(content.id, { isBookmarked: !currentStatus });
+      setIsBookmarked(!isBookmarked);
     } catch (error) {
       console.error("Error:", error);
     }
-  };
-
-  const displayBookmark = (isBookmarked, handleBookmarkToggle) => {
-    return (
-      <div className="group">
-        <button
-          className="absolute desktop:top-[16px] top-[8px] desktop:right-[24px] right-[8px] w-8 h-8 sm:right-[24px] sm:top-[16px] bg-movie-secondary bg-opacity-50 rounded-full flex items-center justify-center hover:bg-movie-fifth transition"
-          onClick={handleBookmarkToggle}
-        >
-          <svg width="12" height="14" xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="m10.518.75.399 12.214-5.084-4.24-4.535 4.426L.75 1.036l9.768-.285Z"
-              stroke="#FFF"
-              strokeWidth="1.5"
-              fill={isBookmarked ? "#FFF" : "none"}
-              className="group-hover:stroke-movie-secondary"
-            />
-          </svg>
-        </button>
-      </div>
-    );
   };
 
   const displayIcon = (category) => {
@@ -69,7 +50,22 @@ export default function TrendingCard({ content }) {
           {content.title}
         </h3>
       </div>
-      {displayBookmark(content.isBookmarked, handleBookmarkToggle)}
+      <div className="group">
+        <button
+          className="absolute desktop:top-[16px] top-[8px] desktop:right-[24px] right-[8px] w-8 h-8 sm:right-[24px] sm:top-[16px] bg-movie-secondary bg-opacity-50 rounded-full flex items-center justify-center hover:bg-movie-fifth transition"
+          onClick={handleBookmarkToggle}
+        >
+          <svg width="12" height="14" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="m10.518.75.399 12.214-5.084-4.24-4.535 4.426L.75 1.036l9.768-.285Z"
+              stroke="#FFF"
+              strokeWidth="1.5"
+              fill={isBookmarked ? "#FFF" : "none"}
+              className="group-hover:stroke-movie-secondary"
+            />
+          </svg>
+        </button>
+      </div>
     </>
   );
 }
