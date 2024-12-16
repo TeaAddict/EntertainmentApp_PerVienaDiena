@@ -64,7 +64,7 @@
       "year": 2021,
       "category": "Movie",
       "rating": "PG",
-      "isBookmarked": false,
+      "isBookmarked": true,
       "isTrending": true
     },
     {
@@ -156,7 +156,7 @@
       "year": 2019,
       "category": "TV Series",
       "rating": "PG",
-      "isBookmarked": false,
+      "isBookmarked": true,
       "isTrending": false
     },
     {
@@ -220,7 +220,7 @@
       "year": 2016,
       "category": "TV Series",
       "rating": "18+",
-      "isBookmarked": false,
+      "isBookmarked": true,
       "isTrending": false
     },
     {
@@ -380,7 +380,7 @@
       "year": 2013,
       "category": "TV Series",
       "rating": "PG",
-      "isBookmarked": false,
+      "isBookmarked": true,
       "isTrending": false
     },
     {
@@ -498,22 +498,6 @@
     {
       "id": "29",
       "title": "Mission: Saturn",
-      "thumbnail": {
-        "regular": {
-          "small": "./assets/thumbnails/mission-saturn/regular/small.jpg",
-          "medium": "./assets/thumbnails/mission-saturn/regular/medium.jpg",
-          "large": "./assets/thumbnails/mission-saturn/regular/large.jpg"
-        }
-      },
-      "year": 2017,
-      "category": "Movie",
-      "rating": "PG",
-      "isBookmarked": true,
-      "isTrending": false
-    },
-    {
-      "id": "30",
-      "title": "Mission: Saturn 2",
       "thumbnail": {
         "regular": {
           "small": "./assets/thumbnails/mission-saturn/regular/small.jpg",
