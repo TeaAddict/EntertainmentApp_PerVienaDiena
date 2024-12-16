@@ -34,7 +34,9 @@ const HomePage = ({ movies }) => {
           <div className="md:mb-[2.44rem]">
             <Trending data={trendingMovies} />
           </div>
-          <ContentSection movies={movies} heading={"Recommended for you"} />
+          <div className="md:pr-[1.5rem] desktop:pr-[2rem] pr-[1rem]">
+            <ContentSection movies={movies} heading={"Recommended for you"} />
+          </div>
         </div>
       )}
     </div>
