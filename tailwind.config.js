@@ -22,7 +22,8 @@ export default {
         outfit: ["Outfit", "sans-serif"], // Define the Outfit font family
       },
       fontSize: {
-        "heading-l": "32px", // Heading Large (L) - 32px
+        // "heading-l": "32px", // Heading Large (L) - 32px
+        "heading-l": ["32px", { lineHeight: "40px", letterSpacing: "-0.5px" }],
         "heading-m": "24px", // Heading Medium (M) - 24px
         "heading-s": "24px", // Heading Small (S) - 24px (Outfit Medium)
         "heading-xs": "18px", // Heading Extra Small (XS) - 18px (Outfit Medium)

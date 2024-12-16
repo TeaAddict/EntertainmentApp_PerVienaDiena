@@ -8,12 +8,11 @@ const HomePage = ({ movies }) => {
   const [searchText, setSearchText] = useState("");
 
   const trendingMovies = movies.filter((movie) => movie.isTrending);
-  const notTrendingMovies = movies.filter((movie) => movie.isTrending == false);
 
   let filteredMovies = [];
 
   if (searchText.length > 2) {
-    filteredMovies = notTrendingMovies.filter((movie) =>
+    filteredMovies = movies.filter((movie) =>
       movie.title.toLowerCase().includes(searchText.toLowerCase())
     );
   }
