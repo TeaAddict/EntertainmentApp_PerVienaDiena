@@ -4,7 +4,13 @@ import { v4 as uuidv4 } from "uuid";
 export default function ContentSection({ movies, heading }) {
   return (
     <div className="bg-movie-secondary">
-      <h1 className="text-[1.2rem] mb-[0.7rem] md:text-[1.91rem] desktop:text-[1.91rem] desktop:mb-[28px] desktop:tracking-[0.3px] text-movie-fifth">
+      <h1
+        className={`text-[1.2rem] mb-[0.7rem] md:text-[1.91rem] desktop:text-[1.91rem] ${
+          heading.toLowerCase() == "recommended for you"
+            ? "desktop:mb-[2rem]"
+            : "desktop:mb-[2.37rem]"
+        } desktop:tracking-[0.3px] text-movie-fifth`}
+      >
         {heading}
       </h1>
 
