@@ -4,6 +4,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  .bg-gradient-custom {
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 10%, rgba(0, 0, 0, 0.8) 100%);
+  }
+}
+
 body {
   @apply font-outfit;
   box-sizing: border-box;
