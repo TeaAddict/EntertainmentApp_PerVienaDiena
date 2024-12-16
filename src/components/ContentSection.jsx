@@ -1,7 +1,18 @@
 import ContentCard from "./ContentCard";
 import { v4 as uuidv4 } from "uuid";
 
-export default function ContentSection({ movies, heading }) {
+export default function ContentSection({ movies, heading, filter }) {
+  // Filter the content based on the heading
+  const filteredMovies = movies.filter((content) => {
+    if (heading === "Bookmarked Movies") {
+      return content.category === "Movie";
+    } else if (heading === "Bookmarked Tv Series") {
+      return content.category === "TV Series";
+    } else {
+      return true;
+    }
+  });
+
   return (
     <div className="bg-movie-secondary">
       <h1 className="text-[1.2rem] mb-[0.7rem] md:text-[1.91rem] desktop:text-[1.91rem] desktop:mb-[28px] desktop:tracking-[0.3px] text-movie-fifth">
@@ -10,9 +21,9 @@ export default function ContentSection({ movies, heading }) {
 
       <ul
         className="grid grid-cols-2 md:grid-cols-3 desktop:grid-cols-4 gap-x-[0.938rem] gap-y-[1rem] md:gap-x-[1.813rem] md:gap-y-[1.5rem] 
-      desktop:gap-x-[2.5rem] desktop:vt5fwbgy6nh7cuvmj8ig9k-y-[2rem]"
+      desktop:gap-x-[2.5rem] desktop:gap-y-[2rem]"
       >
-        {movies.map(
+        {filteredMovies.map(
           (content) =>
             !content.isTrending && (
               <li key={uuidv4()}>

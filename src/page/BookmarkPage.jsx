@@ -29,7 +29,14 @@ const BookmarkPage = ({ movies }) => {
       {searchText.length > 2 ? (
         <FoundSection movies={filteredMovies} searchText={searchText} />
       ) : (
-        <ContentSection movies={content} heading={"Bookmarked Movies"} />
+        <>
+          <div>
+            <ContentSection movies={content} heading={"Bookmarked Movies"} />
+          </div>
+          <div>
+            <ContentSection movies={content} heading={"Bookmarked Tv Series"} />
+          </div>
+        </>
       )}
     </div>
   );
