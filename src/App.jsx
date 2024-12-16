@@ -10,11 +10,13 @@ import { useEffect, useState } from "react";
 import { getMovies } from "./helpers/movies/get";
 import Main from "./components/Main";
 import ErroePage from "./page/ErrorPage";
+import { useUpdate } from "./components/Context/UpdateContext";
 
 function App() {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const { updateCount } = useUpdate();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -28,7 +30,7 @@ function App() {
       }
     };
     fetchData();
-  }, []);
+  }, [updateCount]);
 
   if (loading) {
     return <p>Loading...</p>;
