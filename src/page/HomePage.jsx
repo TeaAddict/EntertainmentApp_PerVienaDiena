@@ -31,9 +31,9 @@ const HomePage = ({ movies }) => {
         <FoundSection movies={filteredMovies} searchText={searchText} />
       ) : (
         <div>
-          <div className="md:mb-[2.44rem]">
+          {/* <div className="mb-[24px] md:mb-[2.44rem]">
             <Trending data={trendingMovies} />
-          </div>
+          </div> */}
           <ContentSection movies={movies} heading={"Recommended for you"} />
         </div>
       )}
