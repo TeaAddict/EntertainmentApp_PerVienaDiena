@@ -20,7 +20,7 @@ export default function ContentCard({ content }) {
     <div className="items-center bg-movie-secondary">
       <div className="relative">
         {/* Image */}
-        <div className="group relative ">
+        <div >
           <div className="flex">
             <div
               className="min-w-[10.25rem] min-h-[6.875rem] md:min-w-[13.75rem] md:min-h-[8.75rem] 

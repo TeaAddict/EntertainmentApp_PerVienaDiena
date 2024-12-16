@@ -9,6 +9,7 @@ import HomePage from "./page/HomePage";
 import { useEffect, useState } from "react";
 import { getMovies } from "./helpers/movies/get";
 import Main from "./components/Main";
+import ErroePage from "./page/ErrorPage";
 
 function App() {
   const [data, setData] = useState(null);
@@ -48,6 +49,7 @@ function App() {
           <Route path="/movies" element={<MoviesPage movies={data} />} />
           <Route path="/bookmarks" element={<BookmarkPage movies={data} />} />
         </Route>
+        <Route path="*" element={<ErroePage />}></Route>
       </Routes>
     </div>
   );
