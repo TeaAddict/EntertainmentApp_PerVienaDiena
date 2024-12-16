@@ -1,13 +1,15 @@
 import form from "@tailwindcss/forms";
+import daisyui from "daisyui";
 /** @type {import('tailwindcss').Config} */
 
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
-  safelist: ["border-movie-third", "border-movie-primary"],
+  safelist: ["border-movie-third", "border-movie-primary", "bg-movie-fourth"],
   theme: {
     extend: {
       screens: {
         desktop: "1440px",
+        desktop2xl: "1450px",
       },
       colors: {
         "movie-primary": "#FC4747",
@@ -20,7 +22,8 @@ export default {
         outfit: ["Outfit", "sans-serif"], // Define the Outfit font family
       },
       fontSize: {
-        "heading-l": "32px", // Heading Large (L) - 32px
+        // "heading-l": "32px", // Heading Large (L) - 32px
+        "heading-l": ["32px", { lineHeight: "40px", letterSpacing: "-0.5px" }],
         "heading-m": "24px", // Heading Medium (M) - 24px
         "heading-s": "24px", // Heading Small (S) - 24px (Outfit Medium)
         "heading-xs": "18px", // Heading Extra Small (XS) - 18px (Outfit Medium)
@@ -34,5 +37,5 @@ export default {
       },
     },
   },
-  plugins: [form],
+  plugins: [form, daisyui],
 };

@@ -1,3 +1,47 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Monoton&family=Outfit:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  @apply font-outfit;
+  box-sizing: border-box;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  transition: background-color 5000s ease-in-out 0s;
+  -webkit-text-fill-color: white !important;
+}
+:root {
+  --main-red: #fc4747;
+  --main-dark-blue: #10141e;
+  --main-greyish-blue: #5a698f;
+  --main-semi-dark-blue: #161d2f;
+  --main-pure-white: #ffffff;
+}
+
+.active-link svg {
+  fill: var(--main-pure-white);
+  /* scrollbar */
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
+  /* For Firefox */
+  -ms-overflow-style: none;
+  /* For IE/Edge */
+}
+
+/* .img-background {
+  background-image: url("./assets/thumbnails/112/regular/large.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+} */

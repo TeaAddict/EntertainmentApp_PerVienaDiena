@@ -1,8 +1,34 @@
 {
-  "users": [{ "email": "test@gmail.com", "password": "@DMmasdams232" }],
-
+  "users": [
+    {
+      "email": "test@cc.com",
+      "password": "@Matas123",
+      "id": "6d7e"
+    },
+    {
+      "id": "d1f2",
+      "email": "jonas@gmail.com",
+      "password": "@Jonas1234"
+    },
+    {
+      "id": "f310",
+      "email": "jonas@gmail.com",
+      "password": "@Jonas123"
+    },
+    {
+      "id": "8a81",
+      "email": "jonas1@gmail.com",
+      "password": "@Jonas1234"
+    },
+    {
+      "id": "5944",
+      "email": "petras@petas.com",
+      "password": "@Matas123"
+    }
+  ],
   "movies": [
     {
+      "id": "1",
       "title": "Beyond Earth",
       "thumbnail": {
         "trending": {
@@ -22,6 +48,7 @@
       "isTrending": true
     },
     {
+      "id": "2",
       "title": "Bottom Gear",
       "thumbnail": {
         "trending": {
@@ -37,10 +64,11 @@
       "year": 2021,
       "category": "Movie",
       "rating": "PG",
-      "isBookmarked": false,
+      "isBookmarked": true,
       "isTrending": true
     },
     {
+      "id": "3",
       "title": "Undiscovered Cities",
       "thumbnail": {
         "trending": {
@@ -60,6 +88,7 @@
       "isTrending": true
     },
     {
+      "id": "4",
       "title": "1998",
       "thumbnail": {
         "trending": {
@@ -79,6 +108,7 @@
       "isTrending": true
     },
     {
+      "id": "5",
       "title": "Dark Side of the Moon",
       "thumbnail": {
         "trending": {
@@ -98,7 +128,8 @@
       "isTrending": true
     },
     {
-      "title": "The Great Lands",
+      "id": "6",
+      "title": "The Lietuviškas",
       "thumbnail": {
         "regular": {
           "small": "./assets/thumbnails/the-great-lands/regular/small.jpg",
@@ -109,10 +140,11 @@
       "year": 2019,
       "category": "Movie",
       "rating": "E",
-      "isBookmarked": false,
+      "isBookmarked": true,
       "isTrending": false
     },
     {
+      "id": "7",
       "title": "The Diary",
       "thumbnail": {
         "regular": {
@@ -124,10 +156,11 @@
       "year": 2019,
       "category": "TV Series",
       "rating": "PG",
-      "isBookmarked": false,
+      "isBookmarked": true,
       "isTrending": false
     },
     {
+      "id": "8",
       "title": "Earth’s Untouched",
       "thumbnail": {
         "regular": {
@@ -143,6 +176,7 @@
       "isTrending": false
     },
     {
+      "id": "9",
       "title": "No Land Beyond",
       "thumbnail": {
         "regular": {
@@ -158,6 +192,7 @@
       "isTrending": false
     },
     {
+      "id": "10",
       "title": "During the Hunt",
       "thumbnail": {
         "regular": {
@@ -173,6 +208,7 @@
       "isTrending": false
     },
     {
+      "id": "11",
       "title": "Autosport the Series",
       "thumbnail": {
         "regular": {
@@ -184,10 +220,11 @@
       "year": 2016,
       "category": "TV Series",
       "rating": "18+",
-      "isBookmarked": false,
+      "isBookmarked": true,
       "isTrending": false
     },
     {
+      "id": "12",
       "title": "Same Answer II",
       "thumbnail": {
         "regular": {
@@ -203,6 +240,7 @@
       "isTrending": false
     },
     {
+      "id": "13",
       "title": "Below Echo",
       "thumbnail": {
         "regular": {
@@ -218,6 +256,7 @@
       "isTrending": false
     },
     {
+      "id": "14",
       "title": "The Rockies",
       "thumbnail": {
         "regular": {
@@ -229,10 +268,11 @@
       "year": 2015,
       "category": "TV Series",
       "rating": "E",
-      "isBookmarked": true,
+      "isBookmarked": false,
       "isTrending": false
     },
     {
+      "id": "15",
       "title": "Relentless",
       "thumbnail": {
         "regular": {
@@ -248,6 +288,7 @@
       "isTrending": false
     },
     {
+      "id": "16",
       "title": "Community of Ours",
       "thumbnail": {
         "regular": {
@@ -259,10 +300,11 @@
       "year": 2018,
       "category": "TV Series",
       "rating": "18+",
-      "isBookmarked": false,
+      "isBookmarked": true,
       "isTrending": false
     },
     {
+      "id": "17",
       "title": "Van Life",
       "thumbnail": {
         "regular": {
@@ -278,6 +320,7 @@
       "isTrending": false
     },
     {
+      "id": "18",
       "title": "The Heiress",
       "thumbnail": {
         "regular": {
@@ -293,6 +336,7 @@
       "isTrending": false
     },
     {
+      "id": "19",
       "title": "Off the Track",
       "thumbnail": {
         "regular": {
@@ -308,6 +352,7 @@
       "isTrending": false
     },
     {
+      "id": "20",
       "title": "Whispering Hill",
       "thumbnail": {
         "regular": {
@@ -323,6 +368,7 @@
       "isTrending": false
     },
     {
+      "id": "21",
       "title": "112",
       "thumbnail": {
         "regular": {
@@ -334,10 +380,11 @@
       "year": 2013,
       "category": "TV Series",
       "rating": "PG",
-      "isBookmarked": false,
+      "isBookmarked": true,
       "isTrending": false
     },
     {
+      "id": "22",
       "title": "Lone Heart",
       "thumbnail": {
         "regular": {
@@ -353,6 +400,7 @@
       "isTrending": false
     },
     {
+      "id": "23",
       "title": "Production Line",
       "thumbnail": {
         "regular": {
@@ -368,6 +416,7 @@
       "isTrending": false
     },
     {
+      "id": "24",
       "title": "Dogs",
       "thumbnail": {
         "regular": {
@@ -383,6 +432,7 @@
       "isTrending": false
     },
     {
+      "id": "25",
       "title": "Asia in 24 Days",
       "thumbnail": {
         "regular": {
@@ -398,6 +448,7 @@
       "isTrending": false
     },
     {
+      "id": "26",
       "title": "The Tasty Tour",
       "thumbnail": {
         "regular": {
@@ -413,6 +464,7 @@
       "isTrending": false
     },
     {
+      "id": "27",
       "title": "Darker",
       "thumbnail": {
         "regular": {
@@ -428,6 +480,7 @@
       "isTrending": false
     },
     {
+      "id": "28",
       "title": "Unresolved Cases",
       "thumbnail": {
         "regular": {
@@ -443,6 +496,7 @@
       "isTrending": false
     },
     {
+      "id": "29",
       "title": "Mission: Saturn",
       "thumbnail": {
         "regular": {
