@@ -12,8 +12,15 @@ export const UserProvider = ({ children }) => {
   const userId = Cookies.get("id");
 
   const getUserFromDb = async () => {
-    const userData = await getUser(userId);
-    setUser(userData);
+    try {
+      if (!userId) {
+        return setUser({ role: "" });
+      }
+      const userData = await getUser(userId);
+      setUser(userData);
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   useEffect(() => {

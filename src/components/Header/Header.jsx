@@ -2,15 +2,12 @@ import { NavLink } from "react-router";
 import HeaderProfilePicture from "./HeaderProfilePicture";
 import { useUser } from "../Context/UserContext";
 import AddMovieButton from "../AddMovieButton";
-import Modal from "../Modal";
 
 const setActive = ({ isActive }) => (isActive ? `active-link ` : ``);
 const Header = () => {
   const {
     user: { role },
   } = useUser();
-
-  console.log(role);
 
   return (
     <header className="sticky top-0 desktop:top-[2rem] h-full z-10">

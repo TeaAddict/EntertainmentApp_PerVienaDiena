@@ -3,9 +3,13 @@ import SearchBar from "../components/SearchBar";
 import Trending from "../components/Trending";
 import FoundSection from "../components/FoundSection";
 import ContentSection from "../components/ContentSection";
+import { useUser } from "../components/Context/UserContext";
+import { useNavigate } from "react-router";
 
 const HomePage = ({ movies }) => {
   const [searchText, setSearchText] = useState("");
+  const { user } = useUser();
+  const navigate = useNavigate();
 
   const trendingMovies = movies.filter((movie) => movie.isTrending);
 
@@ -16,6 +20,8 @@ const HomePage = ({ movies }) => {
       movie.title.toLowerCase().includes(searchText.toLowerCase())
     );
   }
+
+  if (user.role == "") navigate("/login");
 
   if (!movies) return <p>Loading data...</p>;
   return (
