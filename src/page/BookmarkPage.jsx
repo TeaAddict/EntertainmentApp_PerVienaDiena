@@ -12,7 +12,6 @@ const BookmarkPage = ({ movies }) => {
     (movie) => movie.isBookmarked && movie.isTrending == false
   );
 
-  console.log(content);
   let filteredMovies = [];
 
   if (searchValue.length > 2) {

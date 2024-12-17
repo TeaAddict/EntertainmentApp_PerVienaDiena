@@ -19,7 +19,7 @@ const HomePage = ({ movies }) => {
     );
   }
 
-  if (user.role == "") navigate("/login");
+  // if (user.role == "") navigate("/login");
 
   if (!movies) return <p>Loading data...</p>;
   return (
