@@ -1,13 +1,15 @@
 import ContentCard from "./ContentCard";
 import { v4 as uuidv4 } from "uuid";
 
-export default function ContentSection({ movies, heading, filter }) {
+export default function ContentSection({ movies, heading }) {
   // Filter the content based on the heading
   const filteredMovies = movies.filter((content) => {
     if (heading === "Bookmarked Movies") {
       return content.category === "Movie";
     } else if (heading === "Bookmarked TV Series") {
       return content.category === "TV Series";
+    } else if (heading == "Recommended for you") {
+      return !content.isTrending;
     } else {
       return true;
     }
@@ -36,14 +38,11 @@ export default function ContentSection({ movies, heading, filter }) {
         md:gap-x-[1.875rem] md:gap-y-[23px] 
         desktop:gap-x-[40px] desktop:gap-y-[30px]"
       >
-        {filteredMovies.map(
-          (content) =>
-            !content.isTrending && (
-              <li key={uuidv4()}>
-                <ContentCard content={content} />
-              </li>
-            )
-        )}
+        {filteredMovies.map((content) => (
+          <li key={uuidv4()}>
+            <ContentCard content={content} />
+          </li>
+        ))}
       </ul>
     </div>
   );

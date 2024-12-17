@@ -5,7 +5,10 @@
       "email": "user",
       "password": "user",
       "role": "user",
-      "bookmarks": ["1", "2"],
+      "bookmarks": [
+        "1",
+        "2"
+      ],
       "ratedMovies": [
         {
           "movieId": 1,
@@ -22,7 +25,10 @@
       "email": "admin",
       "password": "admin",
       "role": "admin",
-      "bookmarks": ["3", "4"],
+      "bookmarks": [
+        "3",
+        "4"
+      ],
       "ratedMovies": [
         {
           "movieId": 1,

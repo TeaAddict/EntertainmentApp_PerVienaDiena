@@ -6,11 +6,8 @@ import ContentSection from "../components/ContentSection";
 const BookmarkPage = ({ movies }) => {
   const [searchText, setSearchText] = useState("");
 
-  const content = movies.filter(
-    (movie) => movie.isBookmarked && movie.isTrending == false
-  );
+  const content = movies.filter((movie) => movie.isBookmarked);
 
-  console.log(content);
   let filteredMovies = [];
 
   if (searchText.length > 2) {
@@ -18,6 +15,8 @@ const BookmarkPage = ({ movies }) => {
       movie.title.toLowerCase().includes(searchText.toLowerCase())
     );
   }
+
+  console.log(filteredMovies);
 
   if (!movies) return <p>Loading data...</p>;
   return (
