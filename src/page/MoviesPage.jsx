@@ -4,14 +4,13 @@ import FoundSection from "../components/FoundSection";
 import ContentSection from "../components/ContentSection";
 import { useSearchParams } from 'react-router';
 const MoviesPage = ({ movies }) => {
-  const [searchText, setSearchText] = useState("");
   const [searchParams, setSearchParams] = useSearchParams();
   const searchValue = searchParams.get("search") || "";
 
   const categoryMovies = movies?.filter((movie) => movie.category == "Movie");
   let filteredMovies = [];
 
-  if (searchText.length > 2) {
+  if (searchValue.length > 2) {
     filteredMovies = categoryMovies?.filter((movie) =>
       movie.title.toLowerCase().includes(searchValue?.toLowerCase())
     );
@@ -23,7 +22,7 @@ const MoviesPage = ({ movies }) => {
       <div className="mt-[1.4rem]  md:my-[1.99rem]">
         <SearchBar
           placeholderText="Search for movies"
-          setValue={setSearchText}
+          value={searchValue}
           setSearchParams={setSearchParams}
         />
       </div>
