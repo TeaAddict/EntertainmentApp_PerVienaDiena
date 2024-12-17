@@ -1,11 +1,12 @@
 import { useState } from "react";
 
-const SearchBar = ({ placeholderText, setValue }) => {
+const SearchBar = ({ placeholderText, setValue, setSearchParams }) => {
   const [currentText, setCurrentText] = useState("");
 
   const handleChange = (e) => {
     if (setValue) setValue(e.target.value);
     setCurrentText(e.target.value);
+    setSearchParams({ search: e.target.value });
   };
 
   return (

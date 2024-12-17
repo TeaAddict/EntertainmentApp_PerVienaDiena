@@ -16,7 +16,7 @@ const Trending = ({ data }) => {
         ref={containerRef}
         {...events}
       >
-        {data.map((item) => (
+        {data?.map((item) => (
           <div
             key={item.title}
             className="relative flex-shrink-0 rounded-lg overflow-hidden git h-[8.75rem] sm:h-[14.375rem] lg:h-[14.375rem]"

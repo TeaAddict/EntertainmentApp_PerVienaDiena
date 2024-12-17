@@ -31,7 +31,7 @@ function App() {
   }, []);
 
   if (loading) {
-    return <p>Loading...</p>;
+    // return <p>Loading...</p>;
   }
   if (error) {
     return <p>Error: {error}</p>;

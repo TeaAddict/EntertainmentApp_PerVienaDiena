@@ -1,8 +1,12 @@
-import { NavLink } from "react-router";
+import { Navigate, NavLink, useNavigate } from "react-router";
 import HeaderProfilePicture from "./HeaderProfilePicture";
 
 const setActive = ({ isActive }) => (isActive ? `active-link ` : ``);
 const Header = () => {
+  const navigate = useNavigate();
+  const handleClick = () => {
+    navigate(0);
+  };
   return (
     <header className="sticky top-0 desktop:top-[2rem] h-full z-10">
       <nav className="  bg-movie-fourth h-[3.5rem] md:h-[4.5rem] md:rounded-[0.63rem] grid grid-cols-[auto_1fr_auto] items-center desktop:grid desktop:grid-cols-1 desktop:grid-rows-[auto_1fr_auto] desktop:w-[6rem] desktop:h-[60rem] desktop:rounded-[1.25rem]">
@@ -35,7 +39,7 @@ const Header = () => {
                 />
               </svg>
             </NavLink>
-            <NavLink to="/movies" className={setActive}>
+            <NavLink to="/movies" className={setActive} >
               <svg
                 className="fill-[#5A698F] hover:fill-movie-primary w-[1rem] h-[1rem] md:w-[1.25rem] md:h-[1.25rem]"
                 xmlns="http://www.w3.org/2000/svg"
@@ -63,7 +67,11 @@ const Header = () => {
                 />
               </svg>
             </NavLink>
-            <NavLink to="/bookmarks" className={setActive}>
+            <NavLink
+              to="/bookmarks"
+              onClick={() => navigate("/bookmarks")}
+              className={setActive}
+            >
               <svg
                 className="fill-[#5A698F] hover:fill-movie-primary w-[0.846rem] h-[1rem] md:w-[1.0575rem] md:h-[1.25rem] "
                 xmlns="http://www.w3.org/2000/svg"

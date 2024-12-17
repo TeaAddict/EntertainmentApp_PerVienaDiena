@@ -3,31 +3,35 @@ import SearchBar from "../components/SearchBar";
 import Trending from "../components/Trending";
 import FoundSection from "../components/FoundSection";
 import ContentSection from "../components/ContentSection";
+import { useSearchParams } from 'react-router';
 
 const HomePage = ({ movies }) => {
   const [searchText, setSearchText] = useState("");
+  const [searchParams, setSearchParams] = useSearchParams();
+  const searchValue = searchParams.get("search") || "";
 
-  const trendingMovies = movies.filter((movie) => movie.isTrending);
+  const trendingMovies = movies?.filter((movie) => movie.isTrending);
 
   let filteredMovies = [];
 
   if (searchText.length > 2) {
-    filteredMovies = movies.filter((movie) =>
-      movie.title.toLowerCase().includes(searchText.toLowerCase())
+    filteredMovies = movies?.filter((movie) =>
+      movie.title.toLowerCase().includes(searchValue?.toLowerCase())
     );
   }
 
-  if (!movies) return <p>Loading data...</p>;
+  // if (!movies) return <p>Loading data...</p>;
   return (
     <div className="bg-movie-secondary flex flex-col gap-[1.5rem] md:gap-0">
       <div className="  md:my-[2.125rem]">
         <SearchBar
           placeholderText="Search for movies or TV series"
           setValue={setSearchText}
+          setSearchParams={setSearchParams}
         />
       </div>
-      {searchText.length > 2 ? (
-        <FoundSection movies={filteredMovies} searchText={searchText} />
+      {searchValue.length > 2 ? (
+        <FoundSection movies={filteredMovies} searchText={searchValue} />
       ) : (
         <div>
           <div className="md:mb-[2.44rem]">

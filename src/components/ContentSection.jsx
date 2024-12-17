@@ -12,7 +12,7 @@ export default function ContentSection({ movies, heading }) {
         className="grid grid-cols-2 md:grid-cols-3 desktop:grid-cols-4 gap-x-[0.938rem] gap-y-[1rem] md:gap-x-[1.875rem] md:gap-y-[1.5rem] 
       desktop:gap-x-[2.5rem] desktop:gap-y-[2rem]"
       >
-        {movies.map(
+        {movies?.map(
           (content) =>
             !content.isTrending && (
               <li key={uuidv4()}>
