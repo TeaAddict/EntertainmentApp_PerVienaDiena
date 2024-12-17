@@ -22,6 +22,7 @@ const LoginForm = () => {
   const handleFormSubmit = async (data) => {
     try {
       const res = await getUsers();
+      let userId;
 
       const isCorrect = res.some((user) => {
         if (user.email == data.email) {
@@ -29,6 +30,7 @@ const LoginForm = () => {
 
           if (user.password == data.password) {
             clearErrors("password");
+            userId = user.id;
             return true;
           }
         }
@@ -40,8 +42,7 @@ const LoginForm = () => {
       });
 
       if (isCorrect) {
-        console.log("email", data.email);
-        Cookies.set("email", data.email);
+        Cookies.set("id", userId);
         navigate("/");
       } else console.log("wrong acc");
     } catch (error) {

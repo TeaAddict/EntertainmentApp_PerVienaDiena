@@ -1,6 +1,7 @@
 {
   "users": [
     {
+      "id": "ewqeasd",
       "email": "jonas@gmail.com",
       "password": "jonas@gmail.com",
       "role": "user",
@@ -17,6 +18,7 @@
       ]
     },
     {
+      "id": "ewqeasd",
       "email": "kestas@gmail.com",
       "password": "@Kestas123",
       "role": "admin",
@@ -33,9 +35,9 @@
       ]
     },
     {
-      "id": "3264",
-      "email": "lukas@g.com",
-      "password": "Llukas@g.com",
+      "id": "689d",
+      "email": "Jjonas@gmail.com",
+      "password": "Jjonas@gmail.com",
       "role": "user",
       "bookmarks": [],
       "ratedMovies": []
