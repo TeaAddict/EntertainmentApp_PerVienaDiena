@@ -1,10 +1,11 @@
-import { Navigate, NavLink, useNavigate } from "react-router";
+import { NavLink, useNavigate } from "react-router";
 import HeaderProfilePicture from "./HeaderProfilePicture";
 import { useUser } from "../Context/UserContext";
 import AddMovieButton from "../AddMovieButton";
 
 const setActive = ({ isActive }) => (isActive ? `active-link ` : ``);
 const Header = () => {
+  const navigate = useNavigate();
   const {
     user: { role },
   } = useUser();
@@ -41,7 +42,7 @@ const Header = () => {
                 />
               </svg>
             </NavLink>
-            <NavLink to="/movies" className={setActive} >
+            <NavLink to="/movies" className={setActive}>
               <svg
                 className="fill-[#5A698F] hover:fill-movie-primary w-[1rem] h-[1rem] md:w-[1.25rem] md:h-[1.25rem]"
                 xmlns="http://www.w3.org/2000/svg"
@@ -86,7 +87,7 @@ const Header = () => {
           </section>
         </section>
         <section className=" flex justify-end items-center pr-[0.93rem] pt-[1rem] pb-[1rem] md:pr-[1rem] md:pt-[1.31rem] md:pb-[1.19rem] desktop:pb-[1.7rem] desktop:pl-[1.75rem] desktop:pr-[1.75rem] desktop:self-end">
-          <div className="flex gap-1">
+          <div className="flex desktop:flex-col desktop:items-center gap-1 desktop:gap-5">
             {role == "admin" && <AddMovieButton />}
             <HeaderProfilePicture />
           </div>

@@ -5,7 +5,9 @@ const AddMovieButton = () => {
   return (
     <button>
       <IconContext.Provider
-        value={{ className: "text-movie-primary text-[1.5rem]" }}
+        value={{
+          className: "text-movie-primary text-[1.5rem] desktop:text-[2.5rem]",
+        }}
       >
         <IoMdAddCircle />
       </IconContext.Provider>
