@@ -20,7 +20,7 @@ const HomePage = ({ movies }) => {
   if (!movies) return <p>Loading data...</p>;
   return (
     <div className="bg-movie-secondary flex flex-col gap-[1.5rem] md:gap-0">
-      <div className="  md:my-[2.125rem]">
+      <div className="mt-[1.5rem] md:my-[2.125rem]">
         <SearchBar
           placeholderText="Search for movies or TV series"
           setValue={setSearchText}
