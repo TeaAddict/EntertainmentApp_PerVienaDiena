@@ -4,7 +4,7 @@ import Button from "./Button";
 const Modal = ({ OpenButton }) => {
   const navigate = useNavigate();
   return (
-    <div>
+    <div className="flex">
       <button onClick={() => document.getElementById("my_modal_2").showModal()}>
         {<OpenButton />}
       </button>

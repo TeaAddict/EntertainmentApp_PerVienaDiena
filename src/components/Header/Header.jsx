@@ -1,8 +1,17 @@
 import { NavLink } from "react-router";
 import HeaderProfilePicture from "./HeaderProfilePicture";
+import { useUser } from "../Context/UserContext";
+import AddMovieButton from "../AddMovieButton";
+import Modal from "../Modal";
 
 const setActive = ({ isActive }) => (isActive ? `active-link ` : ``);
 const Header = () => {
+  const {
+    user: { role },
+  } = useUser();
+
+  console.log(role);
+
   return (
     <header className="sticky top-0 desktop:top-[2rem] h-full z-10">
       <nav className="  bg-movie-fourth h-[3.5rem] md:h-[4.5rem] md:rounded-[0.63rem] grid grid-cols-[auto_1fr_auto] items-center desktop:grid desktop:grid-cols-1 desktop:grid-rows-[auto_1fr_auto] desktop:w-[6rem] desktop:h-[60rem] desktop:rounded-[1.25rem]">
@@ -76,7 +85,10 @@ const Header = () => {
           </section>
         </section>
         <section className=" flex justify-end items-center pr-[0.93rem] pt-[1rem] pb-[1rem] md:pr-[1rem] md:pt-[1.31rem] md:pb-[1.19rem] desktop:pb-[1.7rem] desktop:pl-[1.75rem] desktop:pr-[1.75rem] desktop:self-end">
-          <HeaderProfilePicture />
+          <div className="flex gap-1">
+            {role == "admin" && <AddMovieButton />}
+            <HeaderProfilePicture />
+          </div>
         </section>
       </nav>
     </header>

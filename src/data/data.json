@@ -5,7 +5,10 @@
       "email": "jonas@gmail.com",
       "password": "jonas@gmail.com",
       "role": "user",
-      "bookmarks": ["1", "2"],
+      "bookmarks": [
+        "1",
+        "2"
+      ],
       "ratedMovies": [
         {
           "movieId": 1,
@@ -18,11 +21,14 @@
       ]
     },
     {
-      "id": "ewqeasd",
+      "id": "ewqeasdasd",
       "email": "kestas@gmail.com",
       "password": "@Kestas123",
       "role": "admin",
-      "bookmarks": ["3", "4"],
+      "bookmarks": [
+        "3",
+        "4"
+      ],
       "ratedMovies": [
         {
           "movieId": 1,
@@ -62,7 +68,7 @@
       "category": "Movie",
       "rating": [],
       "ageRating": "PG",
-      "isBookmarked": false,
+      "isBookmarked": true,
       "isTrending": true
     },
     {
@@ -83,7 +89,7 @@
       "category": "Movie",
       "rating": [],
       "ageRating": "PG",
-      "isBookmarked": true,
+      "isBookmarked": false,
       "isTrending": true
     },
     {
