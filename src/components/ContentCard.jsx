@@ -65,25 +65,31 @@ export default function ContentCard({ content }) {
           </button>
         </div>
         {/* Description and Title */}
-        <div className="w-full md:pt-[6px]">
+        <div className="w-full pt-[8px] md:pt-[6px]">
           <p
             className="font-thin text-white flex items-center
-          text-[11px] md:text-body-s desktop:text-body-s"
+          text-[11px] md:text-body-s desktop:text-body-s md:pb-[1px]"
           >
-            <span className="pr-[8px]">{content.year}</span>
-            <span className="pr-[8px]">•</span>
+            <span className="pr-[7px] md:pr-[8px]">{content.year}</span>
+            <span className="pr-[5px] md:pr-[8px]">•</span>
             <img
               src={`src/assets/icon-category-${
                 content.category === "Movie" ? "movie" : "tv"
               }.svg`}
-              className="inline-block w-[13px] h-[13px] mr-[5px]"
+              className="inline-block 
+              w-[10px] h-[10px] md:w-[12px] md:h-[12px]
+               mr-[4px] md:mr-[6px]"
             />
             <span className="pr-[8px]">{content.category}</span>
-            <span className="pr-[8px]">•</span>
+            <span className="pr-[5px] md:pr-[8px]">•</span>
             <span>{content.rating}</span>
           </p>
 
-          <h5 className="text-white text-body-m md:text-heading-xs desktop:text-heading-xs">
+          <h5
+            className="text-white text-body-m md:text-heading-xs 
+          tracking-[-0.4px] md:tracking-[0]
+          desktop:text-heading-xs"
+          >
             {content.title}
           </h5>
         </div>
