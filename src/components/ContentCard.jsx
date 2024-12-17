@@ -1,12 +1,15 @@
 import { updateMovie } from "../helpers/movies/put";
 import { useState } from "react";
+import { useUpdate } from "./Context/UpdateContext";
 export default function ContentCard({ content }) {
   const [isBookmarked, setIsBookmarked] = useState(content.isBookmarked);
+  const { update } = useUpdate();
 
   const handleBookmarkToggle = async () => {
     try {
       await updateMovie(content.id, { isBookmarked: !isBookmarked });
       setIsBookmarked(!isBookmarked);
+      update();
     } catch (error) {
       console.error("Error:", error);
     }
@@ -20,16 +23,21 @@ export default function ContentCard({ content }) {
     <div className="items-center bg-movie-secondary">
       <div className="relative">
         {/* Image */}
-        <div >
+        <div className="group relative">
           <div className="flex">
             <div
-              className="min-w-[10.25rem] min-h-[6.875rem] md:min-w-[13.75rem] md:min-h-[8.75rem] 
-              desktop:min-w-[280px] desktop:min-h-[174px] img-background "
+              className="
+              min-w-[10.25rem] min-h-[6.875rem]
+              md:min-w-[13.75rem] md:min-h-[8.75rem] 
+              desktop:min-w-[280px] desktop:min-h-[174px]
+              img-background overflow-hidden"
             >
+              {/* DESKTOP: 280/174
+                  TABLET: 220/140
+                  PHONE: 164/110 */}
               <img
-                className="block object-contain rounded-[9px] hover:bg-movie-second w-[100%]"
+                className="block object-cover rounded-[8px] hover:bg-movie-second w-full h-full"
                 src={updatedSrc(content.thumbnail.regular.large)}
-                alt=""
               />
             </div>
           </div>
@@ -41,7 +49,7 @@ export default function ContentCard({ content }) {
             </button>
           </div>
         </div>
-        {/* bookmark */}
+        {/* Bookmark */}
         <div className="group">
           <button
             className="absolute top-[8px] right-[8px] md:top-[16px] md:right-[16px] w-8 h-8 bg-movie-secondary bg-opacity-50 rounded-full flex items-center justify-center hover:bg-movie-fifth transition"
@@ -59,22 +67,31 @@ export default function ContentCard({ content }) {
           </button>
         </div>
         {/* Description and Title */}
-        <div className="w-full pt-[5px] ">
-          <p className="font-thin text-white flex items-center text-[11px] desktop:text-body-s pb-[1px]">
-            <span className="pr-[8px]">{content.year}</span>
-            <span className="pr-[8px]">•</span>
+        <div className="w-full pt-[8px] md:pt-[6px]">
+          <p
+            className="font-thin text-white flex items-center
+          text-[11px] md:text-body-s desktop:text-body-s md:pb-[1px]"
+          >
+            <span className="pr-[7px] md:pr-[8px]">{content.year}</span>
+            <span className="pr-[5px] md:pr-[8px]">•</span>
             <img
               src={`src/assets/icon-category-${
                 content.category === "Movie" ? "movie" : "tv"
               }.svg`}
-              className="inline-block w-[13px] h-[13px] mr-[5px]"
+              className="inline-block 
+              w-[10px] h-[10px] md:w-[12px] md:h-[12px]
+               mr-[4px] md:mr-[6px]"
             />
             <span className="pr-[8px]">{content.category}</span>
-            <span className="pr-[8px]">•</span>
+            <span className="pr-[5px] md:pr-[8px]">•</span>
             <span>{content.rating}</span>
           </p>
 
-          <h5 className="text-body-m text-white desktop:text-heading-xs">
+          <h5
+            className="text-white text-body-m md:text-heading-xs 
+          tracking-[-0.4px] md:tracking-[0]
+          desktop:text-heading-xs"
+          >
             {content.title}
           </h5>
         </div>

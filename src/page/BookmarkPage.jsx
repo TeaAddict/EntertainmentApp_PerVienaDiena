@@ -22,7 +22,7 @@ const BookmarkPage = ({ movies }) => {
 
   if (!movies) return <p>Loading data...</p>;
   return (
-    <div className="bg-movie-secondary flex flex-col gap-[1.5rem] md:gap-0">
+    <div className="bg-movie-secondary flex flex-col gap-[1.3rem] md:gap-0">
       <div className="mt-[1.4rem]  md:my-[1.99rem]">
         <SearchBar
           placeholderText="Search for bookmarked shows"
@@ -33,7 +33,14 @@ const BookmarkPage = ({ movies }) => {
       {searchValue.length > 2 ? (
         <FoundSection movies={filteredMovies} searchText={searchValue} />
       ) : (
-        <ContentSection movies={content} heading={"Bookmarked Movies"} />
+        <>
+          <div className=" md:pb-[43px] desktop:pb-[37px]">
+            <ContentSection movies={content} heading={"Bookmarked Movies"} />
+          </div>
+          <div>
+            <ContentSection movies={content} heading={"Bookmarked TV Series"} />
+          </div>
+        </>
       )}
     </div>
   );
