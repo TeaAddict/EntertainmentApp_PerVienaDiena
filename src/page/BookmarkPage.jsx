@@ -1,18 +1,19 @@
-import { useState } from "react";
 import SearchBar from "../components/SearchBar";
 import FoundSection from "../components/FoundSection";
 import ContentSection from "../components/ContentSection";
+import { useSearchParams } from "react-router";
 
 const BookmarkPage = ({ movies }) => {
-  const [searchText, setSearchText] = useState("");
+  const [searchParams, setSearchParams] = useSearchParams();
+  const searchValue = searchParams.get("search") || "";
 
   const content = movies.filter((movie) => movie.isBookmarked);
 
   let filteredMovies = [];
 
-  if (searchText.length > 2) {
-    filteredMovies = content.filter((movie) =>
-      movie.title.toLowerCase().includes(searchText.toLowerCase())
+  if (searchValue.length > 2) {
+    filteredMovies = content?.filter((movie) =>
+      movie.title.toLowerCase().includes(searchValue.toLowerCase())
     );
   }
 
@@ -22,11 +23,12 @@ const BookmarkPage = ({ movies }) => {
       <div className="mt-[1.4rem]  md:my-[1.99rem]">
         <SearchBar
           placeholderText="Search for bookmarked shows"
-          setValue={setSearchText}
+          value={searchValue}
+          setSearchParams={setSearchParams}
         />
       </div>
-      {searchText.length > 2 ? (
-        <FoundSection movies={filteredMovies} searchText={searchText} />
+      {searchValue.length > 2 ? (
+        <FoundSection movies={filteredMovies} searchText={searchValue} />
       ) : (
         <>
           <div className=" md:pb-[43px] desktop:pb-[37px]">

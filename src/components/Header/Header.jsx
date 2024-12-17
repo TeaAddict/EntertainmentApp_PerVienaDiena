@@ -1,4 +1,4 @@
-import { NavLink } from "react-router";
+import { Navigate, NavLink, useNavigate } from "react-router";
 import HeaderProfilePicture from "./HeaderProfilePicture";
 import { useUser } from "../Context/UserContext";
 import AddMovieButton from "../AddMovieButton";
@@ -41,7 +41,7 @@ const Header = () => {
                 />
               </svg>
             </NavLink>
-            <NavLink to="/movies" className={setActive}>
+            <NavLink to="/movies" className={setActive} >
               <svg
                 className="fill-[#5A698F] hover:fill-movie-primary w-[1rem] h-[1rem] md:w-[1.25rem] md:h-[1.25rem]"
                 xmlns="http://www.w3.org/2000/svg"
@@ -69,7 +69,11 @@ const Header = () => {
                 />
               </svg>
             </NavLink>
-            <NavLink to="/bookmarks" className={setActive}>
+            <NavLink
+              to="/bookmarks"
+              onClick={() => navigate("/bookmarks")}
+              className={setActive}
+            >
               <svg
                 className="fill-[#5A698F] hover:fill-movie-primary w-[0.846rem] h-[1rem] md:w-[1.0575rem] md:h-[1.25rem] "
                 xmlns="http://www.w3.org/2000/svg"

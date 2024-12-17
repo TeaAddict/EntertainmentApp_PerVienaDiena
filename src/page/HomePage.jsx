@@ -3,25 +3,23 @@ import SearchBar from "../components/SearchBar";
 import Trending from "../components/Trending";
 import FoundSection from "../components/FoundSection";
 import ContentSection from "../components/ContentSection";
-import { useUser } from "../components/Context/UserContext";
-import { useNavigate } from "react-router";
+import { useSearchParams } from "react-router";
 
 const HomePage = ({ movies }) => {
-  const [searchText, setSearchText] = useState("");
-  const { user } = useUser();
-  const navigate = useNavigate();
+  const [searchParams, setSearchParams] = useSearchParams();
+  const searchValue = searchParams.get("search") || "";
 
-  const trendingMovies = movies.filter((movie) => movie.isTrending);
+  const trendingMovies = movies?.filter((movie) => movie.isTrending);
 
   let filteredMovies = [];
 
-  if (searchText.length > 2) {
-    filteredMovies = movies.filter((movie) =>
-      movie.title.toLowerCase().includes(searchText.toLowerCase())
+  if (searchValue.length > 2) {
+    filteredMovies = movies?.filter((movie) =>
+      movie.title.toLowerCase().includes(searchValue?.toLowerCase())
     );
   }
 
-  if (user.role == "") navigate("/login");
+  // if (user.role == "") navigate("/login");
 
   if (!movies) return <p>Loading data...</p>;
   return (
@@ -29,11 +27,12 @@ const HomePage = ({ movies }) => {
       <div className="mt-[1.5rem] md:my-[2.125rem]">
         <SearchBar
           placeholderText="Search for movies or TV series"
-          setValue={setSearchText}
+          value={searchValue}
+          setSearchParams={setSearchParams}
         />
       </div>
-      {searchText.length > 2 ? (
-        <FoundSection movies={filteredMovies} searchText={searchText} />
+      {searchValue.length > 2 ? (
+        <FoundSection movies={filteredMovies} searchText={searchValue} />
       ) : (
         <div>
           <div className="mb-[22px] md:mb-[2.44rem]">
