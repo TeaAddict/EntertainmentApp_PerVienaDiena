@@ -8,12 +8,11 @@ const HomePage = ({ movies }) => {
   const [searchText, setSearchText] = useState("");
 
   const trendingMovies = movies.filter((movie) => movie.isTrending);
-  const notTrendingMovies = movies.filter((movie) => movie.isTrending == false);
 
   let filteredMovies = [];
 
   if (searchText.length > 2) {
-    filteredMovies = notTrendingMovies.filter((movie) =>
+    filteredMovies = movies.filter((movie) =>
       movie.title.toLowerCase().includes(searchText.toLowerCase())
     );
   }
@@ -21,7 +20,7 @@ const HomePage = ({ movies }) => {
   if (!movies) return <p>Loading data...</p>;
   return (
     <div className="bg-movie-secondary flex flex-col gap-[1.5rem] md:gap-0">
-      <div className="mt-[1.4rem]  md:my-[1.99rem]">
+      <div className="  md:my-[2.125rem]">
         <SearchBar
           placeholderText="Search for movies or TV series"
           setValue={setSearchText}

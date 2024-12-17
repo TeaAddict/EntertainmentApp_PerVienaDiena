@@ -8,7 +8,7 @@ const Trending = ({ data }) => {
 
   return (
     <section className="bg-movie-secondary text-white">
-      <h1 className="text-[1.2rem] mb-[0.7rem] sm:text-[1.91rem] lg:text-[1.91rem] sm:mb-[1.2rem]">
+      <h1 className="md:text-[32px] mb-[0.7rem] sm:text-[1.91rem] lg:text-[1.91rem] sm:mb-[1.2rem]">
         Trending
       </h1>
       <div

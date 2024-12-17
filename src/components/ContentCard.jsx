@@ -1,13 +1,15 @@
 import { updateMovie } from "../helpers/movies/put";
 import { useState } from "react";
-
+import { useUpdate } from "./Context/UpdateContext";
 export default function ContentCard({ content }) {
   const [isBookmarked, setIsBookmarked] = useState(content.isBookmarked);
+  const { update } = useUpdate();
 
   const handleBookmarkToggle = async () => {
     try {
       await updateMovie(content.id, { isBookmarked: !isBookmarked });
       setIsBookmarked(!isBookmarked);
+      update();
     } catch (error) {
       console.error("Error:", error);
     }
