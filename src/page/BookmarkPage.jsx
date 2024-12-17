@@ -16,8 +16,6 @@ const BookmarkPage = ({ movies }) => {
     );
   }
 
-  console.log(filteredMovies);
-
   if (!movies) return <p>Loading data...</p>;
   return (
     <div className="bg-movie-secondary flex flex-col gap-[1.3rem] md:gap-0">

@@ -23,7 +23,6 @@ const RegisterForm = () => {
   const navigate = useNavigate();
 
   const handleFormSubmit = async (data) => {
-    console.log(data);
     try {
       const res = await getUsers();
       const isCorrectEmail = res.some((user) => user.email === data.email);
