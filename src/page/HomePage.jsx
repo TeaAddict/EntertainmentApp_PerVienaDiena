@@ -19,6 +19,8 @@ const HomePage = ({ movies }) => {
     );
   }
 
+  if (user.role == "") navigate("/login");
+
   if (!movies) return <p>Loading data...</p>;
   return (
     <div className="bg-movie-secondary flex flex-col gap-[1.5rem] md:gap-0">

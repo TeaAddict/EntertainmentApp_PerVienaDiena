@@ -23,6 +23,7 @@ const RegisterForm = () => {
   const navigate = useNavigate();
 
   const handleFormSubmit = async (data) => {
+    console.log(data);
     try {
       const res = await getUsers();
       const isCorrectEmail = res.some((user) => user.email === data.email);
@@ -34,7 +35,13 @@ const RegisterForm = () => {
         return;
       }
 
-      await postUser({ email: data.email, password: data.password });
+      await postUser({
+        email: data.email,
+        password: data.password,
+        role: "user",
+        bookmarks: [],
+        ratedMovies: [],
+      });
       navigate("/");
     } catch (error) {
       console.error(error);
