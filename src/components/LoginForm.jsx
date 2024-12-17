@@ -2,6 +2,7 @@ import { useForm } from "react-hook-form";
 import { getUsers } from "../helpers/users/get";
 import { Link, useNavigate } from "react-router";
 import Button from "./Button";
+import Cookies from "js-cookie";
 
 const LoginForm = () => {
   const {
@@ -39,7 +40,8 @@ const LoginForm = () => {
       });
 
       if (isCorrect) {
-        console.log("correct acc");
+        console.log("email", data.email);
+        Cookies.set("email", data.email);
         navigate("/");
       } else console.log("wrong acc");
     } catch (error) {

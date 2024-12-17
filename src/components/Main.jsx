@@ -1,7 +1,13 @@
 import { Outlet } from "react-router";
 import Header from "./Header/Header";
+import Cookies from "js-cookie";
 
 const Main = () => {
+
+  
+  if (Cookies.get("email") == "admin") return <p>is ADMIN!</p>;
+  if (Cookies.get("email") != "user") return <p>is USER!</p>;
+
   return (
     <div className="desktop:flex bg-movie-secondary p-0 md:pl-[1.56rem] md:pt-[1.44rem] md:pr-[1.5rem] desktop:p-[2rem] desktop:gap-[2.25rem]">
       <Header />

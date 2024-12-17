@@ -51,6 +51,7 @@ function App() {
     return <ErrorPage text="Something went wrong..." displayButton={true} />;
   }
 
+
   return (
     <div className="font-outfit min-h-[100vh] bg-movie-secondary">
       <Routes>
