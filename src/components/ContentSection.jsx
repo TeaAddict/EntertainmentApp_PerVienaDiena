@@ -1,8 +1,9 @@
 import ContentCard from "./ContentCard";
 import { v4 as uuidv4 } from "uuid";
+import MovieManipulation from "./MovieManipulation";
+import { useState } from "react";
 
-export default function ContentSection({ movies, heading, filter }) {
-  // Filter the content based on the heading
+export default function ContentSection({ movies, heading }) {
   const filteredMovies = movies.filter((content) => {
     if (heading === "Bookmarked Movies") {
       return content.category === "Movie";
@@ -12,6 +13,7 @@ export default function ContentSection({ movies, heading, filter }) {
       return true;
     }
   });
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
     <div className="bg-movie-secondary">
@@ -29,6 +31,21 @@ export default function ContentSection({ movies, heading, filter }) {
       >
         {heading}
       </h1>
+
+      <div>
+        <button
+          className="bg-movie-third text-white px-4 py-2 rounded"
+          onClick={() => setIsModalOpen(true)}
+        >
+          Add Movie
+        </button>
+        {isModalOpen && (
+          <MovieManipulation
+            heading={"Add"}
+            onClose={() => setIsModalOpen(false)}
+          />
+        )}
+      </div>
 
       <ul
         className="grid grid-cols-2 md:grid-cols-3 desktop:grid-cols-4 

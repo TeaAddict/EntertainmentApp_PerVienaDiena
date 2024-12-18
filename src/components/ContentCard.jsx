@@ -1,8 +1,11 @@
 import { updateMovie } from "../helpers/movies/put";
 import { useState } from "react";
 import { useUpdate } from "./Context/UpdateContext";
+import MovieManipulation from "./MovieManipulation";
+
 export default function ContentCard({ content }) {
   const [isBookmarked, setIsBookmarked] = useState(content.isBookmarked);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const { update } = useUpdate();
 
   const handleBookmarkToggle = async () => {
@@ -37,7 +40,11 @@ export default function ContentCard({ content }) {
                   PHONE: 164/110 */}
               <img
                 className="block object-cover rounded-[8px] hover:bg-movie-second w-full h-full"
-                src={updatedSrc(content.thumbnail.regular.large)}
+                src={
+                  content.thumbnail.regular.large[0] === "."
+                    ? updatedSrc(content.thumbnail.regular.large)
+                    : content.thumbnail.regular.large
+                }
               />
             </div>
           </div>
@@ -94,6 +101,22 @@ export default function ContentCard({ content }) {
           >
             {content.title}
           </h5>
+        </div>
+
+        <div>
+          <button
+            className="bg-movie-third text-white px-4 py-2 rounded"
+            onClick={() => setIsModalOpen(true)}
+          >
+            Edit Movie
+          </button>
+          {isModalOpen && (
+            <MovieManipulation
+              movie={content}
+              heading={"Edit"}
+              onClose={() => setIsModalOpen(false)}
+            />
+          )}
         </div>
       </div>
     </div>

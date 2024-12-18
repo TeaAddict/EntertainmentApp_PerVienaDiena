@@ -3,7 +3,6 @@
     {
       "email": "test@cc.com",
       "password": "@Matas123",
-      "role": "user",
       "id": "6d7e"
     },
     {
@@ -45,7 +44,7 @@
       "year": 2019,
       "category": "Movie",
       "rating": "PG",
-      "isBookmarked": true,
+      "isBookmarked": false,
       "isTrending": true
     },
     {
@@ -85,7 +84,7 @@
       "year": 2019,
       "category": "TV Series",
       "rating": "E",
-      "isBookmarked": true,
+      "isBookmarked": false,
       "isTrending": true
     },
     {
@@ -129,166 +128,6 @@
       "isTrending": true
     },
     {
-      "id": "6",
-      "title": "The Lietuviškas",
-      "thumbnail": {
-        "regular": {
-          "small": "./assets/thumbnails/the-great-lands/regular/small.jpg",
-          "medium": "./assets/thumbnails/the-great-lands/regular/medium.jpg",
-          "large": "./assets/thumbnails/the-great-lands/regular/large.jpg"
-        }
-      },
-      "year": 2019,
-      "category": "Movie",
-      "rating": "E",
-      "isBookmarked": false,
-      "isTrending": false
-    },
-    {
-      "id": "7",
-      "title": "The Diary",
-      "thumbnail": {
-        "regular": {
-          "small": "./assets/thumbnails/the-diary/regular/small.jpg",
-          "medium": "./assets/thumbnails/the-diary/regular/medium.jpg",
-          "large": "./assets/thumbnails/the-diary/regular/large.jpg"
-        }
-      },
-      "year": 2019,
-      "category": "TV Series",
-      "rating": "PG",
-      "isBookmarked": true,
-      "isTrending": false
-    },
-    {
-      "id": "8",
-      "title": "Earth’s Untouched",
-      "thumbnail": {
-        "regular": {
-          "small": "./assets/thumbnails/earths-untouched/regular/small.jpg",
-          "medium": "./assets/thumbnails/earths-untouched/regular/medium.jpg",
-          "large": "./assets/thumbnails/earths-untouched/regular/large.jpg"
-        }
-      },
-      "year": 2017,
-      "category": "Movie",
-      "rating": "18+",
-      "isBookmarked": true,
-      "isTrending": false
-    },
-    {
-      "id": "9",
-      "title": "No Land Beyond",
-      "thumbnail": {
-        "regular": {
-          "small": "./assets/thumbnails/no-land-beyond/regular/small.jpg",
-          "medium": "./assets/thumbnails/no-land-beyond/regular/medium.jpg",
-          "large": "./assets/thumbnails/no-land-beyond/regular/large.jpg"
-        }
-      },
-      "year": 2019,
-      "category": "Movie",
-      "rating": "E",
-      "isBookmarked": false,
-      "isTrending": false
-    },
-    {
-      "id": "10",
-      "title": "During the Hunt",
-      "thumbnail": {
-        "regular": {
-          "small": "./assets/thumbnails/during-the-hunt/regular/small.jpg",
-          "medium": "./assets/thumbnails/during-the-hunt/regular/medium.jpg",
-          "large": "./assets/thumbnails/during-the-hunt/regular/large.jpg"
-        }
-      },
-      "year": 2016,
-      "category": "TV Series",
-      "rating": "PG",
-      "isBookmarked": false,
-      "isTrending": false
-    },
-    {
-      "id": "11",
-      "title": "Autosport the Series",
-      "thumbnail": {
-        "regular": {
-          "small": "./assets/thumbnails/autosport-the-series/regular/small.jpg",
-          "medium": "./assets/thumbnails/autosport-the-series/regular/medium.jpg",
-          "large": "./assets/thumbnails/autosport-the-series/regular/large.jpg"
-        }
-      },
-      "year": 2016,
-      "category": "TV Series",
-      "rating": "18+",
-      "isBookmarked": false,
-      "isTrending": false
-    },
-    {
-      "id": "12",
-      "title": "Same Answer II",
-      "thumbnail": {
-        "regular": {
-          "small": "./assets/thumbnails/same-answer-2/regular/small.jpg",
-          "medium": "./assets/thumbnails/same-answer-2/regular/medium.jpg",
-          "large": "./assets/thumbnails/same-answer-2/regular/large.jpg"
-        }
-      },
-      "year": 2017,
-      "category": "Movie",
-      "rating": "E",
-      "isBookmarked": false,
-      "isTrending": false
-    },
-    {
-      "id": "13",
-      "title": "Below Echo",
-      "thumbnail": {
-        "regular": {
-          "small": "./assets/thumbnails/below-echo/regular/small.jpg",
-          "medium": "./assets/thumbnails/below-echo/regular/medium.jpg",
-          "large": "./assets/thumbnails/below-echo/regular/large.jpg"
-        }
-      },
-      "year": 2016,
-      "category": "TV Series",
-      "rating": "PG",
-      "isBookmarked": false,
-      "isTrending": false
-    },
-    {
-      "id": "14",
-      "title": "The Rockies",
-      "thumbnail": {
-        "regular": {
-          "small": "./assets/thumbnails/the-rockies/regular/small.jpg",
-          "medium": "./assets/thumbnails/the-rockies/regular/medium.jpg",
-          "large": "./assets/thumbnails/the-rockies/regular/large.jpg"
-        }
-      },
-      "year": 2015,
-      "category": "TV Series",
-      "rating": "E",
-      "isBookmarked": false,
-      "isTrending": false
-    },
-    {
-      "id": "15",
-      "title": "Relentless",
-      "thumbnail": {
-        "regular": {
-          "small": "./assets/thumbnails/relentless/regular/small.jpg",
-          "medium": "./assets/thumbnails/relentless/regular/medium.jpg",
-          "large": "./assets/thumbnails/relentless/regular/large.jpg"
-        }
-      },
-      "year": 2017,
-      "category": "Movie",
-      "rating": "PG",
-      "isBookmarked": false,
-      "isTrending": false
-    },
-    {
       "id": "16",
       "title": "Community of Ours",
       "thumbnail": {
@@ -301,7 +140,7 @@
       "year": 2018,
       "category": "TV Series",
       "rating": "18+",
-      "isBookmarked": false,
+      "isBookmarked": true,
       "isTrending": false
     },
     {
@@ -333,7 +172,7 @@
       "year": 2021,
       "category": "Movie",
       "rating": "PG",
-      "isBookmarked": false,
+      "isBookmarked": true,
       "isTrending": false
     },
     {
@@ -349,7 +188,7 @@
       "year": 2017,
       "category": "Movie",
       "rating": "18+",
-      "isBookmarked": false,
+      "isBookmarked": true,
       "isTrending": false
     },
     {
@@ -381,7 +220,7 @@
       "year": 2013,
       "category": "TV Series",
       "rating": "PG",
-      "isBookmarked": false,
+      "isBookmarked": true,
       "isTrending": false
     },
     {
@@ -397,7 +236,7 @@
       "year": 2017,
       "category": "Movie",
       "rating": "E",
-      "isBookmarked": false,
+      "isBookmarked": true,
       "isTrending": false
     },
     {
@@ -429,7 +268,7 @@
       "year": 2016,
       "category": "TV Series",
       "rating": "E",
-      "isBookmarked": false,
+      "isBookmarked": true,
       "isTrending": false
     },
     {
@@ -477,7 +316,7 @@
       "year": 2017,
       "category": "Movie",
       "rating": "18+",
-      "isBookmarked": false,
+      "isBookmarked": true,
       "isTrending": false
     },
     {
@@ -509,8 +348,20 @@
       "year": 2017,
       "category": "Movie",
       "rating": "PG",
-      "isBookmarked": false,
+      "isBookmarked": true,
       "isTrending": false
+    },
+    {
+      "id": "03fa",
+      "title": "DFWF",
+      "category": "Movie",
+      "thumbnail": {
+        "regular": {
+          "large": "./assets/thumbnails/no-land-beyond/regular/large.jpg"
+        }
+      },
+      "year": "553",
+      "rating": "PG"
     }
   ]
 }
