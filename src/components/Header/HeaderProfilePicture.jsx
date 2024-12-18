@@ -1,8 +1,8 @@
-import Modal from "../Modal";
+import SignOutModal from "../SignOutModal";
 import ProfilePictureButton from "./ProfilePictureButton";
 
 const HeaderProfilePicture = () => {
-  return <Modal OpenButton={ProfilePictureButton} />;
+  return <SignOutModal OpenButton={ProfilePictureButton} />;
 };
 
 export default HeaderProfilePicture;

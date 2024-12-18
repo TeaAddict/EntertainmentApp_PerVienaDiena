@@ -42,7 +42,7 @@ const LoginForm = () => {
       });
 
       if (isCorrect) {
-        Cookies.set("id", userId);
+        Cookies.set("id", userId, { expires: 7 });
         navigate("/");
       } else console.log("wrong acc");
     } catch (error) {
