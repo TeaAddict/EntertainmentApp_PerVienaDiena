@@ -7,6 +7,7 @@ import Button from "../Button";
 import { useUpdate } from "../Context/UpdateContext";
 
 const MovieForm = ({ data, onClose, heading }) => {
+  const isTrending = data ? String(data?.isTrending) : "";
   const {
     register,
     handleSubmit,
@@ -15,12 +16,11 @@ const MovieForm = ({ data, onClose, heading }) => {
   } = useForm({
     defaultValues: {
       title: data?.title || "",
-      thumbnail: data?.thumbnail || "",
+      thumbnail: data?.thumbnail.regular.large || "",
       year: data?.year || "",
       category: data?.category || "",
-      rating: data?.rating || "",
       ageRating: data?.ageRating || "",
-      isTrending: data?.isTrending || "",
+      isTrending: isTrending || "",
     },
   });
   const { update } = useUpdate(); // <-- Add this
@@ -45,7 +45,7 @@ const MovieForm = ({ data, onClose, heading }) => {
         thumbnail: { regular: { large: formData.thumbnail } },
         year: formData.year,
         category: formData.category,
-        rating: [],
+        rating: data.rating || [],
         ageRating: formData.rating,
         isTrending: formData.isTrending == "true",
       };
@@ -169,18 +169,17 @@ const MovieForm = ({ data, onClose, heading }) => {
           {/* RATING */}
           <div
             className={`flex border-b-[1px] ${
-              errors.rating ? "border-movie-primary" : "border-movie-third"
+              errors.ageRating ? "border-movie-primary" : "border-movie-third"
             } has-[:focus]:border-movie-fifth`}
           >
             <input
-              type="number"
-              {...register("rating", { required: "Rating is required" })}
+              {...register("ageRating", { required: "Age rating is required" })}
               className="caret-movie-primary text-movie-fifth focus:ring-0 w-full font-medium text-body-m bg-transparent border-none pb-[1.06rem] pt-0 pl-[1rem] leading-[19px]"
-              placeholder="Rating"
+              placeholder="Age rating"
             />
-            {errors.rating && (
+            {errors.ageRating && (
               <p className="text-movie-primary text-nowrap">
-                {errors.rating.message}
+                {errors.ageRating.message}
               </p>
             )}
           </div>
@@ -215,10 +214,8 @@ const MovieForm = ({ data, onClose, heading }) => {
 
         <div className="flex justify-center mt-5">
           <div className="flex flex-row gap-5">
-            <Button type="submit">
-              {heading === "Edit" ? "Submit" : "Add"}
-            </Button>
-            {heading === "Edit" && (
+            <Button type="submit">{data ? "Submit" : "Add"}</Button>
+            {data && (
               <Button styleType="delete" onClick={handleDelete}>
                 Delete
               </Button>

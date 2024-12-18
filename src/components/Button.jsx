@@ -8,7 +8,7 @@ const Button = ({
     <button
       type={type}
       onClick={onClick}
-      className={`text-movie-fifth hover:text-movie-secondary text-body-m font-medium mt-[2.5rem] mb-[1.5rem] ${
+      className={`text-movie-fifth hover:text-movie-secondary text-body-m font-medium w-full text-nowrap ${
         styleType == "primary"
           ? "bg-movie-primary"
           : styleType == "secondary"

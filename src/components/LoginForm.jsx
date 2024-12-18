@@ -127,7 +127,9 @@ const LoginForm = () => {
           </p>
         )}
 
-        <Button type="submit">Login to your account</Button>
+        <div className="mt-[2.5rem] mb-[1.5rem]">
+          <Button type="submit">Login to your account</Button>
+        </div>
 
         <div className="flex justify-center gap-[8px]">
           <span className="text-movie-fifth text-body-m font-medium leading-[19px]">
