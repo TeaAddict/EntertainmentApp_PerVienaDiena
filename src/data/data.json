@@ -5,17 +5,7 @@
       "email": "user",
       "password": "user",
       "role": "user",
-      "bookmarks": [
-        "9",
-        "7",
-        "8",
-        "10",
-        "11",
-        "14",
-        "13",
-        "12",
-        "2"
-      ],
+      "bookmarks": ["9", "7", "8", "10", "11", "14", "13", "12", "2"],
       "ratedMovies": [
         {
           "movieId": 1,
@@ -32,10 +22,7 @@
       "email": "admin",
       "password": "admin",
       "role": "admin",
-      "bookmarks": [
-        "",
-        "10"
-      ],
+      "bookmarks": ["", "10"],
       "ratedMovies": [
         {
           "movieId": 1,
@@ -541,6 +528,18 @@
       "rating": [],
       "ageRating": "PG",
       "isTrending": false
+    },
+    {
+      "id": "03fa",
+      "title": "DFWF",
+      "category": "Movie",
+      "thumbnail": {
+        "regular": {
+          "large": "./assets/thumbnails/no-land-beyond/regular/large.jpg"
+        }
+      },
+      "year": "553",
+      "rating": "PG"
     }
   ]
 }

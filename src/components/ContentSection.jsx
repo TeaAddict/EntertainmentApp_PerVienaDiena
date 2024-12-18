@@ -2,7 +2,6 @@ import ContentCard from "./ContentCard";
 import { v4 as uuidv4 } from "uuid";
 
 export default function ContentSection({ movies, heading }) {
-  // Filter the content based on the heading
   const filteredMovies = movies.filter((content) => {
     if (heading === "Bookmarked Movies") {
       return content.category === "Movie";

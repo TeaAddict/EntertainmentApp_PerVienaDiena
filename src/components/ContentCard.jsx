@@ -3,6 +3,7 @@ import { useUpdate } from "./Context/UpdateContext";
 import { updateUser } from "../helpers/users/post";
 import { useUser } from "./Context/UserContext";
 import addRemoveFromArray from "../helpers/functions/addRemoveFromArray";
+
 export default function ContentCard({ content }) {
   const [isBookmarked, setIsBookmarked] = useState(false);
   const { update } = useUpdate();
@@ -48,7 +49,11 @@ export default function ContentCard({ content }) {
                   PHONE: 164/110 */}
               <img
                 className="block object-cover rounded-[8px] hover:bg-movie-second w-full h-full"
-                src={updatedSrc(content.thumbnail.regular.large)}
+                src={
+                  content.thumbnail.regular.large[0] === "."
+                    ? updatedSrc(content.thumbnail.regular.large)
+                    : content.thumbnail.regular.large
+                }
               />
             </div>
           </div>
@@ -78,7 +83,7 @@ export default function ContentCard({ content }) {
           </button>
         </div>
         {/* Description and Title */}
-        <div className="w-full pt-[8px] md:pt-[6px]">
+        <div className="w-full pt-[8px] md:pt-[6px] bg-red-500">
           <p
             className="font-thin text-white flex items-center
           text-[11px] md:text-body-s desktop:text-body-s md:pb-[1px]"
