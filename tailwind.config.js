@@ -15,6 +15,7 @@ export default {
         "movie-third": "#5A698F",
         "movie-fourth": "#161D2F",
         "movie-fifth": "#FFFFFF",
+        
       },
       fontFamily: {
         outfit: ["Outfit", "sans-serif"], // Define the Outfit font family
@@ -34,5 +35,6 @@ export default {
       },
     },
   },
+  
   plugins: [form],
 };

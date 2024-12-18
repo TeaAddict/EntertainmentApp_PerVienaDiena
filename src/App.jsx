@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router";
 import "./App.css";
-import Homepage from "./page/Homepage";
+import Homepage from "./page/HomePage";
 import RegisterPage from "./page/RegisterPage";
 import LoginPage from "./page/LoginPage";
 import TvSeriesPage from "./page/TvSeriesPage";
@@ -11,7 +11,7 @@ import Header from  "./components/Header";
 function App() {
   return (
     <div className="font-outfit">
-      <Header/>
+      
       <Routes>
         <Route path="/" element={<Homepage />} />
         <Route path="/register" element={<RegisterPage />} />
