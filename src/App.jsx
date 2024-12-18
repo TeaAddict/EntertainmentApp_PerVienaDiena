@@ -52,6 +52,7 @@ function App() {
     return <ErrorPage text="Something went wrong..." displayButton={true} />;
   }
 
+  console.log("RERENDERED");
   return (
     <div className="font-outfit min-h-[100vh] bg-movie-secondary">
       <UserProvider>

@@ -3,6 +3,7 @@ import { getUsers } from "../helpers/users/get";
 import { Link, useNavigate } from "react-router";
 import Button from "./Button";
 import Cookies from "js-cookie";
+import { useUser } from "./Context/UserContext";
 
 const LoginForm = () => {
   const {
@@ -18,6 +19,7 @@ const LoginForm = () => {
     },
   });
   const navigate = useNavigate();
+  const { refetchUser } = useUser();
 
   const handleFormSubmit = async (data) => {
     try {
@@ -43,6 +45,7 @@ const LoginForm = () => {
 
       if (isCorrect) {
         Cookies.set("id", userId, { expires: 7 });
+        refetchUser();
         navigate("/");
       } else console.log("wrong acc");
     } catch (error) {

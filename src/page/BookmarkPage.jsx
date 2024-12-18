@@ -2,12 +2,15 @@ import SearchBar from "../components/SearchBar";
 import FoundSection from "../components/FoundSection";
 import ContentSection from "../components/ContentSection";
 import { useSearchParams } from "react-router";
+import { useUser } from "../components/Context/UserContext";
 
 const BookmarkPage = ({ movies }) => {
   const [searchParams, setSearchParams] = useSearchParams();
   const searchValue = searchParams.get("search") || "";
+  const { user } = useUser();
 
-  const content = movies.filter((movie) => movie.isBookmarked);
+  if (!movies || Object.keys(user).length == 0) return <p>Loading data...</p>;
+  const content = movies.filter((movie) => user.bookmarks.includes(movie.id));
 
   let filteredMovies = [];
 
@@ -17,7 +20,6 @@ const BookmarkPage = ({ movies }) => {
     );
   }
 
-  if (!movies) return <p>Loading data...</p>;
   return (
     <div className="bg-movie-secondary flex flex-col gap-[1.3rem] md:gap-0">
       <div className="mt-[1.4rem]  md:my-[1.99rem]">

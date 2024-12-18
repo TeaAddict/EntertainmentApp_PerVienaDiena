@@ -1,14 +1,19 @@
-import { useState } from "react";
-import { updateMovie } from "../helpers/movies/put.js";
+import { useEffect, useState } from "react";
 import { useUpdate } from "./Context/UpdateContext.jsx";
+import { useUser } from "./Context/UserContext.jsx";
+import addRemoveFromArray from "../helpers/functions/addRemoveFromArray.js";
+import { updateUser } from "../helpers/users/post.js";
 
 export default function TrendingCard({ content }) {
   const [isBookmarked, setIsBookmarked] = useState(content.isBookmarked);
   const { update } = useUpdate();
+  const { user, setUser } = useUser();
 
   const handleBookmarkToggle = async () => {
     try {
-      await updateMovie(content.id, { isBookmarked: !isBookmarked });
+      const newBookmarkIds = addRemoveFromArray(user.bookmarks, content.id);
+      setUser({ ...user, bookmarks: newBookmarkIds });
+      await updateUser(user.id, { bookmarks: newBookmarkIds });
       setIsBookmarked(!isBookmarked);
       update();
     } catch (error) {
@@ -27,6 +32,11 @@ export default function TrendingCard({ content }) {
       />
     );
   };
+
+  useEffect(() => {
+    if (user) setIsBookmarked(user?.bookmarks?.includes(content.id));
+  }, [user]);
+
   return (
     <div className="relative">
       <div className="group relative">

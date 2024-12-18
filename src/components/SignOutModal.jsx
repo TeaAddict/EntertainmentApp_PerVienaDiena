@@ -1,14 +1,20 @@
 import { useNavigate } from "react-router";
 import Button from "./Button";
 import Cookies from "js-cookie";
+import { useUpdate } from "./Context/UpdateContext";
+import { useUser } from "./Context/UserContext";
 
 const SignOutModal = ({ OpenButton }) => {
   const navigate = useNavigate();
+  const { update } = useUpdate();
+  const { refetchUser } = useUser();
 
   const handleSignOut = () => {
     document.getElementById("signOutModal").close();
     navigate("/login");
     Cookies.remove("id");
+    refetchUser();
+    update();
   };
 
   return (
