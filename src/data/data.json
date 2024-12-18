@@ -167,7 +167,7 @@
       },
       "year": 2019,
       "category": "Movie",
-      "rating": [],
+      "rating": 3,
       "ageRating": "E",
       "isBookmarked": false,
       "isTrending": false

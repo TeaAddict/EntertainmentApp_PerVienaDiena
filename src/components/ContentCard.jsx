@@ -1,12 +1,15 @@
 import { updateMovie } from "../helpers/movies/put";
+import { updateUser } from "../helpers/users/post";
 import { useState } from "react";
 import { useUpdate } from "./Context/UpdateContext";
+import { useUser } from "./Context/UserContext";
 import Rating from "./Rating";
 
 export default function ContentCard({ content }) {
   const [isBookmarked, setIsBookmarked] = useState(content.isBookmarked);
   const [rating, setRating] = useState(content.rating);
   const { update } = useUpdate();
+  const { user, } = useUser();
 
   
   const handleBookmarkToggle = async () => {
@@ -23,7 +26,6 @@ export default function ContentCard({ content }) {
     try {
       await updateMovie(content.id, { rating: newRating });
       setRating(newRating);
-      update();
     } catch (error) {
       console.error("Error updating rating:", error);
     }
