@@ -127,7 +127,7 @@ const LoginForm = () => {
           </p>
         )}
 
-        <Button>Login to your account</Button>
+        <Button type="submit">Login to your account</Button>
 
         <div className="flex justify-center gap-[8px]">
           <span className="text-movie-fifth text-body-m font-medium leading-[19px]">

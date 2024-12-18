@@ -83,7 +83,7 @@ export default function ContentCard({ content }) {
           </button>
         </div>
         {/* Description and Title */}
-        <div className="w-full pt-[8px] md:pt-[6px] bg-red-500">
+        <div className="w-full pt-[8px] md:pt-[6px]">
           <p
             className="font-thin text-white flex items-center
           text-[11px] md:text-body-s desktop:text-body-s md:pb-[1px]"

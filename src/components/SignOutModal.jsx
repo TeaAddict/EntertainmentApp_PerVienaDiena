@@ -32,7 +32,7 @@ const SignOutModal = ({ OpenButton }) => {
           <section className="flex flex-row gap-5">
             <Button onClick={handleSignOut}>Sign Out</Button>
             <Button
-              type="secondary"
+              styleType="secondary"
               onClick={() => document.getElementById("signOutModal").close()}
             >
               Close
