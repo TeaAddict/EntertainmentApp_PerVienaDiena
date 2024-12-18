@@ -5,13 +5,11 @@ import { useEffect } from "react";
 
 const Main = () => {
   const navigate = useNavigate();
-  const { user } = useUser();
-
-  console.log(user.role);
+  const { user, isLoading } = useUser();
 
   useEffect(() => {
-    // if (Object.keys(user).length != 0 && user?.role == "") navigate("/login");
-  }, [user?.role, navigate]);
+    if (!isLoading && user?.role == "") navigate("/login");
+  }, [user?.role, navigate, isLoading]);
 
   return (
     <div className="desktop:flex bg-movie-secondary p-0 md:pl-[1.56rem] md:pt-[1.44rem] md:pr-[1.5rem] desktop:p-[2rem] desktop:gap-[2.25rem]">

@@ -11,16 +11,20 @@ export const UserProvider = ({ children }) => {
   const [user, setUser] = useState({});
   const userId = Cookies.get("id");
   const [updateCount, setUpdateCount] = useState(0);
+  const [isLoading, setIsLoading] = useState(true);
 
   const refetchUser = () => setUpdateCount(updateCount + 1);
 
   const getUserFromDb = async () => {
     try {
+      setIsLoading(true);
       if (!userId) {
+        setIsLoading(false);
         return setUser({ role: "" });
       }
       const userData = await getUser(userId);
       setUser(userData);
+      setIsLoading(false);
     } catch (error) {
       console.error(error);
     }
@@ -31,7 +35,9 @@ export const UserProvider = ({ children }) => {
   }, [updateCount]);
 
   return (
-    <UserContext.Provider value={{ user, setUser, refetchUser }}>
+    <UserContext.Provider
+      value={{ user, setUser, refetchUser, isLoading, setIsLoading }}
+    >
       {children}
     </UserContext.Provider>
   );
