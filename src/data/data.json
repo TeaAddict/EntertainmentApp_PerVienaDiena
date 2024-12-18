@@ -5,7 +5,10 @@
       "email": "user",
       "password": "user",
       "role": "user",
-      "bookmarks": ["9", "7", "8", "10", "11", "14", "13", "12", "2"],
+      "bookmarks": [
+        "14",
+        "7"
+      ],
       "ratedMovies": [
         {
           "movieId": 1,
@@ -22,7 +25,12 @@
       "email": "admin",
       "password": "admin",
       "role": "admin",
-      "bookmarks": ["", "10"],
+      "bookmarks": [
+        "",
+        "10",
+        "1",
+        "6"
+      ],
       "ratedMovies": [
         {
           "movieId": 1,
@@ -44,27 +52,6 @@
     }
   ],
   "movies": [
-    {
-      "id": "1",
-      "title": "Beyond Earth",
-      "thumbnail": {
-        "trending": {
-          "small": "./assets/thumbnails/beyond-earth/trending/small.jpg",
-          "large": "./assets/thumbnails/beyond-earth/trending/large.jpg"
-        },
-        "regular": {
-          "small": "./assets/thumbnails/beyond-earth/regular/small.jpg",
-          "medium": "./assets/thumbnails/beyond-earth/regular/medium.jpg",
-          "large": "./assets/thumbnails/beyond-earth/regular/large.jpg"
-        }
-      },
-      "year": 2019,
-      "category": "Movie",
-      "rating": [],
-      "ageRating": "PG",
-      "isTrending": true,
-      "isBookmarked": false
-    },
     {
       "id": "2",
       "title": "Bottom Gear",

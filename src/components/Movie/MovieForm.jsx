@@ -12,6 +12,7 @@ const MovieForm = ({ data, onClose, heading }) => {
     register,
     handleSubmit,
     // setValue,
+    reset,
     formState: { errors },
   } = useForm({
     defaultValues: {
@@ -45,8 +46,8 @@ const MovieForm = ({ data, onClose, heading }) => {
         thumbnail: { regular: { large: formData.thumbnail } },
         year: formData.year,
         category: formData.category,
-        rating: data.rating || [],
-        ageRating: formData.rating,
+        rating: data?.rating || [],
+        ageRating: formData.ageRating,
         isTrending: formData.isTrending == "true",
       };
 
@@ -62,6 +63,7 @@ const MovieForm = ({ data, onClose, heading }) => {
 
       update();
       if (onClose) onClose();
+      reset();
     } catch (error) {
       console.error("Failed to submit movie:", error);
     }
@@ -216,7 +218,7 @@ const MovieForm = ({ data, onClose, heading }) => {
           <div className="flex flex-row gap-5">
             <Button type="submit">{data ? "Submit" : "Add"}</Button>
             {data && (
-              <Button styleType="delete" onClick={handleDelete}>
+              <Button styleType="primary" onClick={handleDelete}>
                 Delete
               </Button>
             )}
