@@ -1,20 +1,22 @@
-import { updateMovie } from "../helpers/movies/put";
-import { updateUser } from "../helpers/users/post";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useUpdate } from "./Context/UpdateContext";
+import { updateUser } from "../helpers/users/post";
 import { useUser } from "./Context/UserContext";
+import { updateMovie } from "../helpers/movies/put";
 import Rating from "./Rating";
-
+import addRemoveFromArray from "../helpers/functions/addRemoveFromArray";
 export default function ContentCard({ content }) {
-  const [isBookmarked, setIsBookmarked] = useState(content.isBookmarked);
+  const [isBookmarked, setIsBookmarked] = useState(false);
   const [rating, setRating] = useState(content.rating);
   const { update } = useUpdate();
-  const { user, } = useUser();
+  const { user, setUser } = useUser();
 
   
   const handleBookmarkToggle = async () => {
     try {
-      await updateMovie(content.id, { isBookmarked: !isBookmarked });
+      const newBookmarkIds = addRemoveFromArray(user.bookmarks, content.id);
+      setUser({ ...user, bookmarks: newBookmarkIds });
+      await updateUser(user.id, { bookmarks: newBookmarkIds });
       setIsBookmarked(!isBookmarked);
       update();
     } catch (error) {
@@ -30,6 +32,11 @@ export default function ContentCard({ content }) {
       console.error("Error updating rating:", error);
     }
   };
+  useEffect(() => {
+    if (user) setIsBookmarked(user?.bookmarks?.includes(content.id));
+  }, [user]);
+
+  if (Object.keys(user).length == 0) return <p>Loading...</p>;
 
   const updatedSrc = (imgString) => {
     return `src/${imgString.substring(1)}`;

@@ -10,6 +10,9 @@ const UserContext = createContext();
 export const UserProvider = ({ children }) => {
   const [user, setUser] = useState({});
   const userId = Cookies.get("id");
+  const [updateCount, setUpdateCount] = useState(0);
+
+  const refetchUser = () => setUpdateCount(updateCount + 1);
 
   const getUserFromDb = async () => {
     try {
@@ -25,10 +28,12 @@ export const UserProvider = ({ children }) => {
 
   useEffect(() => {
     getUserFromDb();
-  }, []);
+  }, [updateCount]);
 
   return (
-    <UserContext.Provider value={{ user }}>{children}</UserContext.Provider>
+    <UserContext.Provider value={{ user, setUser, refetchUser }}>
+      {children}
+    </UserContext.Provider>
   );
 };
 
