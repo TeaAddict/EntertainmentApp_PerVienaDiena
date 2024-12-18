@@ -1,10 +1,14 @@
 import { updateMovie } from "../helpers/movies/put";
 import { useState } from "react";
 import { useUpdate } from "./Context/UpdateContext";
+import Rating from "./Rating";
+
 export default function ContentCard({ content }) {
   const [isBookmarked, setIsBookmarked] = useState(content.isBookmarked);
+  const [rating, setRating] = useState(content.rating);
   const { update } = useUpdate();
 
+  
   const handleBookmarkToggle = async () => {
     try {
       await updateMovie(content.id, { isBookmarked: !isBookmarked });
@@ -12,6 +16,16 @@ export default function ContentCard({ content }) {
       update();
     } catch (error) {
       console.error("Error:", error);
+    }
+  };
+
+  const handleRatingUpdate = async (newRating) => {
+    try {
+      await updateMovie(content.id, { rating: newRating });
+      setRating(newRating);
+      update();
+    } catch (error) {
+      console.error("Error updating rating:", error);
     }
   };
 
@@ -32,9 +46,6 @@ export default function ContentCard({ content }) {
               desktop:min-w-[280px] desktop:min-h-[174px]
               img-background overflow-hidden"
             >
-              {/* DESKTOP: 280/174
-                  TABLET: 220/140
-                  PHONE: 164/110 */}
               <img
                 className="block object-cover rounded-[8px] hover:bg-movie-second w-full h-full"
                 src={updatedSrc(content.thumbnail.regular.large)}
@@ -84,7 +95,9 @@ export default function ContentCard({ content }) {
             />
             <span className="pr-[8px]">{content.category}</span>
             <span className="pr-[5px] md:pr-[8px]">•</span>
-            <span>{content.rating}</span>
+            <span>
+              <Rating rating={rating} setRating={handleRatingUpdate} />
+            </span>
           </p>
 
           <h5
