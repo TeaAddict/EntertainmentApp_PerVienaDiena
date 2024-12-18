@@ -1,4 +1,3 @@
-import { useState } from "react";
 import SearchBar from "../components/SearchBar";
 import Trending from "../components/Trending";
 import FoundSection from "../components/FoundSection";
@@ -18,8 +17,6 @@ const HomePage = ({ movies }) => {
       movie.title.toLowerCase().includes(searchValue?.toLowerCase())
     );
   }
-
-  // if (user.role == "") navigate("/login");
 
   if (!movies) return <p>Loading data...</p>;
   return (
