@@ -68,7 +68,7 @@
       "category": "Movie",
       "rating": [],
       "ageRating": "PG",
-      "isBookmarked": true,
+      "isBookmarked": false,
       "isTrending": true
     },
     {
