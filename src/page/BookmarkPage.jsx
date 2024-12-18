@@ -19,7 +19,7 @@ const BookmarkPage = ({ movies }) => {
       movie.title.toLowerCase().includes(searchValue.toLowerCase())
     );
   }
-
+  if (content.length === 0 ) return <p className="text-[1.2rem] mb-[1.3rem] md:text-[1.91rem] md:mb-[1.2rem] desktop:mb-[1.8rem] text-movie-fifth flex items-center justify-center h-[100%]">No Bookmarked Movies</p>;
   return (
     <div className="bg-movie-secondary flex flex-col gap-[1.3rem] md:gap-0">
       <div className="mt-[1.4rem]  md:my-[1.99rem]">

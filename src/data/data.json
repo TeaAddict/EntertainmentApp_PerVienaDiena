@@ -1,11 +1,11 @@
 {
   "users": [
     {
-      "id": "usrId",
+      "id": "ewqeasd",
       "email": "user",
       "password": "user",
       "role": "user",
-      "bookmarks": ["9", "7", "8", "10", "11", "14", "13", "12", "2"],
+      "bookmarks": [],
       "ratedMovies": [
         {
           "movieId": 1,
@@ -18,11 +18,14 @@
       ]
     },
     {
-      "id": "admId",
+      "id": "ewqeasdasd",
       "email": "admin",
       "password": "admin",
       "role": "admin",
-      "bookmarks": ["", "10"],
+      "bookmarks": [
+        "3",
+        "4"
+      ],
       "ratedMovies": [
         {
           "movieId": 1,
@@ -62,8 +65,8 @@
       "category": "Movie",
       "rating": [],
       "ageRating": "PG",
-      "isTrending": true,
-      "isBookmarked": false
+      "isBookmarked": false,
+      "isTrending": true
     },
     {
       "id": "2",
@@ -83,6 +86,7 @@
       "category": "Movie",
       "rating": [],
       "ageRating": "PG",
+      "isBookmarked": false,
       "isTrending": true
     },
     {
@@ -103,6 +107,7 @@
       "category": "TV Series",
       "rating": [],
       "ageRating": "E",
+      "isBookmarked": false,
       "isTrending": true
     },
     {
@@ -123,6 +128,7 @@
       "category": "Movie",
       "rating": [],
       "ageRating": "18+",
+      "isBookmarked": false,
       "isTrending": true
     },
     {
@@ -143,6 +149,7 @@
       "category": "TV Series",
       "rating": [],
       "ageRating": "PG",
+      "isBookmarked": false,
       "isTrending": true
     },
     {
@@ -159,6 +166,7 @@
       "category": "Movie",
       "rating": [],
       "ageRating": "E",
+      "isBookmarked": false,
       "isTrending": false
     },
     {
@@ -175,6 +183,7 @@
       "category": "TV Series",
       "rating": [],
       "ageRating": "PG",
+      "isBookmarked": false,
       "isTrending": false
     },
     {
@@ -191,6 +200,7 @@
       "category": "Movie",
       "rating": [],
       "ageRating": "18+",
+      "isBookmarked": false,
       "isTrending": false
     },
     {
@@ -207,6 +217,7 @@
       "category": "Movie",
       "rating": [],
       "ageRating": "E",
+      "isBookmarked": false,
       "isTrending": false
     },
     {
@@ -223,6 +234,7 @@
       "category": "TV Series",
       "rating": [],
       "ageRating": "PG",
+      "isBookmarked": false,
       "isTrending": false
     },
     {
@@ -239,6 +251,7 @@
       "category": "TV Series",
       "rating": [],
       "ageRating": "18+",
+      "isBookmarked": false,
       "isTrending": false
     },
     {
@@ -255,6 +268,7 @@
       "category": "Movie",
       "rating": [],
       "ageRating": "E",
+      "isBookmarked": false,
       "isTrending": false
     },
     {
@@ -271,6 +285,7 @@
       "category": "TV Series",
       "rating": [],
       "ageRating": "PG",
+      "isBookmarked": false,
       "isTrending": false
     },
     {
@@ -287,6 +302,7 @@
       "category": "TV Series",
       "rating": [],
       "ageRating": "E",
+      "isBookmarked": false,
       "isTrending": false
     },
     {
@@ -303,6 +319,7 @@
       "category": "Movie",
       "rating": [],
       "ageRating": "PG",
+      "isBookmarked": false,
       "isTrending": false
     },
     {
@@ -319,6 +336,7 @@
       "category": "TV Series",
       "rating": [],
       "ageRating": "18+",
+      "isBookmarked": false,
       "isTrending": false
     },
     {
@@ -335,6 +353,7 @@
       "category": "Movie",
       "rating": [],
       "ageRating": "PG",
+      "isBookmarked": false,
       "isTrending": false
     },
     {
@@ -351,6 +370,7 @@
       "category": "Movie",
       "rating": [],
       "ageRating": "PG",
+      "isBookmarked": false,
       "isTrending": false
     },
     {
@@ -367,6 +387,7 @@
       "category": "Movie",
       "rating": [],
       "ageRating": "18+",
+      "isBookmarked": false,
       "isTrending": false
     },
     {
@@ -383,6 +404,7 @@
       "category": "Movie",
       "rating": [],
       "ageRating": "E",
+      "isBookmarked": false,
       "isTrending": false
     },
     {
@@ -399,6 +421,7 @@
       "category": "TV Series",
       "rating": [],
       "ageRating": "PG",
+      "isBookmarked": false,
       "isTrending": false
     },
     {
@@ -415,6 +438,7 @@
       "category": "Movie",
       "rating": [],
       "ageRating": "E",
+      "isBookmarked": false,
       "isTrending": false
     },
     {
@@ -431,6 +455,7 @@
       "category": "TV Series",
       "rating": [],
       "ageRating": "PG",
+      "isBookmarked": false,
       "isTrending": false
     },
     {
@@ -447,6 +472,7 @@
       "category": "TV Series",
       "rating": [],
       "ageRating": "E",
+      "isBookmarked": false,
       "isTrending": false
     },
     {
@@ -463,6 +489,7 @@
       "category": "TV Series",
       "rating": [],
       "ageRating": "PG",
+      "isBookmarked": false,
       "isTrending": false
     },
     {
@@ -479,6 +506,7 @@
       "category": "TV Series",
       "rating": [],
       "ageRating": "PG",
+      "isBookmarked": false,
       "isTrending": false
     },
     {
@@ -495,6 +523,7 @@
       "category": "Movie",
       "rating": [],
       "ageRating": "18+",
+      "isBookmarked": false,
       "isTrending": false
     },
     {
@@ -511,6 +540,7 @@
       "category": "TV Series",
       "rating": [],
       "ageRating": "18+",
+      "isBookmarked": false,
       "isTrending": false
     },
     {
@@ -527,19 +557,8 @@
       "category": "Movie",
       "rating": [],
       "ageRating": "PG",
+      "isBookmarked": false,
       "isTrending": false
-    },
-    {
-      "id": "03fa",
-      "title": "DFWF",
-      "category": "Movie",
-      "thumbnail": {
-        "regular": {
-          "large": "./assets/thumbnails/no-land-beyond/regular/large.jpg"
-        }
-      },
-      "year": "553",
-      "rating": "PG"
     }
   ]
 }
