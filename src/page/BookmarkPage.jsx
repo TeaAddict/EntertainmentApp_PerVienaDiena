@@ -34,7 +34,7 @@ const BookmarkPage = ({ movies }) => {
       ) : (
         <>
           <div className=" md:pb-[43px] desktop:pb-[37px]">
-            <ContentSection movies={content} heading={"Bookmarked Movies"} />
+            <ContentSection movies={content}  heading={"Bookmarked Movies"} />
           </div>
           <div>
             <ContentSection movies={content} heading={"Bookmarked TV Series"} />

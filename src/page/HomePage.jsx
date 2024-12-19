@@ -21,7 +21,7 @@ const HomePage = ({ movies }) => {
   if (!movies) return <p>Loading data...</p>;
   return (
     <div className="bg-movie-secondary flex flex-col gap-[1.5rem] md:gap-0">
-      <div className="mt-[1.5rem] md:my-[2.125rem]">
+      <div className="mt-[1.5rem] md:my-[2.125rem] ml-[1rem] md:ml-[1.56rem] desktop:mt-[4.06rem] desktop:ml-0 ">
         <SearchBar
           placeholderText="Search for movies or TV series"
           value={searchValue}
@@ -32,10 +32,12 @@ const HomePage = ({ movies }) => {
         <FoundSection movies={filteredMovies} searchText={searchValue} />
       ) : (
         <div>
-          <div className="mb-[22px] md:mb-[2.44rem]">
+          <div className="ml-[1rem] md:ml-[1.56rem] desktop:ml-0  ">
             <Trending data={trendingMovies} />
           </div>
-          <ContentSection movies={movies} heading={"Recommended for you"} />
+          <div className=" mr-[1rem] ml-[1rem] mt-[1.4rem] md:ml-[1.56rem] md:mr-[1.5rem] md:mt-[2.38rem] desktop:ml-0 desktop:mr-[2.25rem] desktop:mt-[2.5rem] ">
+            <ContentSection movies={movies} heading={"Recommended for you"} />
+          </div>
         </div>
       )}
     </div>

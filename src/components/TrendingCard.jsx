@@ -38,7 +38,7 @@ export default function TrendingCard({ content }) {
   }, [user]);
 
   return (
-    <div className="relative">
+    <div>
       <div className="group relative">
         <picture>
           <source
