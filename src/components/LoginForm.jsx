@@ -24,22 +24,13 @@ const LoginForm = () => {
   const handleFormSubmit = async (data) => {
     try {
       const res = await getUsers();
-      let userId;
+      let userId = null;
 
       const isCorrect = res.some((user) => {
-        if (user.email == data.email) {
-          clearErrors("email");
-
-          if (user.password == data.password) {
-            clearErrors("password");
-            userId = user.id;
-            return true;
-          }
+        if (user.email === data.email && user.password === data.password) {
+          userId = user.id;
+          return true;
         }
-        setError("general", {
-          type: "custom",
-          message: "Incorrect credentials",
-        });
         return false;
       });
 
@@ -47,7 +38,12 @@ const LoginForm = () => {
         Cookies.set("id", userId, { expires: 7 });
         refetchUser();
         navigate("/");
-      } else console.log("wrong acc");
+      } else {
+        setError("general", {
+          type: "custom",
+          message: "Incorrect credentials",
+        });
+      }
     } catch (error) {
       console.error(error);
     }
