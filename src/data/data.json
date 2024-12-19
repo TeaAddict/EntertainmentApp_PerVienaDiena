@@ -1,29 +1,91 @@
 {
   "users": [
     {
-      "email": "test@cc.com",
-      "password": "@Matas123",
-      "id": "6d7e"
+      "id": "ewqeasd",
+      "email": "user",
+      "password": "user",
+      "role": "user",
+      "bookmarks": [],
+      "ratedMovies": [
+        {
+          "movieId": "9",
+          "rating": 2.5
+        },
+        {
+          "movieId": "7",
+          "rating": 5
+        },
+        {
+          "movieId": "10",
+          "rating": 1
+        },
+        {
+          "movieId": "1",
+          "rating": 4
+        },
+        {
+          "movieId": "3",
+          "rating": 5
+        },
+        {
+          "movieId": "6",
+          "rating": 3
+        }
+      ]
     },
     {
-      "id": "d1f2",
-      "email": "jonas@gmail.com",
-      "password": "@Jonas1234"
+      "id": "ewqeasdasd",
+      "email": "admin",
+      "password": "admin",
+      "role": "admin",
+      "bookmarks": [
+        "1",
+        "6",
+        "3"
+      ],
+      "ratedMovies": [
+        {
+          "movieId": 1,
+          "rating": 1
+        },
+        {
+          "movieId": 2,
+          "rating": 1
+        },
+        {
+          "movieId": "5",
+          "rating": 3.5
+        },
+        {
+          "movieId": "2",
+          "rating": 3
+        }
+      ]
     },
     {
-      "id": "f310",
-      "email": "jonas@gmail.com",
-      "password": "@Jonas123"
-    },
-    {
-      "id": "8a81",
-      "email": "jonas1@gmail.com",
-      "password": "@Jonas1234"
-    },
-    {
-      "id": "5944",
-      "email": "petras@petas.com",
-      "password": "@Matas123"
+      "id": "689d",
+      "email": "Jjonas@gmail.com",
+      "password": "Jjonas@gmail.com",
+      "role": "user",
+      "bookmarks": [],
+      "ratedMovies": [
+        {
+          "movieId": "7",
+          "rating": 3.5
+        },
+        {
+          "movieId": "8",
+          "rating": 4.5
+        },
+        {
+          "movieId": "11",
+          "rating": 4
+        },
+        {
+          "movieId": "6",
+          "rating": 2.5
+        }
+      ]
     }
   ],
   "movies": [
@@ -31,19 +93,23 @@
       "id": "1",
       "title": "Beyond Earth",
       "thumbnail": {
-        "trending": {
-          "small": "./assets/thumbnails/beyond-earth/trending/small.jpg",
-          "large": "./assets/thumbnails/beyond-earth/trending/large.jpg"
-        },
         "regular": {
-          "small": "./assets/thumbnails/beyond-earth/regular/small.jpg",
-          "medium": "./assets/thumbnails/beyond-earth/regular/medium.jpg",
           "large": "./assets/thumbnails/beyond-earth/regular/large.jpg"
         }
       },
       "year": 2019,
       "category": "Movie",
-      "rating": "PG",
+      "rating": [
+        {
+          "userId": "usrId",
+          "rating": 4
+        },
+        {
+          "userId": "ewqeasdasd",
+          "rating": 3
+        }
+      ],
+      "ageRating": "PG",
       "isBookmarked": false,
       "isTrending": true
     },
@@ -63,8 +129,18 @@
       },
       "year": 2021,
       "category": "Movie",
-      "rating": "PG",
-      "isBookmarked": true,
+      "rating": [
+        {
+          "userId": "usrId",
+          "rating": 4.5
+        },
+        {
+          "userId": "ewqeasdasd",
+          "rating": 3
+        }
+      ],
+      "ageRating": "PG",
+      "isBookmarked": false,
       "isTrending": true
     },
     {
@@ -83,7 +159,13 @@
       },
       "year": 2019,
       "category": "TV Series",
-      "rating": "E",
+      "rating": [
+        {
+          "userId": "usrId",
+          "rating": 5
+        }
+      ],
+      "ageRating": "E",
       "isBookmarked": false,
       "isTrending": true
     },
@@ -91,19 +173,14 @@
       "id": "4",
       "title": "1998",
       "thumbnail": {
-        "trending": {
-          "small": "./assets/thumbnails/1998/trending/small.jpg",
-          "large": "./assets/thumbnails/1998/trending/large.jpg"
-        },
         "regular": {
-          "small": "./assets/thumbnails/1998/regular/small.jpg",
-          "medium": "./assets/thumbnails/1998/regular/medium.jpg",
           "large": "./assets/thumbnails/1998/regular/large.jpg"
         }
       },
       "year": 2021,
       "category": "Movie",
-      "rating": "18+",
+      "rating": [],
+      "ageRating": "18+",
       "isBookmarked": false,
       "isTrending": true
     },
@@ -123,8 +200,14 @@
       },
       "year": 2018,
       "category": "TV Series",
-      "rating": "PG",
-      "isBookmarked": true,
+      "rating": [
+        {
+          "userId": "ewqeasdasd",
+          "rating": 3.5
+        }
+      ],
+      "ageRating": "PG",
+      "isBookmarked": false,
       "isTrending": true
     },
     {
@@ -132,15 +215,23 @@
       "title": "The Lietuviškas",
       "thumbnail": {
         "regular": {
-          "small": "./assets/thumbnails/the-great-lands/regular/small.jpg",
-          "medium": "./assets/thumbnails/the-great-lands/regular/medium.jpg",
           "large": "./assets/thumbnails/the-great-lands/regular/large.jpg"
         }
       },
       "year": 2019,
       "category": "Movie",
-      "rating": "E",
-      "isBookmarked": true,
+      "rating": [
+        {
+          "userId": "689d",
+          "rating": 2.5
+        },
+        {
+          "userId": "usrId",
+          "rating": 3
+        }
+      ],
+      "ageRating": "E",
+      "isBookmarked": false,
       "isTrending": false
     },
     {
@@ -155,8 +246,18 @@
       },
       "year": 2019,
       "category": "TV Series",
-      "rating": "PG",
-      "isBookmarked": true,
+      "rating": [
+        {
+          "userId": "689d",
+          "rating": 3.5
+        },
+        {
+          "userId": "usrId",
+          "rating": 5
+        }
+      ],
+      "ageRating": "PG",
+      "isBookmarked": false,
       "isTrending": false
     },
     {
@@ -171,8 +272,14 @@
       },
       "year": 2017,
       "category": "Movie",
-      "rating": "18+",
-      "isBookmarked": true,
+      "rating": [
+        {
+          "userId": "689d",
+          "rating": 4.5
+        }
+      ],
+      "ageRating": "18+",
+      "isBookmarked": false,
       "isTrending": false
     },
     {
@@ -187,7 +294,13 @@
       },
       "year": 2019,
       "category": "Movie",
-      "rating": "E",
+      "rating": [
+        {
+          "userId": "usrId",
+          "rating": 2.5
+        }
+      ],
+      "ageRating": "E",
       "isBookmarked": false,
       "isTrending": false
     },
@@ -203,7 +316,13 @@
       },
       "year": 2016,
       "category": "TV Series",
-      "rating": "PG",
+      "rating": [
+        {
+          "userId": "usrId",
+          "rating": 1
+        }
+      ],
+      "ageRating": "PG",
       "isBookmarked": false,
       "isTrending": false
     },
@@ -219,8 +338,14 @@
       },
       "year": 2016,
       "category": "TV Series",
-      "rating": "18+",
-      "isBookmarked": true,
+      "rating": [
+        {
+          "userId": "689d",
+          "rating": 4
+        }
+      ],
+      "ageRating": "18+",
+      "isBookmarked": false,
       "isTrending": false
     },
     {
@@ -235,7 +360,8 @@
       },
       "year": 2017,
       "category": "Movie",
-      "rating": "E",
+      "rating": [],
+      "ageRating": "E",
       "isBookmarked": false,
       "isTrending": false
     },
@@ -251,7 +377,8 @@
       },
       "year": 2016,
       "category": "TV Series",
-      "rating": "PG",
+      "rating": [],
+      "ageRating": "PG",
       "isBookmarked": false,
       "isTrending": false
     },
@@ -267,7 +394,8 @@
       },
       "year": 2015,
       "category": "TV Series",
-      "rating": "E",
+      "rating": [],
+      "ageRating": "E",
       "isBookmarked": false,
       "isTrending": false
     },
@@ -283,8 +411,9 @@
       },
       "year": 2017,
       "category": "Movie",
-      "rating": "PG",
-      "isBookmarked": true,
+      "rating": [],
+      "ageRating": "PG",
+      "isBookmarked": false,
       "isTrending": false
     },
     {
@@ -299,8 +428,14 @@
       },
       "year": 2018,
       "category": "TV Series",
-      "rating": "18+",
-      "isBookmarked": true,
+      "rating": [
+        {
+          "userId": "usrId",
+          "rating": 1.5
+        }
+      ],
+      "ageRating": "18+",
+      "isBookmarked": false,
       "isTrending": false
     },
     {
@@ -315,7 +450,8 @@
       },
       "year": 2015,
       "category": "Movie",
-      "rating": "PG",
+      "rating": [],
+      "ageRating": "PG",
       "isBookmarked": false,
       "isTrending": false
     },
@@ -331,8 +467,9 @@
       },
       "year": 2021,
       "category": "Movie",
-      "rating": "PG",
-      "isBookmarked": true,
+      "rating": [],
+      "ageRating": "PG",
+      "isBookmarked": false,
       "isTrending": false
     },
     {
@@ -347,8 +484,9 @@
       },
       "year": 2017,
       "category": "Movie",
-      "rating": "18+",
-      "isBookmarked": true,
+      "rating": [],
+      "ageRating": "18+",
+      "isBookmarked": false,
       "isTrending": false
     },
     {
@@ -363,7 +501,8 @@
       },
       "year": 2017,
       "category": "Movie",
-      "rating": "E",
+      "rating": [],
+      "ageRating": "E",
       "isBookmarked": false,
       "isTrending": false
     },
@@ -379,8 +518,9 @@
       },
       "year": 2013,
       "category": "TV Series",
-      "rating": "PG",
-      "isBookmarked": true,
+      "rating": [],
+      "ageRating": "PG",
+      "isBookmarked": false,
       "isTrending": false
     },
     {
@@ -395,8 +535,9 @@
       },
       "year": 2017,
       "category": "Movie",
-      "rating": "E",
-      "isBookmarked": true,
+      "rating": [],
+      "ageRating": "E",
+      "isBookmarked": false,
       "isTrending": false
     },
     {
@@ -411,7 +552,8 @@
       },
       "year": 2018,
       "category": "TV Series",
-      "rating": "PG",
+      "rating": [],
+      "ageRating": "PG",
       "isBookmarked": false,
       "isTrending": false
     },
@@ -427,8 +569,9 @@
       },
       "year": 2016,
       "category": "TV Series",
-      "rating": "E",
-      "isBookmarked": true,
+      "rating": [],
+      "ageRating": "E",
+      "isBookmarked": false,
       "isTrending": false
     },
     {
@@ -443,7 +586,8 @@
       },
       "year": 2020,
       "category": "TV Series",
-      "rating": "PG",
+      "rating": [],
+      "ageRating": "PG",
       "isBookmarked": false,
       "isTrending": false
     },
@@ -459,7 +603,8 @@
       },
       "year": 2016,
       "category": "TV Series",
-      "rating": "PG",
+      "rating": [],
+      "ageRating": "PG",
       "isBookmarked": false,
       "isTrending": false
     },
@@ -475,8 +620,9 @@
       },
       "year": 2017,
       "category": "Movie",
-      "rating": "18+",
-      "isBookmarked": true,
+      "rating": [],
+      "ageRating": "18+",
+      "isBookmarked": false,
       "isTrending": false
     },
     {
@@ -491,7 +637,8 @@
       },
       "year": 2018,
       "category": "TV Series",
-      "rating": "18+",
+      "rating": [],
+      "ageRating": "18+",
       "isBookmarked": false,
       "isTrending": false
     },
@@ -507,8 +654,23 @@
       },
       "year": 2017,
       "category": "Movie",
-      "rating": "PG",
-      "isBookmarked": true,
+      "rating": [],
+      "ageRating": "PG",
+      "isBookmarked": false,
+      "isTrending": false
+    },
+    {
+      "id": "6902",
+      "title": "zz",
+      "thumbnail": {
+        "regular": {
+          "large": "https://hatrabbits.com/wp-content/uploads/2017/01/random.jpg"
+        }
+      },
+      "year": "55",
+      "category": "Movie",
+      "rating": [],
+      "ageRating": "E",
       "isTrending": false
     }
   ]

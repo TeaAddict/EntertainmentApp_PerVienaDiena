@@ -7,6 +7,7 @@
 body {
   @apply font-outfit;
   box-sizing: border-box;
+  
 }
 
 input:-webkit-autofill,
@@ -45,3 +46,17 @@ input:-webkit-autofill:active {
   background-size: cover;
   background-repeat: no-repeat;
 } */
+
+.rating input[type="radio"]:checked {
+  background: rgb(251, 146, 60);
+  --tw-bg-opacity: 0;
+}
+
+.rating input:checked~input,
+.rating input[aria-checked="true"]~input {
+  --tw-bg-opacity: 1;
+    background-color: rgb(209 213 219 / var(--tw-bg-opacity, 1))
+}
+
+
+
