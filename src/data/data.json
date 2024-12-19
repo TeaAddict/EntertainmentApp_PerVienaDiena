@@ -22,7 +22,9 @@
       "email": "admin",
       "password": "admin",
       "role": "admin",
-      "bookmarks": [],
+      "bookmarks": [
+        "1"
+      ],
       "ratedMovies": [
         {
           "movieId": 1,

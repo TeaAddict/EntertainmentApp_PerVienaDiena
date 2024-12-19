@@ -49,19 +49,15 @@ export default function TrendingCard({ content }) {
   return (
     <div>
       <div className="relative">
-        <div className="group relative">
+        <div className="group">
           <picture>
-            <source
-              media="(max-width: 640px)"
-              srcSet={formatPath(content.thumbnail.regular.large)}
-            />
             <img
               className="w-[15rem] md:w-[29.375rem] desktop:w-[29.375rem]"
               src={formatPath(content.thumbnail.regular.large)}
               alt={content.title}
             />
           </picture>
-          <div className="absolute top-[-6rem] inset-0 hidden  group-hover:flex items-center justify-center hover:opacity-100 bg-opacity-50 bg-black transition">
+          <div className="absolute top-[-40%] inset-0 hidden  group-hover:flex items-center justify-center hover:opacity-100 bg-opacity-50 bg-black transition">
             <button className="bg-white bg-opacity-25 text-white rounded-full p-2 flex items-center space-x-2">
               <img src="src/assets/icon-play.svg" alt="Play icon" />
               <p className="text-heading-xs pl-2 pr-4 ">Play</p>
