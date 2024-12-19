@@ -22,9 +22,7 @@
       "email": "admin",
       "password": "admin",
       "role": "admin",
-      "bookmarks": [
-        "3"
-      ],
+      "bookmarks": [],
       "ratedMovies": [
         {
           "movieId": 1,
@@ -543,6 +541,20 @@
       "rating": [],
       "ageRating": "PG",
       "isBookmarked": false,
+      "isTrending": false
+    },
+    {
+      "id": "6902",
+      "title": "zz",
+      "thumbnail": {
+        "regular": {
+          "large": "https://hatrabbits.com/wp-content/uploads/2017/01/random.jpg"
+        }
+      },
+      "year": "55",
+      "category": "Movie",
+      "rating": [],
+      "ageRating": "E",
       "isTrending": false
     }
   ]

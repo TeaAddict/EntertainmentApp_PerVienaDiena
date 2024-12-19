@@ -9,7 +9,7 @@ const MovieFormModal = ({ data, type }) => {
   const closeModal = () => document.getElementById(modalId).close();
 
   return (
-    <div>
+    <div className="flex">
       {type == "add" ? (
         <AddMovieButton
           onClick={() => document.getElementById(modalId).showModal()}
