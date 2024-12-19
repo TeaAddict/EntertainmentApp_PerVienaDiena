@@ -16,7 +16,10 @@ const MovieFormModal = ({ data, type }) => {
         />
       ) : (
         <div>
-          <Button onClick={() => document.getElementById(modalId).showModal()}>
+          <Button
+            size="small"
+            onClick={() => document.getElementById(modalId).showModal()}
+          >
             Edit
           </Button>
         </div>

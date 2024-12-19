@@ -95,7 +95,7 @@ export default function ContentCard({ content }) {
           </button>
         </div>
 
-        <div className="flex justify-between w-full pt-[8px] md:pt-[6px]">
+        <div className="w-full pt-[8px] md:pt-[6px]">
           <div>
             <div
               className="font-thin text-white flex items-center
@@ -119,19 +119,21 @@ export default function ContentCard({ content }) {
             </div>
 
             <div className="text-white text-body-m md:text-heading-xs tracking-[-0.4px] md:tracking-[0] desktop:text-heading-xs">
-              {content.title}
-              <div className="flex gap-1 items-center">
-                <span className="text-white text-body-s relative top-[-1.5px] desktop:top-0 md:">
-                  <Rating
-                    rating={userRating || 0}
-                    setRating={handleRatingUpdate}
-                  />
-                </span>
-                <p>({averageRating.toFixed(1)})</p>
+              <h3>{content.title}</h3>
+              <div className="flex justify-between">
+                <div className="flex gap-1 items-center">
+                  <span className="text-white text-body-s relative top-[-1.5px] desktop:top-0 md:">
+                    <Rating
+                      rating={userRating || 0}
+                      setRating={handleRatingUpdate}
+                    />
+                  </span>
+                  <p>({averageRating.toFixed(1)})</p>
+                </div>
+                {user.role == "admin" && <MovieFormModal data={content} />}
               </div>
             </div>
           </div>
-          {user.role == "admin" && <MovieFormModal data={content} />}
         </div>
       </div>
     </div>

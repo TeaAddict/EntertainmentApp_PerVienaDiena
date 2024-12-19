@@ -51,8 +51,12 @@
           "rating": 1
         },
         {
+          "movieId": "5",
+          "rating": 3.5
+        },
+        {
           "movieId": "2",
-          "rating": 0.5
+          "rating": 3
         }
       ]
     },
@@ -130,7 +134,7 @@
         },
         {
           "userId": "ewqeasdasd",
-          "rating": 0.5
+          "rating": 3
         }
       ],
       "ageRating": "PG",
@@ -194,7 +198,12 @@
       },
       "year": 2018,
       "category": "TV Series",
-      "rating": [],
+      "rating": [
+        {
+          "userId": "ewqeasdasd",
+          "rating": 3.5
+        }
+      ],
       "ageRating": "PG",
       "isBookmarked": false,
       "isTrending": true
