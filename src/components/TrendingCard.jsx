@@ -3,6 +3,8 @@ import { useUpdate } from "./Context/UpdateContext.jsx";
 import { useUser } from "./Context/UserContext.jsx";
 import addRemoveFromArray from "../helpers/functions/addRemoveFromArray.js";
 import { updateUser } from "../helpers/users/post.js";
+import { updateMovie } from "../helpers/movies/put.js";
+import Rating from "./Rating.jsx";
 
 export default function TrendingCard({ content }) {
   const [isBookmarked, setIsBookmarked] = useState(content.isBookmarked);
@@ -18,6 +20,33 @@ export default function TrendingCard({ content }) {
       update();
     } catch (error) {
       console.error("Error:", error);
+    }
+  };
+
+  const averageRating =
+    content.rating.reduce((sum, { rating }) => sum + rating, 0) /
+    (content.rating.length || 1);
+
+  const userRating =
+    content.rating.find((entry) => entry.userId === user.id)?.rating || null;
+
+  const handleRatingUpdate = async (newRating) => {
+    try {
+      const updatedRatedMovies = [
+        ...user.ratedMovies.filter((rating) => rating.movieId !== content.id),
+        { movieId: content.id, rating: newRating },
+      ];
+
+      const updatedMovieRatings = [
+        ...content.rating.filter((entry) => entry.userId !== user.id),
+        { userId: user.id, rating: newRating },
+      ];
+
+      await updateUser(user.id, { ratedMovies: updatedRatedMovies });
+      await updateMovie(content.id, { rating: updatedMovieRatings });
+      update();
+    } catch (error) {
+      console.error("Error updating rating:", error);
     }
   };
 
@@ -81,11 +110,17 @@ export default function TrendingCard({ content }) {
           {displayIcon(content.category)}
           <span>{content.category}</span>
           <span className="px-[0.1rem] sm:px-[0.05rem] ">•</span>
-          <span>{content.rating}</span>
+          <span>{content.ageRating}</span>
         </div>
-        <h3 className="relative top-0.5 sm:top-0 text-[0.9375rem] sm:text-[1.5rem]">
-          {content.title}
-        </h3>
+        <div className="flex items-center gap-1">
+          <h3 className="relative top-0.5 sm:top-0 text-[0.9375rem] sm:text-[1.5rem]">
+            {content.title}
+          </h3>
+          <span className=" gap-[0.1rem]">
+            <Rating rating={userRating || 0} setRating={handleRatingUpdate} />
+          </span>
+            <p className="opacity-2">({averageRating.toFixed(1)})</p>
+        </div>
       </div>
     </div>
   );

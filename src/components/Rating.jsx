@@ -1,23 +1,21 @@
+import ReactStars from "react-stars";
+
 export default function Rating({ rating, setRating }) {
   const handleRatingChange = (newRating) => {
-    setRating(newRating); 
+    setRating(newRating);
   };
 
   return (
-    <div className="rating rating-sm">
-      {[1, 2, 3, 4, 5].map((index) => (
-        <input
-          type="radio"
-          key={index}
-          name="rating"
-          className={`mask mask-star-2 ${
-            index <= rating ? "bg-orange-400" : "bg-gray-300"
-          }`}
-          checked={index === rating}
-          onChange={() => handleRatingChange(index)}
-          defaultChecked
-        />
-      ))}
+    <div className="">
+      <ReactStars
+        count={5} // Number of stars to display
+        value={rating} // Pass current rating value
+        onChange={handleRatingChange} // Handle rating change
+        size={18} // Size of the stars
+        color1="#d3d3d3" // Color for unselected stars (gray)
+        color2="#ff9f00" // Color for selected stars (orange)
+        half={true} // Disable half stars, only full stars
+      />
     </div>
   );
 }

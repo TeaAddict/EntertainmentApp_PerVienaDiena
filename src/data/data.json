@@ -6,24 +6,35 @@
       "password": "user",
       "role": "user",
       "bookmarks": [
-        "9",
-        "7",
         "8",
-        "10",
-        "11",
-        "14",
         "13",
-        "12",
-        "2"
+        "1",
+        "6"
       ],
       "ratedMovies": [
         {
-          "movieId": 1,
-          "rating": 3
+          "movieId": "9",
+          "rating": 2.5
         },
         {
-          "movieId": 2,
+          "movieId": "7",
+          "rating": 5
+        },
+        {
+          "movieId": "10",
+          "rating": 1
+        },
+        {
+          "movieId": "1",
           "rating": 4
+        },
+        {
+          "movieId": "3",
+          "rating": 5
+        },
+        {
+          "movieId": "6",
+          "rating": 3
         }
       ]
     },
@@ -53,7 +64,24 @@
       "password": "Jjonas@gmail.com",
       "role": "user",
       "bookmarks": [],
-      "ratedMovies": []
+      "ratedMovies": [
+        {
+          "movieId": "7",
+          "rating": 3.5
+        },
+        {
+          "movieId": "8",
+          "rating": 4.5
+        },
+        {
+          "movieId": "11",
+          "rating": 4
+        },
+        {
+          "movieId": "6",
+          "rating": 2.5
+        }
+      ]
     }
   ],
   "movies": [
@@ -73,7 +101,12 @@
       },
       "year": 2019,
       "category": "Movie",
-      "rating": [],
+      "rating": [
+        {
+          "userId": "usrId",
+          "rating": 4
+        }
+      ],
       "ageRating": "PG",
       "isTrending": true,
       "isBookmarked": false
@@ -94,7 +127,12 @@
       },
       "year": 2021,
       "category": "Movie",
-      "rating": [],
+      "rating": [
+        {
+          "userId": "usrId",
+          "rating": 4.5
+        }
+      ],
       "ageRating": "PG",
       "isTrending": true
     },
@@ -114,7 +152,12 @@
       },
       "year": 2019,
       "category": "TV Series",
-      "rating": [],
+      "rating": [
+        {
+          "userId": "usrId",
+          "rating": 5
+        }
+      ],
       "ageRating": "E",
       "isTrending": true
     },
@@ -170,7 +213,16 @@
       },
       "year": 2019,
       "category": "Movie",
-      "rating": 3,
+      "rating": [
+        {
+          "userId": "689d",
+          "rating": 2.5
+        },
+        {
+          "userId": "usrId",
+          "rating": 3
+        }
+      ],
       "ageRating": "E",
       "isTrending": false
     },
@@ -186,7 +238,16 @@
       },
       "year": 2019,
       "category": "TV Series",
-      "rating": [],
+      "rating": [
+        {
+          "userId": "689d",
+          "rating": 3.5
+        },
+        {
+          "userId": "usrId",
+          "rating": 5
+        }
+      ],
       "ageRating": "PG",
       "isTrending": false
     },
@@ -202,7 +263,12 @@
       },
       "year": 2017,
       "category": "Movie",
-      "rating": [],
+      "rating": [
+        {
+          "userId": "689d",
+          "rating": 4.5
+        }
+      ],
       "ageRating": "18+",
       "isTrending": false
     },
@@ -218,7 +284,12 @@
       },
       "year": 2019,
       "category": "Movie",
-      "rating": [],
+      "rating": [
+        {
+          "userId": "usrId",
+          "rating": 2.5
+        }
+      ],
       "ageRating": "E",
       "isTrending": false
     },
@@ -234,7 +305,12 @@
       },
       "year": 2016,
       "category": "TV Series",
-      "rating": [],
+      "rating": [
+        {
+          "userId": "usrId",
+          "rating": 1
+        }
+      ],
       "ageRating": "PG",
       "isTrending": false
     },
@@ -250,7 +326,12 @@
       },
       "year": 2016,
       "category": "TV Series",
-      "rating": [],
+      "rating": [
+        {
+          "userId": "689d",
+          "rating": 4
+        }
+      ],
       "ageRating": "18+",
       "isTrending": false
     },
@@ -330,7 +411,12 @@
       },
       "year": 2018,
       "category": "TV Series",
-      "rating": [],
+      "rating": [
+        {
+          "userId": "usrId",
+          "rating": 1.5
+        }
+      ],
       "ageRating": "18+",
       "isTrending": false
     },
