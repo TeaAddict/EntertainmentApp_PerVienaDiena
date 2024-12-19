@@ -171,7 +171,7 @@ const RegisterForm = () => {
         </div>
 
         <div className="mt-[2.5rem] mb-[1.5rem]">
-          <Button>Create an account</Button>
+          <Button type="submit">Create an account</Button>
         </div>
 
         <div className="flex justify-center gap-[8px]">
