@@ -1,21 +1,11 @@
 {
   "users": [
     {
-      "id": "usrId",
+      "id": "ewqeasd",
       "email": "user",
       "password": "user",
       "role": "user",
-      "bookmarks": [
-        "9",
-        "7",
-        "8",
-        "10",
-        "11",
-        "14",
-        "13",
-        "12",
-        "2"
-      ],
+      "bookmarks": [],
       "ratedMovies": [
         {
           "movieId": 1,
@@ -28,14 +18,11 @@
       ]
     },
     {
-      "id": "admId",
+      "id": "ewqeasdasd",
       "email": "admin",
       "password": "admin",
       "role": "admin",
-      "bookmarks": [
-        "",
-        "10"
-      ],
+      "bookmarks": [],
       "ratedMovies": [
         {
           "movieId": 1,
@@ -59,15 +46,9 @@
   "movies": [
     {
       "id": "1",
-      "title": "Beyond Earth",
+      "title": "Beyond Earthe",
       "thumbnail": {
-        "trending": {
-          "small": "./assets/thumbnails/beyond-earth/trending/small.jpg",
-          "large": "./assets/thumbnails/beyond-earth/trending/large.jpg"
-        },
         "regular": {
-          "small": "./assets/thumbnails/beyond-earth/regular/small.jpg",
-          "medium": "./assets/thumbnails/beyond-earth/regular/medium.jpg",
           "large": "./assets/thumbnails/beyond-earth/regular/large.jpg"
         }
       },
@@ -75,8 +56,8 @@
       "category": "Movie",
       "rating": [],
       "ageRating": "PG",
-      "isTrending": true,
-      "isBookmarked": false
+      "isBookmarked": false,
+      "isTrending": true
     },
     {
       "id": "2",
@@ -96,6 +77,7 @@
       "category": "Movie",
       "rating": [],
       "ageRating": "PG",
+      "isBookmarked": false,
       "isTrending": true
     },
     {
@@ -116,19 +98,14 @@
       "category": "TV Series",
       "rating": [],
       "ageRating": "E",
+      "isBookmarked": false,
       "isTrending": true
     },
     {
       "id": "4",
       "title": "1998",
       "thumbnail": {
-        "trending": {
-          "small": "./assets/thumbnails/1998/trending/small.jpg",
-          "large": "./assets/thumbnails/1998/trending/large.jpg"
-        },
         "regular": {
-          "small": "./assets/thumbnails/1998/regular/small.jpg",
-          "medium": "./assets/thumbnails/1998/regular/medium.jpg",
           "large": "./assets/thumbnails/1998/regular/large.jpg"
         }
       },
@@ -136,6 +113,7 @@
       "category": "Movie",
       "rating": [],
       "ageRating": "18+",
+      "isBookmarked": false,
       "isTrending": true
     },
     {
@@ -156,6 +134,7 @@
       "category": "TV Series",
       "rating": [],
       "ageRating": "PG",
+      "isBookmarked": false,
       "isTrending": true
     },
     {
@@ -163,8 +142,6 @@
       "title": "The Lietuviškas",
       "thumbnail": {
         "regular": {
-          "small": "./assets/thumbnails/the-great-lands/regular/small.jpg",
-          "medium": "./assets/thumbnails/the-great-lands/regular/medium.jpg",
           "large": "./assets/thumbnails/the-great-lands/regular/large.jpg"
         }
       },
@@ -172,6 +149,7 @@
       "category": "Movie",
       "rating": [],
       "ageRating": "E",
+      "isBookmarked": false,
       "isTrending": false
     },
     {
@@ -188,6 +166,7 @@
       "category": "TV Series",
       "rating": [],
       "ageRating": "PG",
+      "isBookmarked": false,
       "isTrending": false
     },
     {
@@ -204,6 +183,7 @@
       "category": "Movie",
       "rating": [],
       "ageRating": "18+",
+      "isBookmarked": false,
       "isTrending": false
     },
     {
@@ -220,6 +200,7 @@
       "category": "Movie",
       "rating": [],
       "ageRating": "E",
+      "isBookmarked": false,
       "isTrending": false
     },
     {
@@ -236,6 +217,7 @@
       "category": "TV Series",
       "rating": [],
       "ageRating": "PG",
+      "isBookmarked": false,
       "isTrending": false
     },
     {
@@ -252,6 +234,7 @@
       "category": "TV Series",
       "rating": [],
       "ageRating": "18+",
+      "isBookmarked": false,
       "isTrending": false
     },
     {
@@ -268,6 +251,7 @@
       "category": "Movie",
       "rating": [],
       "ageRating": "E",
+      "isBookmarked": false,
       "isTrending": false
     },
     {
@@ -284,6 +268,7 @@
       "category": "TV Series",
       "rating": [],
       "ageRating": "PG",
+      "isBookmarked": false,
       "isTrending": false
     },
     {
@@ -300,6 +285,7 @@
       "category": "TV Series",
       "rating": [],
       "ageRating": "E",
+      "isBookmarked": false,
       "isTrending": false
     },
     {
@@ -316,6 +302,7 @@
       "category": "Movie",
       "rating": [],
       "ageRating": "PG",
+      "isBookmarked": false,
       "isTrending": false
     },
     {
@@ -332,6 +319,7 @@
       "category": "TV Series",
       "rating": [],
       "ageRating": "18+",
+      "isBookmarked": false,
       "isTrending": false
     },
     {
@@ -348,6 +336,7 @@
       "category": "Movie",
       "rating": [],
       "ageRating": "PG",
+      "isBookmarked": false,
       "isTrending": false
     },
     {
@@ -364,6 +353,7 @@
       "category": "Movie",
       "rating": [],
       "ageRating": "PG",
+      "isBookmarked": false,
       "isTrending": false
     },
     {
@@ -380,6 +370,7 @@
       "category": "Movie",
       "rating": [],
       "ageRating": "18+",
+      "isBookmarked": false,
       "isTrending": false
     },
     {
@@ -396,6 +387,7 @@
       "category": "Movie",
       "rating": [],
       "ageRating": "E",
+      "isBookmarked": false,
       "isTrending": false
     },
     {
@@ -412,6 +404,7 @@
       "category": "TV Series",
       "rating": [],
       "ageRating": "PG",
+      "isBookmarked": false,
       "isTrending": false
     },
     {
@@ -428,6 +421,7 @@
       "category": "Movie",
       "rating": [],
       "ageRating": "E",
+      "isBookmarked": false,
       "isTrending": false
     },
     {
@@ -444,6 +438,7 @@
       "category": "TV Series",
       "rating": [],
       "ageRating": "PG",
+      "isBookmarked": false,
       "isTrending": false
     },
     {
@@ -460,6 +455,7 @@
       "category": "TV Series",
       "rating": [],
       "ageRating": "E",
+      "isBookmarked": false,
       "isTrending": false
     },
     {
@@ -476,6 +472,7 @@
       "category": "TV Series",
       "rating": [],
       "ageRating": "PG",
+      "isBookmarked": false,
       "isTrending": false
     },
     {
@@ -492,6 +489,7 @@
       "category": "TV Series",
       "rating": [],
       "ageRating": "PG",
+      "isBookmarked": false,
       "isTrending": false
     },
     {
@@ -508,6 +506,7 @@
       "category": "Movie",
       "rating": [],
       "ageRating": "18+",
+      "isBookmarked": false,
       "isTrending": false
     },
     {
@@ -524,6 +523,7 @@
       "category": "TV Series",
       "rating": [],
       "ageRating": "18+",
+      "isBookmarked": false,
       "isTrending": false
     },
     {
@@ -540,19 +540,22 @@
       "category": "Movie",
       "rating": [],
       "ageRating": "PG",
+      "isBookmarked": false,
       "isTrending": false
     },
     {
-      "id": "03fa",
-      "title": "DFWF",
-      "category": "Movie",
+      "id": "6902",
+      "title": "zz",
       "thumbnail": {
         "regular": {
-          "large": "./assets/thumbnails/no-land-beyond/regular/large.jpg"
+          "large": "https://hatrabbits.com/wp-content/uploads/2017/01/random.jpg"
         }
       },
-      "year": "553",
-      "rating": "PG"
+      "year": "55",
+      "category": "Movie",
+      "rating": [],
+      "ageRating": "E",
+      "isTrending": false
     }
   ]
 }

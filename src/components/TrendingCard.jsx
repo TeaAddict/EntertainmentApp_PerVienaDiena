@@ -34,6 +34,14 @@ export default function TrendingCard({ content }) {
     );
   };
 
+  const formatPath = (path) => {
+    if (path.includes("http")) {
+      return path;
+    } else {
+      return `src/${path.substring(1)}`;
+    }
+  };
+
   useEffect(() => {
     if (user) setIsBookmarked(user?.bookmarks?.includes(content.id));
   }, [user]);
@@ -45,11 +53,11 @@ export default function TrendingCard({ content }) {
           <picture>
             <source
               media="(max-width: 640px)"
-              srcSet={`src/${content.thumbnail.trending.small.substring(1)}`}
+              srcSet={formatPath(content.thumbnail.regular.large)}
             />
             <img
               className="w-[15rem] md:w-[29.375rem] desktop:w-[29.375rem]"
-              src={`src/${content.thumbnail.trending.large.substring(1)}`}
+              src={formatPath(content.thumbnail.regular.large)}
               alt={content.title}
             />
           </picture>
@@ -66,7 +74,7 @@ export default function TrendingCard({ content }) {
               {displayIcon(content.category)}
               <span>{content.category}</span>
               <span className="px-[0.1rem] md:px-[0.05rem] ">•</span>
-              <span>{content.rating}</span>
+              <span>{content.ageRating}</span>
             </div>
             <h3 className="relative top-0.5 md:top-0 text-[0.9375rem] md:text-[1.5rem]">
               {content.title}

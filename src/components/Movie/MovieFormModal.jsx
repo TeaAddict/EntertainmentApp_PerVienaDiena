@@ -9,7 +9,7 @@ const MovieFormModal = ({ data, type }) => {
   const closeModal = () => document.getElementById(modalId).close();
 
   return (
-    <div>
+    <div className="flex">
       {type == "add" ? (
         <AddMovieButton
           onClick={() => document.getElementById(modalId).showModal()}
@@ -21,8 +21,8 @@ const MovieFormModal = ({ data, type }) => {
           </Button>
         </div>
       )}
-      <dialog id={modalId} className="modal flex justify-center">
-        <div className=" bg-movie-fourth rounded-md">
+      <dialog id={modalId} className="modal">
+        <div className="modal-box flex justify-center bg-movie-fourth rounded-md">
           <MovieForm onClose={closeModal} data={data} />
         </div>
         <form method="dialog" className="modal-backdrop">
