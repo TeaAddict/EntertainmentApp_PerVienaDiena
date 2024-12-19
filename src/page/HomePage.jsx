@@ -31,7 +31,9 @@ const HomePage = ({ movies }) => {
         />
       </div>
       {searchValue.length > 2 ? (
-        <FoundSection movies={filteredMovies} searchText={searchValue} />
+        <div className="mx-[1rem] md:mx-[1.56rem] desktop:mx-0">
+          <FoundSection movies={filteredMovies} searchText={searchValue} />
+        </div>
       ) : (
         <div>
           <div className="ml-[1rem] md:ml-[1.56rem] desktop:ml-0  ">

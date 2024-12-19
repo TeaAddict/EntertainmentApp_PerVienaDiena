@@ -32,8 +32,8 @@ const BookmarkPage = ({ movies }) => {
       </p>
     );
   return (
-    <div className="bg-movie-secondary flex flex-col gap-[1.3rem] md:gap-0 mr-[1rem] ml-[1rem] md:mr-[1.5rem] md:ml-[1.56rem]v desktop:mr-[2.25rem] desktop:ml-0">
-      <div className="mt-[1.5rem] md:my-[2.125rem] ml-[1rem] md:ml-[1.56rem] desktop:mt-[4.06rem] desktop:ml-0">
+    <div className="bg-movie-secondary flex flex-col gap-[1.3rem] md:gap-0 mr-[1rem] ml-[1rem] md:mr-[1.5rem] md:ml-[1.56rem] desktop:mr-[2.25rem] desktop:ml-0">
+      <div className="mt-[1.5rem] md:my-[2.125rem] desktop:mt-[4.06rem] desktop:ml-0">
         <SearchBar
           placeholderText="Search for bookmarked shows"
           value={searchValue}

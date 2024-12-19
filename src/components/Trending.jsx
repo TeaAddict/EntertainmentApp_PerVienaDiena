@@ -7,8 +7,12 @@ const Trending = ({ data }) => {
   const { events } = useDraggable(containerRef);
 
   return (
-    <section className= "bg-movie-secondary text-white  ">
-      <h1 className="text-[1.2rem] mb-[0.7rem] md:text-[2rem] desktop:text-[2rem] md:mb-[1rem]">
+    <section className="bg-movie-secondary text-white  ">
+      <h1
+        className="text-[1.2rem] md:text-[1.91rem] desktop:text-[1.91rem]
+tracking-[0.19px] md:tracking-[0.3px] desktop:tracking-[0.3px]
+        text-movie-fifth font-extralight mb-[0.7rem] md:mb-[1rem]"
+      >
         Trending
       </h1>
       <div
