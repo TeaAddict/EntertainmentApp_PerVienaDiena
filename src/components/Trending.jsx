@@ -19,7 +19,7 @@ const Trending = ({ data }) => {
         {data?.map((item) => (
           <div
             key={item.title}
-            className="relative flex-shrink-0 rounded-lg overflow-hidden git h-[8.75rem] md:h-[14.375rem] desktop:h-[14.375rem]"
+            className=" flex-shrink-0 rounded-lg overflow-hidden git h-[8.75rem] md:h-[14.375rem] desktop:h-[14.375rem]"
           >
             <TrendingCard content={item} key={item.id} />
           </div>

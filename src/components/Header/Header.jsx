@@ -88,7 +88,7 @@ const Header = () => {
         </section>
         <section className=" flex justify-end items-center pr-[0.93rem] pt-[1rem] pb-[1rem] md:pr-[1rem] md:pt-[1.31rem] md:pb-[1.19rem] desktop:pb-[1.7rem] desktop:pl-[1.75rem] desktop:pr-[1.75rem] desktop:self-end">
           <div className="flex desktop:flex-col desktop:items-center gap-1 desktop:gap-5">
-            {role == "admin" && <MovieFormModal />}
+            {role == "admin" && <MovieFormModal type="add" />}
             <HeaderProfilePicture />
           </div>
         </section>
