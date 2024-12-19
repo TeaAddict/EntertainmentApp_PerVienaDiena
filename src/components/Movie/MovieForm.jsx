@@ -87,22 +87,6 @@ const MovieForm = ({ data, onClose, heading }) => {
           </div>
 
           {/* CATEGORY */}
-          {/* <div
-            className={`flex border-b-[1px] ${
-              errors.category ? "border-movie-primary" : "border-movie-third"
-            } has-[:focus]:border-movie-fifth`}
-          >
-            <input
-              {...register("category", { required: "Category is required" })}
-              className="caret-movie-primary text-movie-fifth focus:ring-0 w-full font-medium text-body-m bg-transparent border-none pb-[1.06rem] pt-0 pl-[1rem] leading-[19px]"
-              placeholder="Category"
-            />
-            {errors.category && (
-              <p className="text-movie-primary text-nowrap">
-                {errors.category.message}
-              </p>
-            )}
-          </div> */}
           <div
             className={`flex justify-between border-b-[1px] ${
               errors.category ? "border-movie-primary" : "border-movie-third"

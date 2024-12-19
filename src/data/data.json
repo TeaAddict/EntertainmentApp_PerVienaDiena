@@ -24,7 +24,7 @@
       "role": "admin",
       "bookmarks": [
         "3",
-        "4"
+        "1"
       ],
       "ratedMovies": [
         {
@@ -108,13 +108,7 @@
       "id": "4",
       "title": "1998",
       "thumbnail": {
-        "trending": {
-          "small": "./assets/thumbnails/1998/trending/small.jpg",
-          "large": "./assets/thumbnails/1998/trending/large.jpg"
-        },
         "regular": {
-          "small": "./assets/thumbnails/1998/regular/small.jpg",
-          "medium": "./assets/thumbnails/1998/regular/medium.jpg",
           "large": "./assets/thumbnails/1998/regular/large.jpg"
         }
       },
