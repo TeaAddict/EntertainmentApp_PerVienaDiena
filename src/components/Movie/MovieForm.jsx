@@ -1,7 +1,7 @@
 import { useForm } from "react-hook-form";
 import { updateMovie } from "../../helpers/movies/put";
 import { deleteMovie } from "../../helpers/movies/delete";
-import { postMovie } from "../../helpers/movies/post"; // <-- Add the addMovie helper
+import { postMovie } from "../../helpers/movies/post";
 import Button from "../Button";
 import { useUpdate } from "../Context/UpdateContext";
 import ConfirmationModal from "../ConfimationModal";
@@ -11,7 +11,6 @@ const MovieForm = ({ data, onClose, heading }) => {
   const {
     register,
     handleSubmit,
-    // setValue,
     formState: { errors },
   } = useForm({
     defaultValues: {
@@ -23,20 +22,7 @@ const MovieForm = ({ data, onClose, heading }) => {
       isTrending: isTrending || "",
     },
   });
-  const { update } = useUpdate(); // <-- Add this
-
-  // If editing, prepopulate the form with movie data
-  // useEffect(() => {
-  //   if (heading === "Edit") {
-  //     setValue("title", data.title);
-  //     setValue("thumbnail", data.thumbnail?.regular?.large || "");
-  //     setValue("year", data.year);
-  //     setValue("category", data.category);
-  //     setValue("rating", data.rating);
-  //     setValue("ageRating", data.ageRating);
-  //     setValue("isTrending", data.isTrending);
-  //   }
-  // }, [data, setValue]);
+  const { update } = useUpdate();
 
   const onSubmit = async (formData) => {
     try {
@@ -45,19 +31,15 @@ const MovieForm = ({ data, onClose, heading }) => {
         thumbnail: { regular: { large: formData.thumbnail } },
         year: formData.year,
         category: formData.category,
-        rating: data.rating || [],
-        ageRating: formData.rating,
+        rating: data?.rating || [],
+        ageRating: formData.ageRating,
         isTrending: formData.isTrending == "true",
       };
 
       if (data) {
-        // Update movie logic
-        // await updateMovie(data.id, resultData);
-        console.log("Updating movie: ", resultData);
+        await updateMovie(data.id, resultData);
       } else {
-        // Add movie logic
-        // await postMovie(resultData);
-        console.log("Adding movie: ", resultData);
+        await postMovie(resultData);
       }
 
       update();
@@ -69,8 +51,7 @@ const MovieForm = ({ data, onClose, heading }) => {
 
   const handleDelete = async () => {
     try {
-      // await deleteMovie(data.id);
-      console.log("DELETING");
+      await deleteMovie(data.id);
       update();
       onClose();
     } catch (error) {
@@ -167,7 +148,7 @@ const MovieForm = ({ data, onClose, heading }) => {
             )}
           </div>
 
-          {/* RATING */}
+          {/* AGE RATING */}
           <div
             className={`flex border-b-[1px] ${
               errors.ageRating ? "border-movie-primary" : "border-movie-third"

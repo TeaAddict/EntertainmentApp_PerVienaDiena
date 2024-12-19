@@ -5,7 +5,17 @@
       "email": "user",
       "password": "user",
       "role": "user",
-      "bookmarks": ["9", "7", "8", "10", "11", "14", "13", "12", "2"],
+      "bookmarks": [
+        "9",
+        "7",
+        "8",
+        "10",
+        "11",
+        "14",
+        "13",
+        "12",
+        "2"
+      ],
       "ratedMovies": [
         {
           "movieId": 1,
@@ -22,7 +32,12 @@
       "email": "admin",
       "password": "admin",
       "role": "admin",
-      "bookmarks": ["", "10"],
+      "bookmarks": [
+        "",
+        "10",
+        "6",
+        "1"
+      ],
       "ratedMovies": [
         {
           "movieId": 1,
@@ -46,15 +61,9 @@
   "movies": [
     {
       "id": "1",
-      "title": "Beyond Earth",
+      "title": "Beyond Earthe",
       "thumbnail": {
-        "trending": {
-          "small": "./assets/thumbnails/beyond-earth/trending/small.jpg",
-          "large": "./assets/thumbnails/beyond-earth/trending/large.jpg"
-        },
         "regular": {
-          "small": "./assets/thumbnails/beyond-earth/regular/small.jpg",
-          "medium": "./assets/thumbnails/beyond-earth/regular/medium.jpg",
           "large": "./assets/thumbnails/beyond-earth/regular/large.jpg"
         }
       },
@@ -150,8 +159,6 @@
       "title": "The Lietuviškas",
       "thumbnail": {
         "regular": {
-          "small": "./assets/thumbnails/the-great-lands/regular/small.jpg",
-          "medium": "./assets/thumbnails/the-great-lands/regular/medium.jpg",
           "large": "./assets/thumbnails/the-great-lands/regular/large.jpg"
         }
       },
@@ -540,6 +547,20 @@
       },
       "year": "553",
       "rating": "PG"
+    },
+    {
+      "id": "7d1b",
+      "title": "zxc",
+      "thumbnail": {
+        "regular": {
+          "large": "https://hatrabbits.com/wp-content/uploads/2017/01/random.jpg"
+        }
+      },
+      "year": "12",
+      "category": "asd",
+      "rating": [],
+      "ageRating": "2",
+      "isTrending": false
     }
   ]
 }
