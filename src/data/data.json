@@ -39,7 +39,9 @@
       "password": "admin",
       "role": "admin",
       "bookmarks": [
-        "1"
+        "1",
+        "6",
+        "3"
       ],
       "ratedMovies": [
         {

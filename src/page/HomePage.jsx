@@ -12,6 +12,8 @@ const HomePage = ({ movies }) => {
 
   let filteredMovies = [];
 
+  const recommendedMovies = movies?.filter((movie) => !movie.isTrending);
+
   if (searchValue.length > 2) {
     filteredMovies = movies?.filter((movie) =>
       movie.title.toLowerCase().includes(searchValue?.toLowerCase())
@@ -36,7 +38,10 @@ const HomePage = ({ movies }) => {
             <Trending data={trendingMovies} />
           </div>
           <div className=" mr-[1rem] ml-[1rem] mt-[1.4rem] md:ml-[1.56rem] md:mr-[1.5rem] md:mt-[2.38rem] desktop:ml-0 desktop:mr-[2.25rem] desktop:mt-[2.5rem] ">
-            <ContentSection movies={movies} heading={"Recommended for you"} />
+            <ContentSection
+              movies={recommendedMovies}
+              heading={"Recommended for you"}
+            />
           </div>
         </div>
       )}
