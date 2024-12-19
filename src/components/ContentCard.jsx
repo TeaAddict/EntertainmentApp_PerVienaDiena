@@ -76,10 +76,11 @@ export default function ContentCard({ content }) {
               />
             </div>
           </div>
-          <div className="absolute inset-0 hidden desktop:group-hover:flex items-center justify-center opacity-0 desktop:hover:opacity-100 bg-opacity-50 bg-black transition">
+
+          <div className="absolute inset-0 hidden group-hover:flex items-center justify-center hover:opacity-100 bg-opacity-50 bg-black transition">
             <button className="bg-white bg-opacity-25 text-white rounded-full p-2 flex items-center space-x-2">
               <img src="src/assets/icon-play.svg" alt="Play icon" />
-              <p className="text-heading-xs pl-2 pr-4">Play</p>
+              <p className="text-heading-xs pl-2 pr-4 ">Play</p>
             </button>
           </div>
         </div>
@@ -114,7 +115,7 @@ export default function ContentCard({ content }) {
                   src={`src/assets/icon-category-${
                     content.category === "Movie" ? "movie" : "tv"
                   }.svg`}
-                  className="inline-block 
+                  className="inline-block
                 w-[10px] h-[10px] md:w-[12px] md:h-[12px]
                 mr-[4px] md:mr-[6px]"
                 />
