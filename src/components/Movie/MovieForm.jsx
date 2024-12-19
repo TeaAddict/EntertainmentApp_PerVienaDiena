@@ -11,6 +11,7 @@ const MovieForm = ({ data, onClose, heading }) => {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm({
     defaultValues: {
@@ -44,6 +45,7 @@ const MovieForm = ({ data, onClose, heading }) => {
 
       update();
       if (onClose) onClose();
+      reset();
     } catch (error) {
       console.error("Failed to submit movie:", error);
     }
@@ -85,7 +87,7 @@ const MovieForm = ({ data, onClose, heading }) => {
           </div>
 
           {/* CATEGORY */}
-          <div
+          {/* <div
             className={`flex border-b-[1px] ${
               errors.category ? "border-movie-primary" : "border-movie-third"
             } has-[:focus]:border-movie-fifth`}
@@ -97,6 +99,31 @@ const MovieForm = ({ data, onClose, heading }) => {
             />
             {errors.category && (
               <p className="text-movie-primary text-nowrap">
+                {errors.category.message}
+              </p>
+            )}
+          </div> */}
+          <div
+            className={`flex justify-between border-b-[1px] ${
+              errors.category ? "border-movie-primary" : "border-movie-third"
+            } has-[:focus]:border-movie-fifth`}
+          >
+            <div>
+              <select
+                className="select w-full max-w-xs bg-movie-fourth text-movie-fifth"
+                id="category"
+                {...register("category", {
+                  required: "Is category is required",
+                })}
+              >
+                <option value="">Select category</option>
+                <option value="Movie">Movie</option>
+                <option value="TV Series">TV Series</option>
+              </select>
+            </div>
+
+            {errors.category && (
+              <p className="flex items-center text-movie-primary text-nowrap">
                 {errors.category.message}
               </p>
             )}
@@ -170,7 +197,7 @@ const MovieForm = ({ data, onClose, heading }) => {
         {/* IS TRENDING */}
         <div
           className={`flex justify-between border-b-[1px] ${
-            errors.title ? "border-movie-primary" : "border-movie-third"
+            errors.isTrending ? "border-movie-primary" : "border-movie-third"
           } has-[:focus]:border-movie-fifth`}
         >
           <div>
