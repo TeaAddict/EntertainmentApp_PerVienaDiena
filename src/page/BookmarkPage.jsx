@@ -27,7 +27,7 @@ const BookmarkPage = ({ movies }) => {
   }
   if (content.length === 0)
     return (
-      <p className="text-[1.2rem] mt-[2rem] mb-[1.3rem] md:text-[1.91rem] md:mb-[1.2rem] desktop:mb-[1.8rem] text-movie-fifth flex items-center justify-center h-[100%]">
+      <p className="flex text-[1.2rem] mb-[1.3rem] md:text-[1.91rem] md:mb-[1.2rem] desktop:mb-[1.8rem] text-movie-fifth items-center justify-center h-[80vh]">
         No Bookmarked Movies
       </p>
     );
