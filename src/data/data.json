@@ -49,15 +49,9 @@
   "movies": [
     {
       "id": "1",
-      "title": "Beyond Earth",
+      "title": "Beyond Earthe",
       "thumbnail": {
-        "trending": {
-          "small": "./assets/thumbnails/beyond-earth/trending/small.jpg",
-          "large": "./assets/thumbnails/beyond-earth/trending/large.jpg"
-        },
         "regular": {
-          "small": "./assets/thumbnails/beyond-earth/regular/small.jpg",
-          "medium": "./assets/thumbnails/beyond-earth/regular/medium.jpg",
           "large": "./assets/thumbnails/beyond-earth/regular/large.jpg"
         }
       },
@@ -157,8 +151,6 @@
       "title": "The Lietuviškas",
       "thumbnail": {
         "regular": {
-          "small": "./assets/thumbnails/the-great-lands/regular/small.jpg",
-          "medium": "./assets/thumbnails/the-great-lands/regular/medium.jpg",
           "large": "./assets/thumbnails/the-great-lands/regular/large.jpg"
         }
       },

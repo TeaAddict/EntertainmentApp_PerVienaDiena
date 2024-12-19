@@ -1,17 +1,17 @@
-import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { updateMovie } from "../../helpers/movies/put";
 import { deleteMovie } from "../../helpers/movies/delete";
-import { postMovie } from "../../helpers/movies/post"; // <-- Add the addMovie helper
+import { postMovie } from "../../helpers/movies/post";
 import Button from "../Button";
 import { useUpdate } from "../Context/UpdateContext";
+import ConfirmationModal from "../ConfimationModal";
 
 const MovieForm = ({ data, onClose, heading }) => {
   const isTrending = data ? String(data?.isTrending) : "";
   const {
     register,
     handleSubmit,
-    // setValue,
+    reset,
     formState: { errors },
   } = useForm({
     defaultValues: {
@@ -23,20 +23,7 @@ const MovieForm = ({ data, onClose, heading }) => {
       isTrending: isTrending || "",
     },
   });
-  const { update } = useUpdate(); // <-- Add this
-
-  // If editing, prepopulate the form with movie data
-  // useEffect(() => {
-  //   if (heading === "Edit") {
-  //     setValue("title", data.title);
-  //     setValue("thumbnail", data.thumbnail?.regular?.large || "");
-  //     setValue("year", data.year);
-  //     setValue("category", data.category);
-  //     setValue("rating", data.rating);
-  //     setValue("ageRating", data.ageRating);
-  //     setValue("isTrending", data.isTrending);
-  //   }
-  // }, [data, setValue]);
+  const { update } = useUpdate();
 
   const onSubmit = async (formData) => {
     try {
@@ -45,23 +32,20 @@ const MovieForm = ({ data, onClose, heading }) => {
         thumbnail: { regular: { large: formData.thumbnail } },
         year: formData.year,
         category: formData.category,
-        rating: data.rating || [],
-        ageRating: formData.rating,
+        rating: data?.rating || [],
+        ageRating: formData.ageRating,
         isTrending: formData.isTrending == "true",
       };
 
       if (data) {
-        // Update movie logic
-        // await updateMovie(data.id, resultData);
-        console.log("Updating movie: ", resultData);
+        await updateMovie(data.id, resultData);
       } else {
-        // Add movie logic
-        // await postMovie(resultData);
-        console.log("Adding movie: ", resultData);
+        await postMovie(resultData);
       }
 
       update();
       if (onClose) onClose();
+      reset();
     } catch (error) {
       console.error("Failed to submit movie:", error);
     }
@@ -103,7 +87,7 @@ const MovieForm = ({ data, onClose, heading }) => {
           </div>
 
           {/* CATEGORY */}
-          <div
+          {/* <div
             className={`flex border-b-[1px] ${
               errors.category ? "border-movie-primary" : "border-movie-third"
             } has-[:focus]:border-movie-fifth`}
@@ -115,6 +99,31 @@ const MovieForm = ({ data, onClose, heading }) => {
             />
             {errors.category && (
               <p className="text-movie-primary text-nowrap">
+                {errors.category.message}
+              </p>
+            )}
+          </div> */}
+          <div
+            className={`flex justify-between border-b-[1px] ${
+              errors.category ? "border-movie-primary" : "border-movie-third"
+            } has-[:focus]:border-movie-fifth`}
+          >
+            <div>
+              <select
+                className="select w-full max-w-xs bg-movie-fourth text-movie-fifth"
+                id="category"
+                {...register("category", {
+                  required: "Is category is required",
+                })}
+              >
+                <option value="">Select category</option>
+                <option value="Movie">Movie</option>
+                <option value="TV Series">TV Series</option>
+              </select>
+            </div>
+
+            {errors.category && (
+              <p className="flex items-center text-movie-primary text-nowrap">
                 {errors.category.message}
               </p>
             )}
@@ -166,7 +175,7 @@ const MovieForm = ({ data, onClose, heading }) => {
             )}
           </div>
 
-          {/* RATING */}
+          {/* AGE RATING */}
           <div
             className={`flex border-b-[1px] ${
               errors.ageRating ? "border-movie-primary" : "border-movie-third"
@@ -188,7 +197,7 @@ const MovieForm = ({ data, onClose, heading }) => {
         {/* IS TRENDING */}
         <div
           className={`flex justify-between border-b-[1px] ${
-            errors.title ? "border-movie-primary" : "border-movie-third"
+            errors.isTrending ? "border-movie-primary" : "border-movie-third"
           } has-[:focus]:border-movie-fifth`}
         >
           <div>
@@ -216,9 +225,12 @@ const MovieForm = ({ data, onClose, heading }) => {
           <div className="flex flex-row gap-5">
             <Button type="submit">{data ? "Submit" : "Add"}</Button>
             {data && (
-              <Button styleType="delete" onClick={handleDelete}>
-                Delete
-              </Button>
+              <ConfirmationModal
+                openButtonText="Delete"
+                confirmButtonText="Confirm"
+                confirmText="Are you sure you want to delete this movie?"
+                onClick={handleDelete}
+              />
             )}
             <Button styleType="secondary" onClick={onClose}>
               Close
