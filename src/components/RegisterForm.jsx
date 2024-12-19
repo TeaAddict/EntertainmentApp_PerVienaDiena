@@ -110,16 +110,31 @@ const RegisterForm = () => {
               {...register("password", {
                 required: "Can't be empty",
                 onBlur: (e) => {
-                  if (!/^(?=.*[A-Z])(?=.*[\W_]).{8,}$/.test(e.target.value))
+                  const value = e.target.value;
+                  if (!/^(?=.*[A-Z])/.test(value)) {
+                    setError("password", {
+                      type: "custom",
+                      message: "Password needs uppercase characters",
+                    });
+                  } else if (!/.{8,}/.test(value)) {
+                    setError("password", {
+                      type: "custom",
+                      message: "Needs atleast 8 characters",
+                    });
+                  } else if (!/[\W_]/.test(value)) {
                     setError("password", {
                       type: "custom",
                       message: "Password needs special characters",
                     });
+                  }
                 },
                 validate: () => {
-                  if (
-                    !/^(?=.*[A-Z])(?=.*[\W_]).{8,}$/.test(watch("password"))
-                  ) {
+                  const value = watch("password");
+                  if (!/^(?=.*[A-Z])/.test(value)) {
+                    return "Password needs uppercase characters";
+                  } else if (!/.{8,}/.test(value)) {
+                    return "Needs atleast 8 characters";
+                  } else if (!/[\W_]/.test(value)) {
                     return "Password needs special characters";
                   }
                 },
