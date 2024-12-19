@@ -124,6 +124,7 @@ const MovieForm = ({ data, onClose, heading }) => {
                 required: "Thumbnail URL is required",
                 validate: (value) => {
                   const imageRegex =
+                    /* eslint-disable-next-line no-useless-escape */
                     /^((https?:\/\/(?:www\.)?[^\s\/]+(?:\/[^\s\/?]+)*\/?[^\s?]+\.(?:jpg|jpeg|png|gif|bmp|svg|webp)(\?[^\s]*)?)|(\.\/(?:[^\/\0]+\/)*[^\/\0]+\.(?:jpg|jpeg|png|gif|bmp|svg|webp))|([a-zA-Z]:\\(?:[^<>:"\/\\|?*]+\\)*[^<>:"\/\\|?*]+\.(?:jpg|jpeg|png|gif|bmp|svg|webp))|(\/(?:[^\/\0]+\/)*[^\/\0]+\.(?:jpg|jpeg|png|gif|bmp|svg|webp)))$/;
                   return (
                     imageRegex.test(value) || "Invalid image URL or file path"
