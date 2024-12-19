@@ -22,10 +22,7 @@
       "email": "admin",
       "password": "admin",
       "role": "admin",
-      "bookmarks": [
-        "3",
-        "4"
-      ],
+      "bookmarks": [],
       "ratedMovies": [
         {
           "movieId": 1,
@@ -49,15 +46,9 @@
   "movies": [
     {
       "id": "1",
-      "title": "Beyond Earth",
+      "title": "Beyond Earthe",
       "thumbnail": {
-        "trending": {
-          "small": "./assets/thumbnails/beyond-earth/trending/small.jpg",
-          "large": "./assets/thumbnails/beyond-earth/trending/large.jpg"
-        },
         "regular": {
-          "small": "./assets/thumbnails/beyond-earth/regular/small.jpg",
-          "medium": "./assets/thumbnails/beyond-earth/regular/medium.jpg",
           "large": "./assets/thumbnails/beyond-earth/regular/large.jpg"
         }
       },
@@ -114,13 +105,7 @@
       "id": "4",
       "title": "1998",
       "thumbnail": {
-        "trending": {
-          "small": "./assets/thumbnails/1998/trending/small.jpg",
-          "large": "./assets/thumbnails/1998/trending/large.jpg"
-        },
         "regular": {
-          "small": "./assets/thumbnails/1998/regular/small.jpg",
-          "medium": "./assets/thumbnails/1998/regular/medium.jpg",
           "large": "./assets/thumbnails/1998/regular/large.jpg"
         }
       },
@@ -157,8 +142,6 @@
       "title": "The Lietuviškas",
       "thumbnail": {
         "regular": {
-          "small": "./assets/thumbnails/the-great-lands/regular/small.jpg",
-          "medium": "./assets/thumbnails/the-great-lands/regular/medium.jpg",
           "large": "./assets/thumbnails/the-great-lands/regular/large.jpg"
         }
       },
@@ -558,6 +541,20 @@
       "rating": [],
       "ageRating": "PG",
       "isBookmarked": false,
+      "isTrending": false
+    },
+    {
+      "id": "6902",
+      "title": "zz",
+      "thumbnail": {
+        "regular": {
+          "large": "https://hatrabbits.com/wp-content/uploads/2017/01/random.jpg"
+        }
+      },
+      "year": "55",
+      "category": "Movie",
+      "rating": [],
+      "ageRating": "E",
       "isTrending": false
     }
   ]

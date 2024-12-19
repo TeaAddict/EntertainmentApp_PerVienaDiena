@@ -3,6 +3,7 @@ import { useUpdate } from "./Context/UpdateContext";
 import { updateUser } from "../helpers/users/post";
 import { useUser } from "./Context/UserContext";
 import addRemoveFromArray from "../helpers/functions/addRemoveFromArray";
+import MovieFormModal from "./Movie/MovieFormModal";
 
 export default function ContentCard({ content }) {
   const [isBookmarked, setIsBookmarked] = useState(false);
@@ -84,32 +85,40 @@ export default function ContentCard({ content }) {
         </div>
         {/* Description and Title */}
         <div className="w-full pt-[8px] md:pt-[6px]">
-          <p
+          <div
             className="font-thin text-white flex items-center
           text-[11px] md:text-body-s desktop:text-body-s md:pb-[1px]"
           >
-            <span className="pr-[7px] md:pr-[8px]">{content.year}</span>
-            <span className="pr-[5px] md:pr-[8px]">•</span>
-            <img
-              src={`src/assets/icon-category-${
-                content.category === "Movie" ? "movie" : "tv"
-              }.svg`}
-              className="inline-block 
+            <div className="flex items-center">
+              <span className="pr-[7px] md:pr-[8px]">{content.year}</span>
+              <span className="pr-[5px] md:pr-[8px]">•</span>
+              <img
+                src={`src/assets/icon-category-${
+                  content.category === "Movie" ? "movie" : "tv"
+                }.svg`}
+                className="inline-block 
               w-[10px] h-[10px] md:w-[12px] md:h-[12px]
                mr-[4px] md:mr-[6px]"
-            />
-            <span className="pr-[8px]">{content.category}</span>
-            <span className="pr-[5px] md:pr-[8px]">•</span>
-            <span>{content.rating}</span>
-          </p>
+              />
+              <span className="pr-[8px]">{content.category}</span>
+              <span className="pr-[5px] md:pr-[8px]">•</span>
+              <span>{content.ageRating}</span>
+            </div>
+            {/* <div className="flex">
+              <p>PLACEHOLDER</p>
+            </div> */}
+          </div>
 
-          <h5
-            className="text-white text-body-m md:text-heading-xs 
-          tracking-[-0.4px] md:tracking-[0]
+          <div className="flex justify-between">
+            <h5
+              className="text-white text-body-m md:text-heading-xs 
+            tracking-[-0.4px] md:tracking-[0]
           desktop:text-heading-xs"
-          >
-            {content.title}
-          </h5>
+            >
+              {content.title}
+            </h5>
+            {user.role == "admin" && <MovieFormModal data={content} />}
+          </div>
         </div>
       </div>
     </div>
