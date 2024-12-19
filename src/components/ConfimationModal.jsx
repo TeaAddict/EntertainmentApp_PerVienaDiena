@@ -11,14 +11,23 @@ const ConfirmationModal = ({
 
   return (
     <div className="flex">
-      <button onClick={() => document.getElementById(modalId).showModal()}>
-        {<Button styleType="primary">{openButtonText}</Button>}
-      </button>
-      <dialog id={modalId} className="modal ">
+      {/* Open button for the modal */}
+      <Button
+        styleType="primary"
+        onClick={() => document.getElementById(modalId).showModal()}
+      >
+        {openButtonText}
+      </Button>
+
+      {/* Modal dialog */}
+      <dialog id={modalId} className="modal">
         <div className="modal-box flex flex-col justify-center items-center bg-movie-fourth">
           <p className="py-4 text-movie-fifth">{confirmText}</p>
           <section className="flex flex-row gap-5">
+            {/* Confirmation button */}
             <Button onClick={onClick}>{confirmButtonText}</Button>
+            {/* Close button for the modal */}
+
             <Button
               styleType="secondary"
               onClick={() => document.getElementById(modalId).close()}
@@ -27,9 +36,6 @@ const ConfirmationModal = ({
             </Button>
           </section>
         </div>
-        <form method="dialog" className="modal-backdrop">
-          <button>Close</button>
-        </form>
       </dialog>
     </div>
   );

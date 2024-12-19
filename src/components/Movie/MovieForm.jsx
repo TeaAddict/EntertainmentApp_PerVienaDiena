@@ -1,10 +1,10 @@
-import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { updateMovie } from "../../helpers/movies/put";
 import { deleteMovie } from "../../helpers/movies/delete";
 import { postMovie } from "../../helpers/movies/post"; // <-- Add the addMovie helper
 import Button from "../Button";
 import { useUpdate } from "../Context/UpdateContext";
+import ConfirmationModal from "../ConfimationModal";
 
 const MovieForm = ({ data, onClose, heading }) => {
   const isTrending = data ? String(data?.isTrending) : "";
@@ -69,7 +69,8 @@ const MovieForm = ({ data, onClose, heading }) => {
 
   const handleDelete = async () => {
     try {
-      await deleteMovie(data.id);
+      // await deleteMovie(data.id);
+      console.log("DELETING");
       update();
       onClose();
     } catch (error) {
@@ -216,9 +217,12 @@ const MovieForm = ({ data, onClose, heading }) => {
           <div className="flex flex-row gap-5">
             <Button type="submit">{data ? "Submit" : "Add"}</Button>
             {data && (
-              <Button styleType="delete" onClick={handleDelete}>
-                Delete
-              </Button>
+              <ConfirmationModal
+                openButtonText="Delete"
+                confirmButtonText="Confirm"
+                confirmText="Are you sure you want to delete this movie?"
+                onClick={handleDelete}
+              />
             )}
             <Button styleType="secondary" onClick={onClose}>
               Close
