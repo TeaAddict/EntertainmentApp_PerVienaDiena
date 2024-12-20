@@ -30,6 +30,10 @@
         {
           "movieId": "6",
           "rating": 3
+        },
+        {
+          "movieId": "15",
+          "rating": 0.5
         }
       ]
     },
@@ -67,6 +71,10 @@
         {
           "movieId": "8",
           "rating": 2
+        },
+        {
+          "movieId": "15",
+          "rating": 5
         }
       ]
     },
@@ -92,6 +100,10 @@
         {
           "movieId": "6",
           "rating": 2.5
+        },
+        {
+          "movieId": "15",
+          "rating": 5
         }
       ]
     }
@@ -245,6 +257,10 @@
         {
           "userId": "usrId",
           "rating": 3
+        },
+        {
+          "userId": "ewqeasdasd",
+          "rating": 2.5
         }
       ],
       "ageRating": "E",
@@ -436,7 +452,20 @@
       },
       "year": 2017,
       "category": "Movie",
-      "rating": [],
+      "rating": [
+        {
+          "userId": "ewqeasdasd",
+          "rating": 5
+        },
+        {
+          "userId": "ewqeasd",
+          "rating": 0.5
+        },
+        {
+          "userId": "689d",
+          "rating": 5
+        }
+      ],
       "ageRating": "PG",
       "isBookmarked": false,
       "isTrending": false
