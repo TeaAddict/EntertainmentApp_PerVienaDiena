@@ -44,7 +44,7 @@ const BookmarkPage = ({ movies }) => {
         <FoundSection movies={filteredMovies} searchText={searchValue} />
       ) : (
         <>
-          {moviesData.length && (
+          {moviesData.length > 0 && (
             <div className=" md:pb-[43px] desktop:pb-[37px]">
               <ContentSection
                 movies={moviesData}
@@ -52,7 +52,7 @@ const BookmarkPage = ({ movies }) => {
               />
             </div>
           )}
-          {tvSeriesData.length && (
+          {tvSeriesData.length > 0 && (
             <div>
               <ContentSection
                 movies={tvSeriesData}

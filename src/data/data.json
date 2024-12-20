@@ -5,7 +5,9 @@
       "email": "user",
       "password": "user",
       "role": "user",
-      "bookmarks": [],
+      "bookmarks": [
+        "1"
+      ],
       "ratedMovies": [
         {
           "movieId": "9",
