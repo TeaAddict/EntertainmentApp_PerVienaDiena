@@ -13,8 +13,8 @@ The app provides functionality for browsing movies and TV series, bookmarking co
 
 Admins have full access to the content management features. The following functionalities are available to Admin users:
 
-- **Add Content Cards**: Admin can add new movie or TV series content to the app with details like title, description, genre, and release year.
-- **Edit Content Cards**: Admin can edit existing content details, including the title, description, genre, and other metadata.
+- **Add Content Cards**: Admin can add new movie or TV series content to the app with details like title, genre, and release year.
+- **Edit Content Cards**: Admin can edit existing content details, including the title, genre, and other metadata.
 - **Delete Content Cards**: Admin can remove content from the app, ensuring outdated or irrelevant content is removed.
 
 ### 2. Standard User Role
