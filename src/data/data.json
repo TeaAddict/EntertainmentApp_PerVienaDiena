@@ -38,11 +38,7 @@
       "email": "admin",
       "password": "admin",
       "role": "admin",
-      "bookmarks": [
-        "1",
-        "6",
-        "3"
-      ],
+      "bookmarks": [],
       "ratedMovies": [
         {
           "movieId": 1,
@@ -53,12 +49,24 @@
           "rating": 1
         },
         {
-          "movieId": "5",
-          "rating": 3.5
-        },
-        {
           "movieId": "2",
           "rating": 3
+        },
+        {
+          "movieId": "1",
+          "rating": 4.5
+        },
+        {
+          "movieId": "5",
+          "rating": 0.5
+        },
+        {
+          "movieId": "7",
+          "rating": 4.5
+        },
+        {
+          "movieId": "8",
+          "rating": 2
         }
       ]
     },
@@ -91,7 +99,7 @@
   "movies": [
     {
       "id": "1",
-      "title": "Beyond Earth",
+      "title": "Beyond Earthe",
       "thumbnail": {
         "regular": {
           "large": "./assets/thumbnails/beyond-earth/regular/large.jpg"
@@ -106,7 +114,7 @@
         },
         {
           "userId": "ewqeasdasd",
-          "rating": 3
+          "rating": 1
         }
       ],
       "ageRating": "PG",
@@ -136,7 +144,7 @@
         },
         {
           "userId": "ewqeasdasd",
-          "rating": 3
+          "rating": 0.5
         }
       ],
       "ageRating": "PG",
@@ -163,6 +171,10 @@
         {
           "userId": "usrId",
           "rating": 5
+        },
+        {
+          "userId": "ewqeasdasd",
+          "rating": 5
         }
       ],
       "ageRating": "E",
@@ -179,7 +191,12 @@
       },
       "year": 2021,
       "category": "Movie",
-      "rating": [],
+      "rating": [
+        {
+          "userId": "ewqeasdasd",
+          "rating": 5
+        }
+      ],
       "ageRating": "18+",
       "isBookmarked": false,
       "isTrending": true
@@ -203,7 +220,7 @@
       "rating": [
         {
           "userId": "ewqeasdasd",
-          "rating": 3.5
+          "rating": 0.5
         }
       ],
       "ageRating": "PG",
@@ -254,6 +271,10 @@
         {
           "userId": "usrId",
           "rating": 5
+        },
+        {
+          "userId": "ewqeasdasd",
+          "rating": 4.5
         }
       ],
       "ageRating": "PG",
@@ -276,6 +297,10 @@
         {
           "userId": "689d",
           "rating": 4.5
+        },
+        {
+          "userId": "ewqeasdasd",
+          "rating": 2
         }
       ],
       "ageRating": "18+",
