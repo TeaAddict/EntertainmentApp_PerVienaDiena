@@ -16,7 +16,7 @@ const Main = () => {
       <div className=" desktop:ml-[2rem] desktop:mt-[2rem] desktop:mr-0 desktop:pt-0 md:pt-[1.44rem] md:ml-[1.56rem] md:mr-[1.5rem]">
         <Header />
       </div>
-      <div className=" pb-[1rem] md:p-0 desktop:w-full">
+      <div className="pb-[1rem] md:p-0 md:pb-[2rem] desktop:w-full">
         <Outlet />
       </div>
     </div>

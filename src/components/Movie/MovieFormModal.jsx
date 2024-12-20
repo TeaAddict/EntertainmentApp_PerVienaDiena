@@ -26,7 +26,11 @@ const MovieFormModal = ({ data, type }) => {
       )}
       <dialog id={modalId} className="modal">
         <div className="modal-box flex justify-center bg-movie-fourth rounded-md">
-          <MovieForm onClose={closeModal} data={data} />
+          <MovieForm
+            onClose={closeModal}
+            data={data}
+            heading={`${type ? "Add" : "Edit"}`}
+          />
         </div>
         <form method="dialog" className="modal-backdrop">
           <button>close</button>
