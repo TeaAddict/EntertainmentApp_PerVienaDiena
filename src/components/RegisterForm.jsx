@@ -34,7 +34,13 @@ const RegisterForm = () => {
         return;
       }
 
-      await postUser({ email: data.email, password: data.password });
+      await postUser({
+        email: data.email,
+        password: data.password,
+        role: "user",
+        bookmarks: [],
+        ratedMovies: [],
+      });
       navigate("/");
     } catch (error) {
       console.error(error);
@@ -164,7 +170,9 @@ const RegisterForm = () => {
           </div>
         </div>
 
-        <Button>Create an account</Button>
+        <div className="mt-[2.5rem] mb-[1.5rem]">
+          <Button type="submit">Create an account</Button>
+        </div>
 
         <div className="flex justify-center gap-[8px]">
           <span className="text-movie-fifth text-body-m font-medium leading-[19px]">

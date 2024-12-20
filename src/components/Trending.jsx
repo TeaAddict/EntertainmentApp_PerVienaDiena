@@ -7,19 +7,23 @@ const Trending = ({ data }) => {
   const { events } = useDraggable(containerRef);
 
   return (
-    <section className="bg-movie-secondary text-white">
-      <h1 className="text-[1.2rem] mb-[0.7rem] sm:text-[1.91rem] lg:text-[1.91rem] sm:mb-[1.2rem]">
+    <section className="bg-movie-secondary text-white  ">
+      <h1
+        className="text-[1.2rem] md:text-[1.91rem] desktop:text-[1.91rem]
+tracking-[0.19px] md:tracking-[0.3px] desktop:tracking-[0.3px]
+        text-movie-fifth font-extralight mb-[0.7rem] md:mb-[1rem]"
+      >
         Trending
       </h1>
       <div
-        className="flex gap-4 sm:gap-10 lg:gap-10 overflow-x-auto cursor-grab active:cursor-grabbing no-scrollbar"
+        className="flex gap-4 md:gap-10 desktop:gap-10 overflow-x-auto cursor-grab active:cursor-grabbing no-scrollbar"
         ref={containerRef}
         {...events}
       >
-        {data.map((item) => (
+        {data?.map((item) => (
           <div
             key={item.title}
-            className="relative flex-shrink-0 rounded-lg overflow-hidden git h-[8.75rem] sm:h-[14.375rem] lg:h-[14.375rem]"
+            className=" flex-shrink-0 rounded-lg overflow-hidden git h-[8.75rem] md:h-[14.375rem] desktop:h-[14.375rem]"
           >
             <TrendingCard content={item} key={item.id} />
           </div>

@@ -2,6 +2,8 @@ import { useForm } from "react-hook-form";
 import { getUsers } from "../helpers/users/get";
 import { Link, useNavigate } from "react-router";
 import Button from "./Button";
+import Cookies from "js-cookie";
+import { useUser } from "./Context/UserContext";
 
 const LoginForm = () => {
   const {
@@ -17,31 +19,31 @@ const LoginForm = () => {
     },
   });
   const navigate = useNavigate();
+  const { refetchUser } = useUser();
 
   const handleFormSubmit = async (data) => {
     try {
       const res = await getUsers();
+      let userId = null;
 
       const isCorrect = res.some((user) => {
-        if (user.email == data.email) {
-          clearErrors("email");
-
-          if (user.password == data.password) {
-            clearErrors("password");
-            return true;
-          }
+        if (user.email === data.email && user.password === data.password) {
+          userId = user.id;
+          return true;
         }
-        setError("general", {
-          type: "custom",
-          message: "Incorrect credentials",
-        });
         return false;
       });
 
       if (isCorrect) {
-        console.log("correct acc");
+        Cookies.set("id", userId, { expires: 7 });
+        refetchUser();
         navigate("/");
-      } else console.log("wrong acc");
+      } else {
+        setError("general", {
+          type: "custom",
+          message: "Incorrect credentials",
+        });
+      }
     } catch (error) {
       console.error(error);
     }
@@ -121,7 +123,9 @@ const LoginForm = () => {
           </p>
         )}
 
-        <Button>Login to your account</Button>
+        <div className="mt-[2.5rem] mb-[1.5rem]">
+          <Button type="submit">Login to your account</Button>
+        </div>
 
         <div className="flex justify-center gap-[8px]">
           <span className="text-movie-fifth text-body-m font-medium leading-[19px]">
