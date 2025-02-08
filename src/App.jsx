@@ -21,7 +21,6 @@ function App() {
   const { updateCount } = useUpdate();
 
   useEffect(() => {
-    console.log("RERENDERING");
     const fetchData = async () => {
       try {
         const data = await getMovies();

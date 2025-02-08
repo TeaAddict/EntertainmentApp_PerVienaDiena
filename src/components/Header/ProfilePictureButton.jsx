@@ -1,4 +1,4 @@
-import avatar from "../../assets/image-avatar.png";
+import avatar from "/image-avatar.png";
 const ProfilePictureButton = () => {
   return (
     <section>

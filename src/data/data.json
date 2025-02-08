@@ -67,16 +67,16 @@
           "rating": 0.5
         },
         {
-          "movieId": "7",
-          "rating": 4.5
-        },
-        {
           "movieId": "8",
           "rating": 2
         },
         {
           "movieId": "15",
           "rating": 5
+        },
+        {
+          "movieId": "7",
+          "rating": 2.5
         }
       ]
     },
@@ -292,7 +292,7 @@
         },
         {
           "userId": "ewqeasdasd",
-          "rating": 4.5
+          "rating": 2.5
         }
       ],
       "ageRating": "PG",

@@ -6,8 +6,9 @@ import { updateMovie } from "../helpers/movies/put";
 import Rating from "./Rating";
 import addRemoveFromArray from "../helpers/functions/addRemoveFromArray";
 import MovieFormModal from "./Movie/MovieFormModal";
+import formatImgSource from "../helpers/functions/formatImgSource";
 
-export default function ContentCard({ content }) {
+export default function ContentCardOld({ content }) {
   const [isBookmarked, setIsBookmarked] = useState(false);
   const { update } = useUpdate();
   const { user, setUser } = useUser();
@@ -58,8 +59,6 @@ export default function ContentCard({ content }) {
 
   if (Object.keys(user).length === 0) return <p>Loading...</p>;
 
-  const updatedSrc = (imgString) => `src/${imgString.substring(1)}`;
-
   return (
     <div className="items-center bg-movie-secondary">
       <div className="relative">
@@ -70,7 +69,7 @@ export default function ContentCard({ content }) {
                 className="block object-cover rounded-[8px] hover:bg-movie-second w-full h-full"
                 src={
                   content.thumbnail.regular.large[0] === "."
-                    ? updatedSrc(content.thumbnail.regular.large)
+                    ? formatImgSource(content.thumbnail.regular.large)
                     : content.thumbnail.regular.large
                 }
               />
@@ -79,7 +78,7 @@ export default function ContentCard({ content }) {
 
           <div className="absolute inset-0 hidden group-hover:flex items-center justify-center hover:opacity-100 bg-opacity-50 bg-black transition">
             <button className="bg-white bg-opacity-25 text-white rounded-full p-2 flex items-center space-x-2">
-              <img src="src/assets/icon-play.svg" alt="Play icon" />
+              <img src="/icon-play.svg" alt="Play icon" />
               <p className="text-heading-xs pl-2 pr-4 ">Play</p>
             </button>
           </div>
@@ -112,7 +111,7 @@ export default function ContentCard({ content }) {
                 <span className="pr-[7px] md:pr-[8px]">{content.year}</span>
                 <span className="pr-[5px] md:pr-[8px]">•</span>
                 <img
-                  src={`src/assets/icon-category-${
+                  src={`/icon-category-${
                     content.category === "Movie" ? "movie" : "tv"
                   }.svg`}
                   className="inline-block
