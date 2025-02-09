@@ -9,7 +9,7 @@ const SearchBar = ({ value, placeholderText, setSearchParams }) => {
       className="flex items-start gap-[1rem] w-full md:gap-[1.5rem] p-[1px]"
     >
       <img
-        src="/icon-search.svg"
+        src="./icon-search.svg"
         className="w-[24px] h-[24px] md:w-[32px] md:h-[32px]"
       />
       <div className="relative w-full">

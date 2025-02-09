@@ -7,7 +7,7 @@ import { UpdateProvider } from "./components/Context/UpdateContext.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename={import.meta.env.VITE_BASEPATH}>
       <UpdateProvider>
         <App />
       </UpdateProvider>

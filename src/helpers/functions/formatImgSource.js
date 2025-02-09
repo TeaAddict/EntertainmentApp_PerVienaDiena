@@ -3,5 +3,5 @@ export default function formatImgSource(imageSource) {
     return imageSource;
   }
 
-  return imageSource.replace("./assets", "");
+  return imageSource.replace("./assets", ".");
 }

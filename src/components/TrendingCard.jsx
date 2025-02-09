@@ -55,20 +55,12 @@ export default function TrendingCard({ content }) {
   const displayIcon = (category) => {
     return (
       <img
-        src={`/icon-category-${category === "Movie" ? "movie" : "tv"}.svg`}
+        src={`./icon-category-${category === "Movie" ? "movie" : "tv"}.svg`}
         className="inline-block w-[12px] h-[12px]"
         alt={`${category} icon`}
       />
     );
   };
-
-  // const formatPath = (path) => {
-  //   if (path.includes("http")) {
-  //     return path;
-  //   } else {
-  //     return `src/${path.substring(1)}`;
-  //   }
-  // };
 
   useEffect(() => {
     if (user) setIsBookmarked(user?.bookmarks?.includes(content.id));
@@ -87,7 +79,7 @@ export default function TrendingCard({ content }) {
           </picture>
           <div className="absolute top-[-40%] inset-0 hidden  group-hover:flex items-center justify-center hover:opacity-100 bg-opacity-50 bg-black transition">
             <button className="bg-white bg-opacity-25 text-white rounded-full p-2 flex items-center space-x-2">
-              <img src="/icon-play.svg" alt="Play icon" />
+              <img src="./icon-play.svg" alt="Play icon" />
               <p className="text-heading-xs pl-2 pr-4 ">Play</p>
             </button>
           </div>

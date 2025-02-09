@@ -78,7 +78,7 @@ export default function ContentCardOld({ content }) {
 
           <div className="absolute inset-0 hidden group-hover:flex items-center justify-center hover:opacity-100 bg-opacity-50 bg-black transition">
             <button className="bg-white bg-opacity-25 text-white rounded-full p-2 flex items-center space-x-2">
-              <img src="/icon-play.svg" alt="Play icon" />
+              <img src="./icon-play.svg" alt="Play icon" />
               <p className="text-heading-xs pl-2 pr-4 ">Play</p>
             </button>
           </div>
@@ -111,7 +111,7 @@ export default function ContentCardOld({ content }) {
                 <span className="pr-[7px] md:pr-[8px]">{content.year}</span>
                 <span className="pr-[5px] md:pr-[8px]">•</span>
                 <img
-                  src={`/icon-category-${
+                  src={`./icon-category-${
                     content.category === "Movie" ? "movie" : "tv"
                   }.svg`}
                   className="inline-block
